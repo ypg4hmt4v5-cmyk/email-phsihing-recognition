@@ -1,0 +1,796 @@
+Delivered-To: samwilkinson2801@gmail.com
+Received: by 2002:a05:7300:d513:b0:34c:d2b3:a6a6 with SMTP id ms19csp46695dyb;
+        Tue, 6 Oct 2026 20:06:44 -0700 (PDT)
+X-Received: by 2002:a05:620a:4707:b0:93b:d7a4:9d4d with SMTP id af79cd13be357-93e9b829e86mr177453785a.32.1791342404393;
+        Tue, 06 Oct 2026 20:06:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791342404; cv=none;
+        d=google.com; s=arc-20260327;
+        b=fX2JHj/qa9o9qkhceQqojqhOUs0HKm73NmBjMQw/IgJ9ZOe0yVE3jbOgqTqKPDmra/
+         cyCezwZQTCIGsyv+++XCob9dkQY3aaoYtHesveQGySCBUcCQBQ5BjX5OPg3BVkLIOzue
+         JWLcSdIqW84vEEkpOg83C1SXAlQqyXrl8uN57bfxK361/9pylvebzCBNvoOo/dvkG+F9
+         jHFrbAnBuUVKX7jD4MGAjLxQbhgdSjYSKCZq15PF07yp+g36caLnq0X3Aw1FySiqGq6v
+         B+X5jz5EjRVb2x/27urFvYZxC0TSr4KWvgcTdoDnL9tWsYMvf4wELm31DYrf0EH/PLJz
+         fNhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=FZf9mINFeOX0jLSWfCyYpeslOXPO2S+BDmGfgRHCZ7c=;
+        fh=Qnp/pJwl7zudKHJ052DU6qhcjQzuOzds2z4zdhoKuhk=;
+        b=K5FFj0D1xX3dqu52R/CylcRTcujG1FQr9RCDmdGQxefd/y5hh5f4iRxGRcSXprP6by
+         jt4O/nQBT7P5rxGUD0AtiYepxj2fkruzaOWvvPpV6QZHicegJ0fqYeqehLfi3Z1lqZBz
+         8xDZry8jZYhy9uGFmcm6MRNBU1Pocfb6GVRYikUD3WQgxHSQpBQnisjCpi/k5bAKSeFU
+         1M1zvoPIeJaqFnMTn223eB524t8TYt4YKJYUVR9y/uV1pI5zh6kQBehNKL1NdvUeLhCs
+         o6BWsD4r/s9sScF6cuGrnuLFhNBkZiOXC8Y1rtzQYktUdhVZLqv5PFPt4n/bA+hXX2Rl
+         a2Ag==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio58667.onthatass.com header.s=mx header.b=naNKaQ3+;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="bZI/remR";
+       spf=pass (google.com: domain of postmaster@cio58667.onthatass.com designates 159.112.243.115 as permitted sender) smtp.mailfrom=postmaster@cio58667.onthatass.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=onthatass.com
+Return-Path: <postmaster@cio58667.onthatass.com>
+Received: from v5115.v5be21903.use4.send.mailgun.net (v5115.v5be21903.use4.send.mailgun.net. [159.112.243.115])
+        by mx.google.com with UTF8SMTPS id af79cd13be357-93e991ef3cesi102826885a.236.2026.10.06.20.06.44
+        for <samwilkinson2801@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 06 Oct 2026 20:06:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio58667.onthatass.com designates 159.112.243.115 as permitted sender) client-ip=159.112.243.115;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio58667.onthatass.com header.s=mx header.b=naNKaQ3+;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="bZI/remR";
+       spf=pass (google.com: domain of postmaster@cio58667.onthatass.com designates 159.112.243.115 as permitted sender) smtp.mailfrom=postmaster@cio58667.onthatass.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=onthatass.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=cio58667.onthatass.com; q=dns/txt; s=mx; t=1791342404; x=1791349604;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=FZf9mINFeOX0jLSWfCyYpeslOXPO2S+BDmGfgRHCZ7c=;
+ b=naNKaQ3+z3SkAQ9m1OtHec17vX0DRpyhx3hp5cTlFOr5vM5QHz9zLwRo2UR9OfJrfYDlyjXmhd0pv1Y3b9hVzUcjhm1W06ZwuuhveDSH4DuUfCQj+uNFsInJuGsGSol/GRKw9pLu5VpfW6xySAaGIVVrOJCq7HP2/KBjLH0E2Ts=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1791342404; x=1791349604;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=FZf9mINFeOX0jLSWfCyYpeslOXPO2S+BDmGfgRHCZ7c=;
+ b=bZI/remR0jA8gTyVeCfPpZDFyvmIDa2kuN6MmRytfApNh/fa2v/aXPrMNOtSM557V4jIzC3BJ/RuJJXmYJxz002oMswKhMjUESaHv7TZm0x4a1Da/UEjC9ALrQY391953Ie4bP0+on09IQpCtrCu9ukTLYScYGKhShBcYY5SemU=
+X-Mailgun-Sid: WyJkOThiOCIsInNhbXdpbGtpbnNvbjI4MDFAZ21haWwuY29tIiwiZTA5NjgwNiJd
+X-Feedback-Id: postmaster@cio58667.onthatass.com::60057d3e7d14c1a48796d831:mailgun
+Received: by 1b8966a0de21a8441c77ec6a083e363ef497539dc812705131d6f28feb2ed087 with HTTP
+ id 6ac5b744228e27d54aa2be72; Wed, 07 Oct 2026 03:06:44 GMT
+X-Mailgun-Sending-Ip: 159.112.243.115
+Date: Wed, 07 Oct 2026 03:06:44 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="a150892f03fd95bdd34370e4ca0c3e5c42ecdfeb2040d4ba0870e7723b23"
+Subject: An update on our Privacy Statement
+From: ON THAT ASS <noreply-gb@onthatass.com>
+To: samwilkinson2801@gmail.com
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: <mailto:32.MRTVGYRXM5KUYQKPOIZWY2CIOA4TKWKSIFQUKVKVHE2GGTKWKVUDITDRK5UUUSCNMNAT2PI=@unsubscribe2.customer.io>,
+ <https://email.onthatass.com/unsubscribe/dgSb7gULAOr3lhHp95YRAaEUU94cMVUh4LqWiJHMcA==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgSb7gULAOr3lhHp95YRAaEUU94cMVUh4LqWiJHMcA==;
+ +https://whatis.customeriomail.com)
+X-Mailgun-Variables: {"email_id": "dgSb7gULAOr3lhHp95YRAaEUU94cMVUh4LqWiJHMcA=="}
+Message-Id: <20261007030644.1a23e27cc485bbee@cio58667.onthatass.com>
+
+--a150892f03fd95bdd34370e4ca0c3e5c42ecdfeb2040d4ba0870e7723b23
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+ON THAT ASS
+
+An update on our Privacy Statement
+
+Hi Sam
+
+=C2=A0
+
+You still have an account with ON THAT ASS. Even if your subscription is no=
+ longer active, we will keep you informed of changes to our Privacy Stateme=
+nt.
+
+=C2=A0
+
+At ON THAT ASS we think it's important that you know how we handle your per=
+sonal data. That's why we regularly review our Privacy Statement and the wa=
+y it is structured. This has led to a number of changes.=C2=A0
+
+=E2=80=8A
+
+*****************************************
+What's changing in the Privacy Statement?
+*****************************************
+
+We have clarified the Privacy Statement. We have also added two new process=
+ors: one that supports us with the loyalty offer and one for telecommunicat=
+ions.
+
+=E2=80=8A
+
+****************************
+What does this mean for you?
+****************************
+
+=E2=80=8A
+
+You don't have to do anything. The updated Privacy Statement ( https://onth=
+atass.com/privacy-statement?userId=3D8174525&utm_campaign=3D1438_20261001+D=
+oelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&utm_content=3D112694_Doelgroep+=
+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demail_action&utm_source=3Dcustomer=
+=2Eio )applies from 6 November 2026.=C2=A0
+
+=E2=80=8A
+
+**************
+Any questions?
+**************
+
+We're happy to help. If you have any questions, please contact our customer=
+ service team at service@onthatass.com. ( service@onthatass.com?subject=3DP=
+rivacy%20Statement&userId=3D8174525&utm_campaign=3D1438_20261001+Doelgroep+=
+5+PS+%7C+Inactive+%2B+unsubscribed&utm_content=3D112694_Doelgroep+5+%7C+PS+=
+Only+%2B+extra+zin&utm_medium=3Demail_action&utm_source=3Dcustomer.io )
+
+=C2=A0
+
+Thanks for being a member at ON THAT ASS.
+
+We dare you to wear it.
+
+Team ON THAT ASS
+
+ON THAT ASS=C2=A0=C2=A0=C2=A0
+
+Men
+
+Instagram ( https://www.instagram.com/onthatass_official/?userId=3D8174525&=
+utm_campaign=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&u=
+tm_content=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demai=
+l_action&utm_source=3Dcustomer.io )
+
+Facebook ( https://www.facebook.com/onthatass/?userId=3D8174525&utm_campaig=
+n=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&utm_content=
+=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demail_action&u=
+tm_source=3Dcustomer.io )
+
+Women
+
+Instagram ( https://www.instagram.com/onthatass_women/?userId=3D8174525&utm=
+_campaign=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&utm_=
+content=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demail_a=
+ction&utm_source=3Dcustomer.io )
+
+ON THAT ASS International B.V.=C2=A0 's-Hertogenbosch (NL) =C2=A0
+
+You can withdraw your consent to the subscription in your account. For prom=
+otional messages, you can unsubscribe at any time. ( https://track.customer=
+=2Eio/unsubscribe/dgSb7gULAOr3lhHp95YRAaEUU94cMVUh4LqWiJHMcA=3D=3D )
+
+Customer service ( https://onthatass.com/customer-service?userId=3D8174525&=
+utm_campaign=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&u=
+tm_content=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demai=
+l_action&utm_source=3Dcustomer.io ) -=C2=A0Terms and Conditions ( https://o=
+nthatass.com/images/frontend/legal/terms/algemene_voorwaarden_GB.pdf?userId=
+=3D8174525&utm_campaign=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+uns=
+ubscribed&utm_content=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_me=
+dium=3Demail_action&utm_source=3Dcustomer.io ) -=C2=A0Privacy Statement ( h=
+ttps://onthatass.com/privacy-statement?userId=3D8174525&utm_campaign=3D1438=
+_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&utm_content=3D112694=
+_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&utm_medium=3Demail_action&utm_source=
+=3Dcustomer.io )
+
+User ID: 8174525=C2=A0 =C2=A0
+
+ON THAT ASS
+--a150892f03fd95bdd34370e4ca0c3e5c42ecdfeb2040d4ba0870e7723b23
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><me=
+ta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"/><!=
+--[if mso]>
+<xml><w:WordDocument xmlns:w=3D"urn:schemas-microsoft-com:office:word"><w:D=
+ontUseAdvancedTypographyReadingMail/></w:WordDocument>
+<o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/=
+></o:OfficeDocumentSettings></xml>
+<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none}sub,sup{font-size:75%;line-height:0} @media =
+(max-width:700px){.row-content{width:100%!important}.stack .column{width:10=
+0%!important;display:block}.mobile_hide{min-height:0;max-height:0;max-width=
+:0;display:none;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide tab=
+le{display:table!important;max-height:none!important}}
+</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup {=
+ mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]--></hea=
+d><body class=3D"body" style=3D"margin:0;padding:0;-webkit-text-size-adjust=
+:none;text-size-adjust:none;background-color:#fff"><div style=3D"display: n=
+one">=C2=A0 =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=C2=A0</div><table c=
+lass=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0;background-color:#fff"><tbody><tr><td><table class=3D"row row-1 mobile=
+_hide" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0;background-color:#f3eeeb"><tbody><tr><td><table class=3D"row-content=
+" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-co=
+lor:#f3eeeb;border-radius:0;color:#000;width:680px;margin:0 auto" width=3D"=
+680"><tbody><tr><td class=3D"column column-1" width=3D"50%" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-al=
+ign:top;width:50%"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"padding-bottom:5px;padd=
+ing-top:10px"><table class=3D"text_block block-1" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td clas=
+s=3D"pad" style=3D"padding-top:10px;padding-bottom:5px;padding-left:20px"><=
+div style=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"font-si=
+ze:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-he=
+ight-alt:14.399999999999999px;color:#555;line-height:1.2"><p style=3D"margi=
+n:0;mso-line-height-alt:14.399999999999999px"><img width=3D"50%" alt=3D"ON =
+THAT ASS" src=3D"https://onthatass.com/images/email/general/logo/logo_ontha=
+tass.png"/></p></div></div></td></tr></tbody></table></td></tr></tbody></ta=
+ble></td><td class=3D"column column-2" width=3D"50%" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top=
+;width:50%"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0"><tbody><tr><td class=3D"col-pad" style=3D"padding-bottom:5px;padding-top=
+:5px"><table class=3D"empty_block block-1" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pad"><div></div></td>
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table><!--[if !mso]><!--><table class=3D"row row-2 deskto=
+p_hide" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;mso-hide:all;display:none;max-height:0;overflow:hidden;background-c=
+olor:#f3eeeb"><tbody><tr><td><table class=3D"row-content" align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-he=
+ight:0;overflow:hidden;background-color:#f3eeeb;border-radius:0;color:#000;=
+width:680px;margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column col=
+umn-1" width=3D"50%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-we=
+ight:400;text-align:left;vertical-align:middle;width:50%"><table width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;m=
+ax-height:0;overflow:hidden"><tbody><tr><td class=3D"col-pad" style=3D"padd=
+ing-bottom:10px;padding-top:10px"><table class=3D"text_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;=
+mso-hide:all;display:none;max-height:0;overflow:hidden"><tbody><tr><td clas=
+s=3D"pad" style=3D"padding-top:10px;padding-left:20px"><div style=3D"font-f=
+amily:Arial,sans-serif"><div class=3D"" style=3D"font-size:12px;font-family=
+:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-height-alt:14.3999999=
+99999999px;color:#555;line-height:1.2"><p style=3D"margin:0;mso-line-height=
+-alt:14.399999999999999px"><img width=3D"95%" alt=3D"ON THAT ASS" src=3D"ht=
+tps://onthatass.com/images/email/general/logo/logo_onthatass.png"/></p></di=
+v></div></td></tr></tbody></table></td></tr></tbody></table></td><td class=
+=3D"column column-2" width=3D"50%" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0;font-weight:400;text-align:left;vertical-align:middle;width:50%"><ta=
+ble width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;=
+display:none;max-height:0;overflow:hidden"><tbody><tr><td class=3D"col-pad"=
+ style=3D"padding-bottom:5px;padding-top:5px"><table class=3D"empty_block b=
+lock-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:=
+all;display:none;max-height:0;overflow:hidden"><tbody><tr><td class=3D"pad"=
+><div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></td></tr></tbody></table><!--<![endif]--><table class=3D"ro=
+w row-3" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0;background-color:#f3eeeb"><tbody><tr><td><table class=3D"row-conte=
+nt" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#f3eeeb;border-radius:0;color:#000;width:680px;margin:0 auto" width=
+=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;backgr=
+ound-color:#f3eeeb;vertical-align:middle;width:100%"><table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad=
+" style=3D"padding-bottom:10px;padding-left:20px;padding-right:20px;padding=
+-top:10px"><table class=3D"text_block block-1" width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=
+=3D"pad" style=3D"padding-bottom:5px"><div style=3D"font-family:Arial,sans-=
+serif"><div class=3D"" style=3D"font-size:14px;font-family:'Helvetica Neue'=
+,Helvetica,Arial,sans-serif;mso-line-height-alt:16.8px;color:#000;line-heig=
+ht:1.2"><p style=3D"margin:0;font-size:14px;text-align:left;mso-line-height=
+-alt:16.8px"><span style=3D"word-break: break-word; font-size: 22px;"><stro=
+ng>An update on our Privacy Statement</strong></span></p></div></div></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></t=
+d></tr></tbody></table><table class=3D"row row-4" align=3D"center" width=3D=
+"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table cl=
+ass=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tabl=
+e-rspace:0;background-color:#fff;border-radius:0;color:#000;width:680px;mar=
+gin:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D=
+"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-=
+align:left;vertical-align:top;width:100%"><table width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"=
+padding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:20px">=
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad"><div=
+ style=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"font-size:=
+14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-heigh=
+t-alt:16.8px;color:#000;line-height:1.2"><p style=3D"margin:0;font-size:16p=
+x;mso-line-height-alt:19.2px"><span style=3D"word-break: break-word; font-s=
+ize: 16px;">Hi Sam</span></p><p style=3D"margin:0;font-size:16px;mso-line-h=
+eight-alt:16.8px">=C2=A0</p><p style=3D"margin:0;mso-line-height-alt:19.2px=
+"><span style=3D"word-break: break-word; font-size: 16px;">You still have a=
+n account with ON THAT ASS. Even if your subscription is no longer active, =
+we will keep you informed of changes to our Privacy Statement.</span></p><p=
+ style=3D"margin:0;mso-line-height-alt:16.8px">=C2=A0</p><p style=3D"margin=
+:0;mso-line-height-alt:19.2px">
+<span style=3D"word-break: break-word; font-size: 16px;">At ON THAT ASS we =
+think it's important that you know how we handle your personal data. That's=
+ why we regularly review our Privacy Statement and the way it is structured=
+=2E This has led to a number of chang=
+es.=C2=A0</span></p></div></div></td></t=
+r></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td>=
+</tr></tbody></table><table class=3D"row row-5" align=3D"center" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table clas=
+s=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0;background-color:#fff;border-radius:0;color:#000;width:680px;margi=
+n:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"1=
+00%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-al=
+ign:left;vertical-align:top;width:100%"><table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"pa=
+dding-left:20px"><div class=3D"spacer_block block-1" style=3D"height:0;line=
+-height:0;font-size:1px">=E2=80=8A</div><table class=3D"heading_block block=
+-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><=
+td class=3D"pad" style=3D"width:100%" align=3D"center"><h1 style=3D"margin:=
+0;color:#000;direction:ltr;font-family:'Helvetica Neue',Helvetica,Arial,san=
+s-serif;font-size:17px;font-weight:700;letter-spacing:normal;line-height:1.=
+2;text-align:left;margin-top:0;margin-bottom:0;mso-line-height-alt:20px"><s=
+pan class=3D"tinyMce-placeholder" style=3D"word-break: break-word;">What's =
+changing in the Privacy Statement?</span></h1></td></tr></tbody></table></t=
+d></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>=
+<table class=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stac=
+k" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#fff;border-radius:0;color:#000;width:680px;margin:0 auto" width=3D"=
+680"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-a=
+lign:top;width:100%"><table width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tabl=
+e-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"padding-bottom:20px;p=
+adding-left:20px;padding-right:20px;padding-top:10px"><table class=3D"text_=
+block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;wo=
+rd-break:break-word"><tbody><tr><td class=3D"pad"><div style=3D"font-family=
+:Arial,sans-serif"><div class=3D"" style=3D"font-size:14px;font-family:'Hel=
+vetica Neue',Helvetica,Arial,sans-serif;mso-line-height-alt:16.8px;color:#0=
+00;line-height:1.2"><p style=3D"margin:0;mso-line-height-alt:16.8px">
+<span style=3D"word-break: break-word; font-size: 16px;">We have clarified =
+the Privacy Statement. We have also added two new processors: one that supp=
+orts us with the loyalty offer and one for telecommunications.</span></p></=
+div></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></t=
+body></table></td></tr></tbody></table><table class=3D"row row-7" align=3D"=
+center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><=
+tr><td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;width:=
+680px;margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1"=
+ width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:=
+400;text-align:left;vertical-align:top;width:100%"><table width=3D"100%" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad"=
+ style=3D"padding-left:20px"><div class=3D"spacer_block block-1" style=3D"h=
+eight:0;line-height:0;font-size:1px">=E2=80=8A</div><table class=3D"heading=
+_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+"><tbody><tr><td class=3D"pad" style=3D"width:100%" align=3D"center"><h1 st=
+yle=3D"margin:0;color:#000;direction:ltr;font-family:'Helvetica Neue',Helve=
+tica,Arial,sans-serif;font-size:17px;font-weight:700;letter-spacing:normal;=
+line-height:1.2;text-align:left;margin-top:0;margin-bottom:0;mso-line-heigh=
+t-alt:20px"><span class=3D"tinyMce-placeholder" style=3D"word-break: break-=
+word;">What does this mean for you?</span></h1></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+><table class=3D"row row-8" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content sta=
+ck" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#fff;border-radius:0;color:#000;width:680px;margin:0 auto" width=3D"=
+680"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-a=
+lign:top;width:100%"><table width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tabl=
+e-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"padding-left:20px"><d=
+iv class=3D"spacer_block block-1" style=3D"height:0;line-height:0;font-size=
+:1px">=E2=80=8A</div></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table><table class=3D"row row-9" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=
+ class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0;background-color:#fff;border-radius:0;color:#000;width:680px;=
+margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;vertical-align:top;width:100%"><table width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" styl=
+e=3D"padding-bottom:20px;padding-left:20px;padding-right:20px;padding-top:1=
+0px"><table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad"=
+><div style=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"font-=
+size:14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-=
+height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"margin:0;mso-line=
+-height-alt:16.8px">
+<span style=3D"word-break: break-word; font-size: 16px;">You don't have to =
+do a<span style=3D"word-break: break-word; color: #000000;">nything. The up=
+dated <span style=3D"word-break: break-word;"><a href=3D"https://email.onth=
+atass.com/e/c/eyJlbWFpbF9pZCI6ImRnU2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoN=
+ExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHBzOi8vb250aGF0YXNzLmNvbS9wcml2YWN5LXN0YXRl=
+bWVudD91c2VySWQ9ODE3NDUyNVx1MDAyNnV0bV9jYW1wYWlnbj0xNDM4XzIwMjYxMDAxK0RvZWx=
+ncm9lcCs1K1BTKyU3QytJbmFjdGl2ZSslMkIrdW5zdWJzY3JpYmVkXHUwMDI2dXRtX2NvbnRlbn=
+Q9MTEyNjk0X0RvZWxncm9lcCs1KyU3QytQUytPbmx5KyUyQitleHRyYSt6aW5cdTAwMjZ1dG1fb=
+WVkaXVtPWVtYWlsX2FjdGlvblx1MDAyNnV0bV9zb3VyY2U9Y3VzdG9tZXIuaW8iLCJpbnRlcm5h=
+bCI6IjliZWUwNWIwMDllOWQ1MDFlYWY3OTYxMSIsImxpbmtfaWQiOjExMzJ9/e543b331daaf1a=
+b9fd317d83ad854784873e15a945f85461ceb919045d97737c" rel=3D"noopener" style=
+=3D"text-decoration:underline;color:#000000;" target=3D"_blank">Privacy Sta=
+tement </a></span>applies fr</span>om 6 November 2026.=C2=A0</span></p></di=
+v></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbo=
+dy></table></td></tr>
+</tbody></table><table class=3D"row row-10" align=3D"center" width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D=
+"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0;background-color:#fff;border-radius:0;color:#000;width:680px;margin:0 =
+auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"100%"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:=
+left;vertical-align:top;width:100%"><table width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"paddin=
+g-left:20px"><div class=3D"spacer_block block-1" style=3D"height:0;line-hei=
+ght:0;font-size:1px">=E2=80=8A</div><table class=3D"heading_block block-2" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td c=
+lass=3D"pad" style=3D"width:100%" align=3D"center"><h1 style=3D"margin:0;co=
+lor:#000;direction:ltr;font-family:'Helvetica Neue',Helvetica,Arial,sans-se=
+rif;font-size:17px;font-weight:700;letter-spacing:normal;line-height:1.2;te=
+xt-align:left;margin-top:0;margin-bottom:0;mso-line-height-alt:20px"><span =
+class=3D"tinyMce-placeholder" style=3D"word-break: break-word;">Any questio=
+ns?</span></h1></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table></td>
+</tr></tbody></table><table class=3D"row row-11" align=3D"center" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table cla=
+ss=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table=
+-rspace:0;background-color:#fff;border-radius:0;color:#000;width:680px;marg=
+in:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"=
+100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-a=
+lign:left;vertical-align:top;width:100%"><table width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"p=
+adding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px"><=
+table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad"><div=
+ style=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"font-size:=
+14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-heigh=
+t-alt:16.8px;color:#000;line-height:1.2"><p style=3D"margin:0;mso-line-heig=
+ht-alt:16.8px">
+<span style=3D"word-break: break-word; font-size: 16px; color: #000000;">We=
+'re happy to help. If you have any questions, please contact our customer s=
+ervice team <span style=3D"word-break: break-word;">at <a href=3D"mailto:se=
+rvice@onthatass.com?subject=3DPrivacy%20Statement&amp;userId=3D8174525&amp;=
+utm_campaign=3D1438_20261001+Doelgroep+5+PS+%7C+Inactive+%2B+unsubscribed&a=
+mp;utm_content=3D112694_Doelgroep+5+%7C+PS+Only+%2B+extra+zin&amp;utm_mediu=
+m=3Demail_action&amp;utm_source=3Dcustomer.io" rel=3D"noopener" style=3D"te=
+xt-decoration:underline;color:#000000;" target=3D"_blank" title=3D"service@=
+onthatass.com">service@onthatass.com.</a></span></span></p><p style=3D"marg=
+in:0;mso-line-height-alt:16.8px">=C2=A0</p><p style=3D"margin:0;mso-line-he=
+ight-alt:19.2px"><strong><span style=3D"word-break: break-word; font-size: =
+16px;">Thanks for being a member at ON THAT ASS.</span></strong></p></div><=
+/div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table></td></tr></tbody></table><table class=3D"row row-12" align=3D"cent=
+er" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><=
+td><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;wid=
+th:680px;margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column column=
+-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weig=
+ht:400;text-align:left;vertical-align:top;width:100%"><table width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pa=
+d" style=3D"padding-bottom:20px;padding-left:20px;padding-right:20px;paddin=
+g-top:10px"><table class=3D"text_block block-1" width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=
+=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class=3D"" style=
+=3D"font-size:14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;=
+mso-line-height-alt:16.8px;color:#000;line-height:1.2"><p style=3D"margin:0=
+;mso-line-height-alt:16.8px"><span style=3D"word-break: break-word; font-si=
+ze: 16px;">We dare you to wear it.</span></p><p style=3D"margin:0;mso-line-=
+height-alt:19.2px"><span style=3D"word-break: break-word; font-size: 16px;"=
+>Team ON THAT ASS</span></p></div></div></td></tr></tbody></table></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-13" align=3D"center" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;background-color:#ebebeb"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#ebebeb;border-radius:0;color:#000;width:680px;mar=
+gin:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D=
+"66.66666666666667%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-we=
+ight:400;text-align:left;vertical-align:bottom;width:66.66666666666667%"><t=
+able width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><t=
+r><td class=3D"col-pad" style=3D"padding-bottom:20px;padding-top:20px"><tab=
+le class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad" style=3D=
+"padding-top:10px;padding-bottom:20px;padding-left:10px;padding-right:10px"=
+><div style=3D"font-family:sans-serif"><div class=3D"" style=3D"font-size:1=
+4px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-line-height=
+-alt:16.8px;color:#474747;line-height:1.2"><p style=3D"margin:0;font-size:1=
+4px;mso-line-height-alt:16.8px"><img width=3D"180px" alt=3D"ON THAT ASS" sr=
+c=3D"https://onthatass.com/images/email/general/logo/logo_onthatass.png"/>=
+=C2=A0=C2=A0=C2=A0</p></div></div></td></tr>
+</tbody></table><table class=3D"text_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td=
+ class=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class=3D"" =
+style=3D"font-size:14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-s=
+erif;mso-line-height-alt:7px;color:#474747;line-height:.5"><p style=3D"marg=
+in:0;font-size:14px;mso-line-height-alt:7px"></p><table role=3D"presentatio=
+n" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collaps=
+e: collapse; font-family: Arial, Helvetica, sans-serif;">
+    <tbody><tr>
+        <td style=3D"color: #474747; font-size: 12px; font-family: Helvetic=
+a Neue, Helvetica, Arial, sans-serif; padding-right: 10px; vertical-align: =
+middle;">Men</td>
+        <td style=3D"padding-right: 10px; vertical-align: middle;">
+            <a href=3D"https://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6ImRn=
+U2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHB=
+zOi8vd3d3Lmluc3RhZ3JhbS5jb20vb250aGF0YXNzX29mZmljaWFsLz91c2VySWQ9ODE3NDUyNV=
+x1MDAyNnV0bV9jYW1wYWlnbj0xNDM4XzIwMjYxMDAxK0RvZWxncm9lcCs1K1BTKyU3QytJbmFjd=
+Gl2ZSslMkIrdW5zdWJzY3JpYmVkXHUwMDI2dXRtX2NvbnRlbnQ9MTEyNjk0X0RvZWxncm9lcCs1=
+KyU3QytQUytPbmx5KyUyQitleHRyYSt6aW5cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsX2FjdGlvblx=
+1MDAyNnV0bV9zb3VyY2U9Y3VzdG9tZXIuaW8iLCJpbnRlcm5hbCI6IjliZWUwNWIwMDllOWQ1MD=
+FlYWY3OTYxMSIsImxpbmtfaWQiOjIyfQ/9ffc8451c88227703ba4f444d146259c9b5ee06b57=
+2c6225d3433ab271fc4a49" style=3D"text-decoration: none;">
+                <img src=3D"https://onthatass.com/images/email/general/logo=
+/social-instagram.png" alt=3D"Instagram" width=3D"20" height=3D"20" style=
+=3D"display: block; border: 0; outline: none; text-decoration: none;"/>
+            </a>
+        </td>
+        <td style=3D"padding-right: 20px; vertical-align: middle;">
+            <a href=3D"https://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6ImRn=
+U2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHB=
+zOi8vd3d3LmZhY2Vib29rLmNvbS9vbnRoYXRhc3MvP3VzZXJJZD04MTc0NTI1XHUwMDI2dXRtX2=
+NhbXBhaWduPTE0MzhfMjAyNjEwMDErRG9lbGdyb2VwKzUrUFMrJTdDK0luYWN0aXZlKyUyQit1b=
+nN1YnNjcmliZWRcdTAwMjZ1dG1fY29udGVudD0xMTI2OTRfRG9lbGdyb2VwKzUrJTdDK1BTK09u=
+bHkrJTJCK2V4dHJhK3ppblx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0aW9uXHUwMDI2dXRtX3N=
+vdXJjZT1jdXN0b21lci5pbyIsImludGVybmFsIjoiOWJlZTA1YjAwOWU5ZDUwMWVhZjc5NjExIi=
+wibGlua19pZCI6MzgyfQ/c3efef830233941c4d65f9f4fb50a43848add35bb1757744f838c7=
+a50d7b0805" style=3D"text-decoration: none;">
+                <img src=3D"https://onthatass.com/images/email/general/logo=
+/social-facebook.png" alt=3D"Facebook" width=3D"20" height=3D"20" style=3D"=
+display: block; border: 0; outline: none; text-decoration: none;"/>
+            </a>
+        </td>
+        <td style=3D"color: #474747; font-size: 12px; font-family: Helvetic=
+a Neue, Helvetica, Arial, sans-serif; padding-right: 10px; vertical-align: =
+middle;">Women</td>
+        <td style=3D"vertical-align: middle;">
+            <a href=3D"https://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6ImRn=
+U2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHB=
+zOi8vd3d3Lmluc3RhZ3JhbS5jb20vb250aGF0YXNzX3dvbWVuLz91c2VySWQ9ODE3NDUyNVx1MD=
+AyNnV0bV9jYW1wYWlnbj0xNDM4XzIwMjYxMDAxK0RvZWxncm9lcCs1K1BTKyU3QytJbmFjdGl2Z=
+SslMkIrdW5zdWJzY3JpYmVkXHUwMDI2dXRtX2NvbnRlbnQ9MTEyNjk0X0RvZWxncm9lcCs1KyU3=
+QytQUytPbmx5KyUyQitleHRyYSt6aW5cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsX2FjdGlvblx1MDA=
+yNnV0bV9zb3VyY2U9Y3VzdG9tZXIuaW8iLCJpbnRlcm5hbCI6IjliZWUwNWIwMDllOWQ1MDFlYW=
+Y3OTYxMSIsImxpbmtfaWQiOjk0OX0/752d4bfeff3446522c479e1ef75b3c33e2b24af5b0aec=
+3d8ecc19a84719229a2" style=3D"text-decoration: none;">
+                <img src=3D"https://onthatass.com/images/email/general/logo=
+/social-instagram.png" alt=3D"Instagram" width=3D"20" height=3D"20" style=
+=3D"display: block; border: 0; outline: none; text-decoration: none;"/>
+            </a>
+        </td>
+    </tr>
+</tbody></table><p></p></div></div></td>
+</tr></tbody></table><table class=3D"text_block block-3" width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr=
+><td class=3D"pad" style=3D"padding-top:25px;padding-bottom:10px;padding-le=
+ft:10px;padding-right:10px"><div style=3D"font-family:Arial,sans-serif"><di=
+v class=3D"" style=3D"font-size:14px;font-family:'Helvetica Neue',Helvetica=
+,Arial,sans-serif;mso-line-height-alt:16.8px;color:#474747;line-height:1.2"=
+><p style=3D"margin:0;font-size:14px;mso-line-height-alt:16.8px"><span styl=
+e=3D"word-break: break-word; font-size: 12px;">ON THAT ASS International B.=
+V.=C2=A0 's-Hertogenbosch (NL) =C2=A0</span></p></div></div></td></tr></tbo=
+dy></table><table class=3D"text_block block-4" width=3D"100%" border=3D"0" =
+cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=
+=3D"pad"><div style=3D"font-family:Arial,sans-serif"><div class=3D"" style=
+=3D"font-size:14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;=
+mso-line-height-alt:16.8px;color:#474747;line-height:1.2"><p style=3D"margi=
+n:0;font-size:14px;mso-line-height-alt:16.8px">
+<span style=3D"word-break: break-word; color: #474747;"><span style=3D"word=
+-break: break-word; font-size: 12px;">You can withdraw your consent to the =
+subscription in your account. For promotional messages, you can unsubscribe=
+ </span><a href=3D"https://email.onthatass.com/unsubscribe/dgSb7gULAOr3lhHp=
+95YRAaEUU94cMVUh4LqWiJHMcA=3D=3D" rel=3D"noopener" style=3D"text-decoration=
+: underline; color: #474747;" target=3D"_blank"><span style=3D"word-break: =
+break-word; font-size: 12px;">at any time.</span></a></span>
+</p></div></div></td></tr></tbody></table><table class=3D"text_block block-=
+5" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:br=
+eak-word"><tbody><tr><td class=3D"pad"><div style=3D"font-family:Arial,sans=
+-serif"><div class=3D"" style=3D"font-size:14px;font-family:'Helvetica Neue=
+',Helvetica,Arial,sans-serif;mso-line-height-alt:16.8px;color:#474747;line-=
+height:1.2"><p style=3D"margin:0;font-size:12px;mso-line-height-alt:14.3999=
+99999999999px">
+<span style=3D"word-break: break-word; color: #474747;"><span style=3D"word=
+-break: break-word; font-size: 12px;"><a href=3D"https://email.onthatass.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnU2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKS=
+E1jQT09IiwiaHJlZiI6Imh0dHBzOi8vb250aGF0YXNzLmNvbS9pbWFnZXMvZnJvbnRlbmQvbGVn=
+YWwvdGVybXMvYWxnZW1lbmVfdm9vcndhYXJkZW5fR0IucGRmP3VzZXJJZD04MTc0NTI1XHUwMDI=
+2dXRtX2NhbXBhaWduPTE0MzhfMjAyNjEwMDErRG9lbGdyb2VwKzUrUFMrJTdDK0luYWN0aXZlKy=
+UyQit1bnN1YnNjcmliZWRcdTAwMjZ1dG1fY29udGVudD0xMTI2OTRfRG9lbGdyb2VwKzUrJTdDK=
+1BTK09ubHkrJTJCK2V4dHJhK3ppblx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0aW9uXHUwMDI2=
+dXRtX3NvdXJjZT1jdXN0b21lci5pbyIsImludGVybmFsIjoiOWJlZTA1YjAwOWU5ZDUwMWVhZjc=
+5NjExIiwibGlua19pZCI6MTEzMH0/04150eee5c9b6562957bacaaa74883d9d647c2864d069e=
+b7e06cd773d3b4742f" rel=3D"noopener" style=3D"text-decoration:underline;col=
+or:#474747;" target=3D"_blank"></a><span style=3D"word-break: break-word; c=
+olor: #474747;"><a href=3D"https://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnU2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh=
+0dHBzOi8vb250aGF0YXNzLmNvbS9jdXN0b21lci1zZXJ2aWNlP3VzZXJJZD04MTc0NTI1XHUwMD=
+I2dXRtX2NhbXBhaWduPTE0MzhfMjAyNjEwMDErRG9lbGdyb2VwKzUrUFMrJTdDK0luYWN0aXZlK=
+yUyQit1bnN1YnNjcmliZWRcdTAwMjZ1dG1fY29udGVudD0xMTI2OTRfRG9lbGdyb2VwKzUrJTdD=
+K1BTK09ubHkrJTJCK2V4dHJhK3ppblx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0aW9uXHUwMDI=
+2dXRtX3NvdXJjZT1jdXN0b21lci5pbyIsImludGVybmFsIjoiOWJlZTA1YjAwOWU5ZDUwMWVhZj=
+c5NjExIiwibGlua19pZCI6MTEzMX0/30284726ce297d6cb9f180498b1c71c5ac465b86a9d9a=
+6d4a218ecbaa8b109fb" rel=3D"noopener" style=3D"text-decoration: underline; =
+color: #474747;" target=3D"_blank">Customer service</a> -=C2=A0<a href=3D"h=
+ttps://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6ImRnU2I3Z1VMQU9yM2xoSHA5NVlS=
+QWFFVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHBzOi8vb250aGF0YXNzLmNvbS9=
+pbWFnZXMvZnJvbnRlbmQvbGVnYWwvdGVybXMvYWxnZW1lbmVfdm9vcndhYXJkZW5fR0IucGRmP3=
+VzZXJJZD04MTc0NTI1XHUwMDI2dXRtX2NhbXBhaWduPTE0MzhfMjAyNjEwMDErRG9lbGdyb2VwK=
+zUrUFMrJTdDK0luYWN0aXZlKyUyQit1bnN1YnNjcmliZWRcdTAwMjZ1dG1fY29udGVudD0xMTI2=
+OTRfRG9lbGdyb2VwKzUrJTdDK1BTK09ubHkrJTJCK2V4dHJhK3ppblx1MDAyNnV0bV9tZWRpdW0=
+9ZW1haWxfYWN0aW9uXHUwMDI2dXRtX3NvdXJjZT1jdXN0b21lci5pbyIsImludGVybmFsIjoiOW=
+JlZTA1YjAwOWU5ZDUwMWVhZjc5NjExIiwibGlua19pZCI6MTEzMH0/04150eee5c9b6562957ba=
+caaa74883d9d647c2864d069eb7e06cd773d3b4742f" rel=3D"noopener" style=3D"text=
+-decoration: underline; color: #474747;" target=3D"_blank">Terms and Condit=
+ions</a> -=C2=A0</span><a aria-describedby=3D"sk-tooltip-6295" href=3D"http=
+s://email.onthatass.com/e/c/eyJlbWFpbF9pZCI6ImRnU2I3Z1VMQU9yM2xoSHA5NVlSQWF=
+FVVU5NGNNVlVoNExxV2lKSE1jQT09IiwiaHJlZiI6Imh0dHBzOi8vb250aGF0YXNzLmNvbS9wcm=
+l2YWN5LXN0YXRlbWVudD91c2VySWQ9ODE3NDUyNVx1MDAyNnV0bV9jYW1wYWlnbj0xNDM4XzIwM=
+jYxMDAxK0RvZWxncm9lcCs1K1BTKyU3QytJbmFjdGl2ZSslMkIrdW5zdWJzY3JpYmVkXHUwMDI2=
+dXRtX2NvbnRlbnQ9MTEyNjk0X0RvZWxncm9lcCs1KyU3QytQUytPbmx5KyUyQitleHRyYSt6aW5=
+cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsX2FjdGlvblx1MDAyNnV0bV9zb3VyY2U9Y3VzdG9tZXIuaW=
+8iLCJpbnRlcm5hbCI6IjliZWUwNWIwMDllOWQ1MDFlYWY3OTYxMSIsImxpbmtfaWQiOjExMzJ9/=
+e543b331daaf1ab9fd317d83ad854784873e15a945f85461ceb919045d97737c" rel=3D"no=
+opener" style=3D"text-decoration: underline; color: #474747;" target=3D"_bl=
+ank">Privacy Statement</a></span></span>
+</p></div></div></td></tr></tbody></table><table class=3D"text_block block-=
+6" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:br=
+eak-word"><tbody><tr><td class=3D"pad"><div style=3D"font-family:Arial,sans=
+-serif"><div class=3D"" style=3D"font-size:12px;font-family:'Helvetica Neue=
+',Helvetica,Arial,sans-serif;mso-line-height-alt:14.399999999999999px;color=
+:#474747;line-height:1.2"><p style=3D"margin:0;mso-line-height-alt:14.39999=
+9999999999px">
+<span style=3D"word-break: break-word; font-size: 12px;">User ID: <strong>8=
+174525=C2=A0 =C2=A0</strong></span></p></div></div></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td><td class=3D"column column-2" width=3D"33.=
+333333333333336%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weigh=
+t:400;text-align:left;vertical-align:bottom;width:33.333333333333336%"><tab=
+le class=3D"text_block mobile_hide block-1" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"p=
+ad"><div style=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"fo=
+nt-size:14px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;mso-li=
+ne-height-alt:12.6px;color:#555;line-height:.9"><p style=3D"margin:0;font-s=
+ize:14px;text-align:right;mso-line-height-alt:12.6px"><img width=3D"180px" =
+alt=3D"ON THAT ASS" src=3D"https://onthatass.com/images/email/general/logo/=
+beeldmerk.png"/></p></div></div></td></tr></tbody></table></td></tr></tbody=
+>
+</table></td></tr></tbody></table><table class=3D"row row-14" align=3D"cent=
+er" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><=
+td><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0;background-color:#f7f7f7;color:#000;width:680px;marg=
+in:0 auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"=
+100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-a=
+lign:left;vertical-align:top;width:100%"><table width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"col-pad" style=3D"p=
+adding-left:50px;padding-right:50px"><table class=3D"divider_block block-1"=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td =
+class=3D"pad" align=3D"center">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><t=
+r><td class=3D"divider_inner" style=3D"font-size:1px;line-height:1px;border=
+-top:1px solid #fff"><span style=3D"word-break: break-word;">=E2=80=8A</spa=
+n></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></t=
+able></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table><!-- End --><img src=3D"https://email.onthatass.com/e/o/eyJlbWFpbF9=
+pZCI6ImRnU2I3Z1VMQU9yM2xoSHA5NVlSQWFFVVU5NGNNVlVoNExxV2lKSE1jQT09In0=3D" st=
+yle=3D"height: 1px !important; max-height: 1px !important; max-width: 1px !=
+important; width: 1px !important; display: none !important;" alt=3D""/></bo=
+dy></html>
+--a150892f03fd95bdd34370e4ca0c3e5c42ecdfeb2040d4ba0870e7723b23--

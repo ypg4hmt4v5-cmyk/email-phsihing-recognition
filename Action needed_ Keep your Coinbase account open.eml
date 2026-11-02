@@ -1,0 +1,527 @@
+Delivered-To: samwilkinson2801@gmail.com
+Received: by 2002:a05:7300:c86:b0:34c:d2b3:a6a6 with SMTP id p6csp628485dyk;
+        Wed, 7 Oct 2026 10:15:38 -0700 (PDT)
+X-Received: by 2002:a05:620a:444d:b0:93e:63fd:40a4 with SMTP id af79cd13be357-93e9b7bdd80mr524725885a.55.1791393338401;
+        Wed, 07 Oct 2026 10:15:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791393338; cv=none;
+        d=google.com; s=arc-20260327;
+        b=D8zWY5GGdSs8y0OekB/q4kabvvRbMNgaA/oYayjGLiBGRK62SKcYIubSPL70FNe84T
+         svvsCB9QQiWKInKJrlOIyCLTvEvezoADsSbv7eZ9mXlwgLaVvE7HxPCsznjrloOmpkEt
+         gELI/GUiBVpnp6gTBNMIQomI9pNkcZf8bLSydxcs2RKICGQkhKobAfiv9ScqtfmM0ysl
+         mcyi5yn6rUjk1RvRasmnlMFVdtDu3r/w/D5DLfPRMLeBBxrAU8s8rTB/LK6X4bO+ZTwX
+         6L1I9FoS1eyFYplHRSTwmoFWovmZNThjHzzjUu22fbUtcAkTQVQDPpkBV6XJWoRmn6Hh
+         v+hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:date:message-id:mime-version:subject:to:from
+         :dkim-signature:dkim-signature;
+        bh=E08p4GsfeBZcBOXyKFMqOYEepA4F9mpG55YezWHK3JE=;
+        fh=Qnp/pJwl7zudKHJ052DU6qhcjQzuOzds2z4zdhoKuhk=;
+        b=ZUritkLgJJPJwmZSWIwLbSDIm2ASpbnJV2qxf8AiYRcywUOrO7jhFpdNdYgQGxk/mX
+         YH0LXBr8ncxpFL2jIRK790xqtkbH0iQ8/W4an4xEYMTYFnTD4ZHvBa95F2NtGMe1vStn
+         k9FcyALjmWiSIH1MrXtpZl8exsP/sWOSB1HkFRqsOkoRfUHDpuSrYJq97waRu25j0iA5
+         Nsx9Rm6kDSf7HE46m37sTEuLuhUbfCsS8X8IjTm2Sn/e12xRwffFlqIWNwUeLZd0hZ/2
+         Tb0RXNejCVj33rUkrEHs+e+OyBR1Jws9buHj00nIFGueBw6f1qMpc8xZYttbPQiJmh+n
+         oxVg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.coinbase.com header.s=utmvq47cidwb6eo5dijoyabype4gxcbw header.b=vovGQWNn;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=qeV0RvpM;
+       spf=pass (google.com: domain of 010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com designates 76.223.142.137 as permitted sender) smtp.mailfrom=010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.coinbase.com
+Return-Path: <010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com>
+Received: from c142-137.smtp-out.amazonses.com (c142-137.smtp-out.amazonses.com. [76.223.142.137])
+        by mx.google.com with ESMTPS id 6a1803df08f44-91996e1c16fsi33082656d6.571.2026.10.07.10.15.38
+        for <samwilkinson2801@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 07 Oct 2026 10:15:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com designates 76.223.142.137 as permitted sender) client-ip=76.223.142.137;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.coinbase.com header.s=utmvq47cidwb6eo5dijoyabype4gxcbw header.b=vovGQWNn;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=qeV0RvpM;
+       spf=pass (google.com: domain of 010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com designates 76.223.142.137 as permitted sender) smtp.mailfrom=010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.coinbase.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=utmvq47cidwb6eo5dijoyabype4gxcbw; d=info.coinbase.com;
+	t=1791393337;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=E08p4GsfeBZcBOXyKFMqOYEepA4F9mpG55YezWHK3JE=;
+	b=vovGQWNn/gsKK4q1TQizTJXXdNdMDvSrfrngEw2m1jgBUG9MsloonX3f/MK16src
+	5Sdjadj2gjaCFMQ9lkus+tTiozFIe1iaDIrddD4DUNG8cgT1FbeApvBInp9ppKJLY4n
+	WOb8s7Vwk0dyX164YquiNX5uh7t/n+T+1kKpC+xs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1791393337;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=E08p4GsfeBZcBOXyKFMqOYEepA4F9mpG55YezWHK3JE=;
+	b=qeV0RvpMrabYZPpFAHbKQgiA95x6QK33woy5/el3AvjLXAl2ThSMGYUVT3sm+iyD
+	qkdPdR3BvypFN+aG+2B9V7OnrECzBPls8yxT9e2FtziXAqaSDiuYedvaV54vYwsfatn
+	5GHfBMWmCchaeeZ4rGm0T3aONHTVHKrmEFT/K4h4=
+From: Coinbase <no-reply@info.coinbase.com>
+To: samwilkinson2801@gmail.com
+Subject: Action needed: Keep your Coinbase account open
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_237245_221781606.1791393337785"
+Message-ID: <010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000@email.amazonses.com>
+Date: Wed, 7 Oct 2026 17:15:37 +0000
+Feedback-ID: ::1.us-east-1.7Dy6Wv5AnFh3NYaKlrCFnhqGApXC3QfI6g+8Wv9I+w8=:AmazonSES
+X-SES-Outgoing: 2026.10.07-76.223.142.137
+
+------=_Part_237245_221781606.1791393337785
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+------=_Part_237245_221781606.1791393337785
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:100%;heig=
+ht:100%;width:100%" class=3D"email-builder-canvas" dir=3D"ltr" lang=3D"en">=
+<head><meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe"/><meta name=3D"x-apple-disable-message-reformatting"/><meta http-equiv=
+=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><meta name=3D"vie=
+wport" content=3D"width=3Ddevice-width,initial-scale=3D1"/><meta name=3D"co=
+lor-scheme" content=3D"light dark"/><meta name=3D"supported-color-schemes" =
+content=3D"light dark only"/><title>Coinbase</title><style>table,tr,td,*.ms=
+o-reset{mso-table-lspace:0;mso-table-rspace:0;}strong{font-weight:bold;}a[x=
+-apple-data-detectors]{color:inherit !important;font-size:inherit !importan=
+t;font-family:inherit !important;font-weight:inherit !important;line-height=
+:inherit !important;-webkit-tap-highlight-color:transparent;}a:-webkit-any-=
+link{color:inherit;cursor:pointer;}img{-ms-interpolation-mode:bicubic;}ul,o=
+l,p,h1,h2,h3{margin-top:0;margin-bottom:0;}p,li{font-size:16px;font-weight:=
+400;font-style:normal;}body.email-body{font-family:Coinbase Text,Arial,sans=
+-serif;font-size:12px;margin:0px;-webkit-text-size-adjust:none;-webkit-font=
+-smoothing:antialiased;-ms-text-size-adjust:none;}</style><style>.dark_mode=
+_only,.dark_mode_only table{mso-hide:all;display:none;max-height:0;overflow=
+:hidden;}.light_mode_only,.light_mode_only table{display:table;mso-hide:non=
+e;max-height:none;}@media (prefers-color-scheme:dark){.dark_mode_only,table=
+.dark_mode_only,.dark_mode_only table{display:table !important;mso-hide:non=
+e !important;max-height:none !important;}.light_mode_only,table.light_mode_=
+only,.light_mode_only table{mso-hide:all !important;display:none !important=
+;max-height:0 !important;overflow:hidden !important;}.email-builder-canvas =
+.color-fg{color:rgb(255,255,255) !important;}.email-builder-canvas .bg-fg{b=
+ackground-color:rgb(255,255,255) !important;}.email-builder-canvas .border-=
+fg{border-color:rgb(255,255,255) !important;}.email-builder-canvas .color-f=
+gInverse{color:rgb(10,11,13) !important;}.email-builder-canvas .bg-fgInvers=
+e{background-color:rgb(10,11,13) !important;}.email-builder-canvas .border-=
+fgInverse{border-color:rgb(10,11,13) !important;}.email-builder-canvas .col=
+or-fgMuted{color:rgb(138,145,158) !important;}.email-builder-canvas .bg-fgM=
+uted{background-color:rgb(138,145,158) !important;}.email-builder-canvas .b=
+order-fgMuted{border-color:rgb(138,145,158) !important;}.email-builder-canv=
+as .color-fgPrimary{color:rgb(87,139,250) !important;}.email-builder-canvas=
+ .bg-fgPrimary{background-color:rgb(87,139,250) !important;}.email-builder-=
+canvas .border-fgPrimary{border-color:rgb(87,139,250) !important;}.email-bu=
+ilder-canvas .color-fgPositive{color:rgb(39,173,117) !important;}.email-bui=
+lder-canvas .bg-fgPositive{background-color:rgb(39,173,117) !important;}.em=
+ail-builder-canvas .border-fgPositive{border-color:rgb(39,173,117) !importa=
+nt;}.email-builder-canvas .color-fgNegative{color:rgb(240,97,109) !importan=
+t;}.email-builder-canvas .bg-fgNegative{background-color:rgb(240,97,109) !i=
+mportant;}.email-builder-canvas .border-fgNegative{border-color:rgb(240,97,=
+109) !important;}.email-builder-canvas .color-fgWarning{color:rgb(248,150,8=
+6) !important;}.email-builder-canvas .bg-fgWarning{background-color:rgb(248=
+,150,86) !important;}.email-builder-canvas .border-fgWarning{border-color:r=
+gb(248,150,86) !important;}.email-builder-canvas .color-bg{color:rgb(10,11,=
+13) !important;}.email-builder-canvas .bg-bg{background-color:rgb(10,11,13)=
+ !important;}.email-builder-canvas .border-bg{border-color:rgb(10,11,13) !i=
+mportant;}.email-builder-canvas .color-bgAlternate{color:rgb(20,21,25) !imp=
+ortant;}.email-builder-canvas .bg-bgAlternate{background-color:rgb(20,21,25=
+) !important;}.email-builder-canvas .border-bgAlternate{border-color:rgb(20=
+,21,25) !important;}.email-builder-canvas .color-bgInverse{color:rgb(255,25=
+5,255) !important;}.email-builder-canvas .bg-bgInverse{background-color:rgb=
+(255,255,255) !important;}.email-builder-canvas .border-bgInverse{border-co=
+lor:rgb(255,255,255) !important;}.email-builder-canvas .color-bgOverlay{col=
+or:rgba(10,11,13,0.33) !important;}.email-builder-canvas .bg-bgOverlay{back=
+ground-color:rgba(10,11,13,0.33) !important;}.email-builder-canvas .border-=
+bgOverlay{border-color:rgba(10,11,13,0.33) !important;}.email-builder-canva=
+s .color-bgPrimary{color:rgb(87,139,250) !important;}.email-builder-canvas =
+.bg-bgPrimary{background-color:rgb(87,139,250) !important;}.email-builder-c=
+anvas .border-bgPrimary{border-color:rgb(87,139,250) !important;}.email-bui=
+lder-canvas .color-bgPrimaryWash{color:rgb(0,16,51) !important;}.email-buil=
+der-canvas .bg-bgPrimaryWash{background-color:rgb(0,16,51) !important;}.ema=
+il-builder-canvas .border-bgPrimaryWash{border-color:rgb(0,16,51) !importan=
+t;}.email-builder-canvas .color-bgSecondary{color:rgb(40,43,49) !important;=
+}.email-builder-canvas .bg-bgSecondary{background-color:rgb(40,43,49) !impo=
+rtant;}.email-builder-canvas .border-bgSecondary{border-color:rgb(40,43,49)=
+ !important;}.email-builder-canvas .color-bgTertiary{color:rgb(50,53,61) !i=
+mportant;}.email-builder-canvas .bg-bgTertiary{background-color:rgb(50,53,6=
+1) !important;}.email-builder-canvas .border-bgTertiary{border-color:rgb(50=
+,53,61) !important;}.email-builder-canvas .color-bgSecondaryWash{color:rgb(=
+20,21,25) !important;}.email-builder-canvas .bg-bgSecondaryWash{background-=
+color:rgb(20,21,25) !important;}.email-builder-canvas .border-bgSecondaryWa=
+sh{border-color:rgb(20,21,25) !important;}.email-builder-canvas .color-bgNe=
+gative{color:rgb(240,97,109) !important;}.email-builder-canvas .bg-bgNegati=
+ve{background-color:rgb(240,97,109) !important;}.email-builder-canvas .bord=
+er-bgNegative{border-color:rgb(240,97,109) !important;}.email-builder-canva=
+s .color-bgNegativeWash{color:rgb(51,0,4) !important;}.email-builder-canvas=
+ .bg-bgNegativeWash{background-color:rgb(51,0,4) !important;}.email-builder=
+-canvas .border-bgNegativeWash{border-color:rgb(51,0,4) !important;}.email-=
+builder-canvas .color-bgPositive{color:rgb(39,173,117) !important;}.email-b=
+uilder-canvas .bg-bgPositive{background-color:rgb(39,173,117) !important;}.=
+email-builder-canvas .border-bgPositive{border-color:rgb(39,173,117) !impor=
+tant;}.email-builder-canvas .color-bgPositiveWash{color:rgb(0,31,18) !impor=
+tant;}.email-builder-canvas .bg-bgPositiveWash{background-color:rgb(0,31,18=
+) !important;}.email-builder-canvas .border-bgPositiveWash{border-color:rgb=
+(0,31,18) !important;}.email-builder-canvas .color-bgWarning{color:rgb(199,=
+158,0) !important;}.email-builder-canvas .bg-bgWarning{background-color:rgb=
+(199,158,0) !important;}.email-builder-canvas .border-bgWarning{border-colo=
+r:rgb(199,158,0) !important;}.email-builder-canvas .color-bgWarningWash{col=
+or:rgb(51,13,0) !important;}.email-builder-canvas .bg-bgWarningWash{backgro=
+und-color:rgb(51,13,0) !important;}.email-builder-canvas .border-bgWarningW=
+ash{border-color:rgb(51,13,0) !important;}.email-builder-canvas .color-curr=
+entColor{color:currentColor !important;}.email-builder-canvas .bg-currentCo=
+lor{background-color:currentColor !important;}.email-builder-canvas .border=
+-currentColor{border-color:currentColor !important;}.email-builder-canvas .=
+color-bgLine{color:rgba(138,145,158,0.2) !important;}.email-builder-canvas =
+.bg-bgLine{background-color:rgba(138,145,158,0.2) !important;}.email-builde=
+r-canvas .border-bgLine{border-color:rgba(138,145,158,0.2) !important;}.ema=
+il-builder-canvas .color-bgLineInverse{color:rgb(10,11,13) !important;}.ema=
+il-builder-canvas .bg-bgLineInverse{background-color:rgb(10,11,13) !importa=
+nt;}.email-builder-canvas .border-bgLineInverse{border-color:rgb(10,11,13) =
+!important;}.email-builder-canvas .color-bgLineHeavy{color:rgba(138,145,158=
+,0.66) !important;}.email-builder-canvas .bg-bgLineHeavy{background-color:r=
+gba(138,145,158,0.66) !important;}.email-builder-canvas .border-bgLineHeavy=
+{border-color:rgba(138,145,158,0.66) !important;}.email-builder-canvas .col=
+or-bgLinePrimary{color:rgb(87,139,250) !important;}.email-builder-canvas .b=
+g-bgLinePrimary{background-color:rgb(87,139,250) !important;}.email-builder=
+-canvas .border-bgLinePrimary{border-color:rgb(87,139,250) !important;}.ema=
+il-builder-canvas .color-bgLinePrimarySubtle{color:rgb(5,59,177) !important=
+;}.email-builder-canvas .bg-bgLinePrimarySubtle{background-color:rgb(5,59,1=
+77) !important;}.email-builder-canvas .border-bgLinePrimarySubtle{border-co=
+lor:rgb(5,59,177) !important;}.email-builder-canvas .color-bgElevation1{col=
+or:rgb(20,21,25) !important;}.email-builder-canvas .bg-bgElevation1{backgro=
+und-color:rgb(20,21,25) !important;}.email-builder-canvas .border-bgElevati=
+on1{border-color:rgb(20,21,25) !important;}.email-builder-canvas .color-bgE=
+levation2{color:rgb(30,32,37) !important;}.email-builder-canvas .bg-bgEleva=
+tion2{background-color:rgb(30,32,37) !important;}.email-builder-canvas .bor=
+der-bgElevation2{border-color:rgb(30,32,37) !important;}.email-builder-canv=
+as .color-accentSubtleGreen{color:rgb(0,31,18) !important;}.email-builder-c=
+anvas .bg-accentSubtleGreen{background-color:rgb(0,31,18) !important;}.emai=
+l-builder-canvas .border-accentSubtleGreen{border-color:rgb(0,31,18) !impor=
+tant;}.email-builder-canvas .color-accentBoldGreen{color:rgb(39,173,117) !i=
+mportant;}.email-builder-canvas .bg-accentBoldGreen{background-color:rgb(39=
+,173,117) !important;}.email-builder-canvas .border-accentBoldGreen{border-=
+color:rgb(39,173,117) !important;}.email-builder-canvas .color-accentSubtle=
+Blue{color:rgb(0,16,51) !important;}.email-builder-canvas .bg-accentSubtleB=
+lue{background-color:rgb(0,16,51) !important;}.email-builder-canvas .border=
+-accentSubtleBlue{border-color:rgb(0,16,51) !important;}.email-builder-canv=
+as .color-accentBoldBlue{color:rgb(55,115,245) !important;}.email-builder-c=
+anvas .bg-accentBoldBlue{background-color:rgb(55,115,245) !important;}.emai=
+l-builder-canvas .border-accentBoldBlue{border-color:rgb(55,115,245) !impor=
+tant;}.email-builder-canvas .color-accentSubtlePurple{color:rgb(25,13,51) !=
+important;}.email-builder-canvas .bg-accentSubtlePurple{background-color:rg=
+b(25,13,51) !important;}.email-builder-canvas .border-accentSubtlePurple{bo=
+rder-color:rgb(25,13,51) !important;}.email-builder-canvas .color-accentBol=
+dPurple{color:rgb(230,201,255) !important;}.email-builder-canvas .bg-accent=
+BoldPurple{background-color:rgb(230,201,255) !important;}.email-builder-can=
+vas .border-accentBoldPurple{border-color:rgb(230,201,255) !important;}.ema=
+il-builder-canvas .color-accentSubtleYellow{color:rgb(27,6,0) !important;}.=
+email-builder-canvas .bg-accentSubtleYellow{background-color:rgb(27,6,0) !i=
+mportant;}.email-builder-canvas .border-accentSubtleYellow{border-color:rgb=
+(27,6,0) !important;}.email-builder-canvas .color-accentBoldYellow{color:rg=
+b(147,96,0) !important;}.email-builder-canvas .bg-accentBoldYellow{backgrou=
+nd-color:rgb(147,96,0) !important;}.email-builder-canvas .border-accentBold=
+Yellow{border-color:rgb(147,96,0) !important;}.email-builder-canvas .color-=
+accentSubtleRed{color:rgb(51,0,4) !important;}.email-builder-canvas .bg-acc=
+entSubtleRed{background-color:rgb(51,0,4) !important;}.email-builder-canvas=
+ .border-accentSubtleRed{border-color:rgb(51,0,4) !important;}.email-builde=
+r-canvas .color-accentBoldRed{color:rgb(240,97,109) !important;}.email-buil=
+der-canvas .bg-accentBoldRed{background-color:rgb(240,97,109) !important;}.=
+email-builder-canvas .border-accentBoldRed{border-color:rgb(240,97,109) !im=
+portant;}.email-builder-canvas .color-accentSubtleGray{color:rgb(30,32,37) =
+!important;}.email-builder-canvas .bg-accentSubtleGray{background-color:rgb=
+(30,32,37) !important;}.email-builder-canvas .border-accentSubtleGray{borde=
+r-color:rgb(30,32,37) !important;}.email-builder-canvas .color-accentBoldGr=
+ay{color:rgb(193,198,207) !important;}.email-builder-canvas .bg-accentBoldG=
+ray{background-color:rgb(193,198,207) !important;}.email-builder-canvas .bo=
+rder-accentBoldGray{border-color:rgb(193,198,207) !important;}.email-builde=
+r-canvas .color-transparent{color:rgba(10,11,13,0) !important;}.email-build=
+er-canvas .bg-transparent{background-color:rgba(10,11,13,0) !important;}.em=
+ail-builder-canvas .border-transparent{border-color:rgba(10,11,13,0) !impor=
+tant;}.email-container{border-color:#24262A !important;}}</style><style>.bl=
+ock-hidden,.block-hidden table{mso-hide:all;display:none;max-height:0;overf=
+low:hidden;font-size:0;line-height:0;}.desktop_only,.desktop_only table{mso=
+-hide:all;display:none;max-height:0;overflow:hidden;}.mobile_only,.mobile_o=
+nly table{display:table;mso-hide:none;max-height:none;}.email-container{bor=
+der:1px solid #D9DBDE;border-radius:24px;overflow:hidden !important;}@media=
+ (min-width:600px){.desktop_only,table.desktop_only,.desktop_only table{dis=
+play:table !important;mso-hide:none !important;max-height:none !important;}=
+.desktop_only.inline-block{display:inline-block !important;}.mobile_only,ta=
+ble.mobile_only,.mobile_only table{mso-hide:all !important;display:none !im=
+portant;max-height:0 !important;overflow:hidden !important;}.email-containe=
+r{max-width:654px !important;margin-top:32px;margin-bottom:32px;border:1px =
+solid #D9DBDE;border-radius:24px;overflow:hidden !important;}.section-horiz=
+ontal-padding{padding-left:40px !important;padding-right:40px !important;}}=
+</style></head><body class=3D"email-body" role=3D"main"><table border=3D"0"=
+ width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" a=
+lign=3D"center"><tbody><tr><td><div style=3D"display:none;overflow:hidden;l=
+ine-height:1px;opacity:0;max-height:0;max-width:0" data-skip-in-text=3D"tru=
+e" id=3D"email-preview">Complete your account requirements by 06/11/2026 to=
+ keep your account open.<div style=3D"display:none;overflow:hidden;line-hei=
+ght:1px;opacity:0;max-height:0;max-width:0">=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=
+=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=
+=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C=E2=80=8B=E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF</div></div><table align=3D"center" width=3D"=
+100%" class=3D"email-container" border=3D"0" cellPadding=3D"0" cellSpacing=
+=3D"0" role=3D"presentation" style=3D"max-width:375px;width:100%"><tbody><t=
+r style=3D"width:100%"><td><table align=3D"center" width=3D"100%" border=3D=
+"0" cellPadding=3D"0" cellSpacing=3D"0" class=3D"bg-bg" style=3D"background=
+:rgb(255,255,255);overflow:hidden;table-layout:fixed;width:100%;padding:0 0=
+px 0 0px"><tbody><tr><td><div class=3D"mobile_only" style=3D"overflow:hidde=
+n;max-width:100%"><img alt=3D"Logo - Coinbase" height=3D"80" src=3D"https:/=
+/d2l7g2wmr3uf42.cloudfront.net/images/68d5b2e1-9007-4c79-b787-a25763e2d62f/=
+image.png" style=3D"display:block;outline:none;border:none;text-decoration:=
+none"/></div><!--[if !mso]><!--><div class=3D"desktop_only" style=3D"displa=
+y:none;mso-hide:all;max-height:0;overflow:hidden"><img alt=3D"Logo - Coinba=
+se" height=3D"80" src=3D"https://d2l7g2wmr3uf42.cloudfront.net/images/58932=
+d73-fb38-490f-b607-67db26670444/image.png" style=3D"display:block;outline:n=
+one;border:none;text-decoration:none"/></div><!--<![endif]--></td></tr></tb=
+ody></table><table align=3D"center" width=3D"100%" border=3D"0" cellPadding=
+=3D"0" cellSpacing=3D"0" role=3D"separator" class=3D"section-horizontal-pad=
+ding" style=3D"padding:16px 24px 16px 24px"><tbody><tr><td><div style=3D"he=
+ight:0;line-height:0;font-size:0"></div></td></tr></tbody></table><table al=
+ign=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D=
+"0" style=3D"padding:0px 0px 16px 0px"><tbody><tr><td><table align=3D"cente=
+r" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0" class=3D=
+"section-horizontal-padding" style=3D"padding:0 24px 0 24px"><tbody><tr><td=
+><h1 class=3D"color-fg" style=3D"line-height:2.25rem;color:rgb(10,11,13);pa=
+dding:0px 0 16px 0;margin:0px 0px 0px 0px;font-size:1.75rem;font-weight:600=
+">Complete your account requirements by 06/11/2026 to keep your account ope=
+n.</h1><p class=3D"color-fg" style=3D"font-size:1rem;line-height:1.5rem;col=
+or:rgb(10,11,13);padding:0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:400=
+;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Hi Sam,=
+<br/><br/>As part of a routine account review, we've noticed your Coinbase =
+account associated with email samwilkinson2801@gmail.com has had little or =
+no activity, currently holds a zero balance, and is missing some required a=
+ccount information.<br/><br/><span style=3D"font-weight:bold">What this mea=
+ns for you</span><br/></p><p class=3D"color-fg" style=3D"font-size:1rem;lin=
+e-height:1.5rem;color:rgb(10,11,13);padding:0px 0 0px 0;margin:0px 0px 0px =
+0px;font-weight:400;margin-top:0px;margin-right:0px;margin-bottom:0px;margi=
+n-left:0px">We're planning to close your account on 06/11/2026 unless you s=
+ign in and complete your outstanding account requirements before then.<br/>=
+<br/></p><p class=3D"color-fg" style=3D"font-size:1rem;line-height:1.5rem;c=
+olor:rgb(10,11,13);padding:0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:4=
+00;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><span=
+ style=3D"font-weight:bold">Keep your account open</span><br/></p><p class=
+=3D"color-fg" style=3D"font-size:1rem;line-height:1.5rem;color:rgb(10,11,13=
+);padding:0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:400;margin-top:0px=
+;margin-right:0px;margin-bottom:0px;margin-left:0px">Sign in and complete a=
+ny outstanding account requirements before 06/11/2026. That's it!<br/><br/>=
+</p><p class=3D"color-fg" style=3D"font-size:1rem;line-height:1.5rem;color:=
+rgb(10,11,13);padding:0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:400;ma=
+rgin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><span styl=
+e=3D"font-weight:bold">Open a new Coinbase account</span><br/></p><p class=
+=3D"color-fg" style=3D"font-size:1rem;line-height:1.5rem;color:rgb(10,11,13=
+);padding:0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:400;margin-top:0px=
+;margin-right:0px;margin-bottom:0px;margin-left:0px">You may be able to ope=
+n a new Coinbase account in future, following these <a href=3D"https://help=
+.coinbase.com/en/coinbase/getting-started/getting-started-with-coinbase/cre=
+ate-a-coinbase-account" class=3D"color-fgPrimary" rel=3D"noopener noreferre=
+r" =3D"" style=3D"color:rgb(0,82,255);text-decoration-line:none;text-decora=
+tion:none" target=3D"_blank">steps</a>.</p></td></tr></tbody></table></td><=
+/tr></tbody></table><table align=3D"center" width=3D"100%" border=3D"0" cel=
+lPadding=3D"0" cellSpacing=3D"0" role=3D"separator" class=3D"section-horizo=
+ntal-padding" style=3D"padding:16px 24px 16px 24px"><tbody><tr><td><div sty=
+le=3D"height:0;line-height:0;font-size:0"></div></td></tr></tbody></table><=
+table align=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSp=
+acing=3D"0" class=3D"section-horizontal-padding" style=3D"padding:0 24px 0 =
+24px"><tbody><tr><td><!--[if mso]><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse:collapse;"><=
+tr><td style=3D"background:rgb(0,82,255);padding:8px 16px;border-radius:900=
+px;text-align:center;"><a href=3D"https://comm.coinbase.com/CL0/https:%2F%2=
+Fwww.coinbase.com%2Fsignin/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb09=
+48f63d7-000000/fQszWjbkGTwlsE1cDrfpWfbhw1zA1aR5NWST-VAJ_Mg=3D452" target=3D=
+"_blank" style=3D"color:rgb(255,255,255);text-decoration:none;font-size:16p=
+x;font-weight:500;line-height:24px;">Sign in to Coinbase</a></td></tr></tab=
+le><![endif]--><!--[if !mso]><!--><a href=3D"https://comm.coinbase.com/CL0/=
+https:%2F%2Fwww.coinbase.com%2Fsignin/2/010001a1175d11b9-885865bf-597d-431a=
+-9538-cbb0948f63d7-000000/vbR_-4lVbe_RekbVHneRiYXpoSod7tkC9Ap3yUKE-Co=3D452=
+" rel=3D"noopener noreferrer" class=3D"bg-bgPrimary color-fgInverse desktop=
+_only inline-block" style=3D"line-height:24px;text-decoration:none;display:=
+none;max-width:100%;mso-padding-alt:0px;background:rgb(0,82,255);color:rgb(=
+255,255,255);padding:16px 32px 16px 32px;font-size:1rem;font-weight:600;bor=
+der-radius:56px;box-sizing:border-box;mso-hide:all;max-height:0;overflow:hi=
+dden;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:3=
+2px" target=3D"_blank"><span></span><span style=3D"max-width:100%;display:i=
+nline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:12px">Sign =
+in to Coinbase</span><span></span></a><a href=3D"https://comm.coinbase.com/=
+CL0/https:%2F%2Fwww.coinbase.com%2Fsignin/3/010001a1175d11b9-885865bf-597d-=
+431a-9538-cbb0948f63d7-000000/JqiPeQdmEZ7MUCKqTgw37iJZ5dFxnbbLxwSDKq8q1NE=
+=3D452" rel=3D"noopener noreferrer" class=3D"bg-bgPrimary color-fgInverse m=
+obile_only" style=3D"line-height:24px;text-decoration:none;display:inline-b=
+lock;max-width:100%;mso-padding-alt:0px;background:rgb(0,82,255);color:rgb(=
+255,255,255);padding:16px 32px 16px 32px;font-size:1rem;font-weight:600;bor=
+der-radius:56px;box-sizing:border-box;width:100%;text-align:center;padding-=
+top:8px;padding-bottom:8px;padding-right:32px;padding-left:32px" target=3D"=
+_blank"><span></span><span style=3D"max-width:100%;display:inline-block;lin=
+e-height:120%;mso-padding-alt:0px;mso-text-raise:6px">Sign in to Coinbase</=
+span><span></span></a><!--<![endif]--></td></tr></tbody></table><table alig=
+n=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0=
+" role=3D"separator" class=3D"section-horizontal-padding" style=3D"padding:=
+16px 24px 16px 24px"><tbody><tr><td><div style=3D"height:0;line-height:0;fo=
+nt-size:0"></div></td></tr></tbody></table><table align=3D"center" width=3D=
+"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0" class=3D"bg-bgAlter=
+nate section-horizontal-padding" style=3D"background:rgb(238,240,243);paddi=
+ng:32px 24px 32px 24px"><tbody><tr><td><table align=3D"center" width=3D"100=
+%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" c=
+lass=3D"" style=3D"padding:0 0 16px 0"><tbody style=3D"width:100%"><tr styl=
+e=3D"width:100%"><td data-id=3D"__react-email-column"><p class=3D"color-fg"=
+ style=3D"font-size:0.8125rem;line-height:1rem;color:rgb(10,11,13);padding:=
+0px 0 0px 0;margin:0px 0px 0px 0px;font-weight:400;margin-top:0px;margin-ri=
+ght:0px;margin-bottom:0px;margin-left:0px"><span style=3D"color:rgb(91,97,1=
+10)" class=3D"color-fgMuted">You're receiving this email because you have a=
+ Coinbase account. Accounts that hold a zero balance and have not completed=
+ their account requirements may be closed in accordance with the Coinbase U=
+ser Agreement. If your account is closed, your personal data will be handle=
+d as described in our Privacy Policy.</span><br/></p></td></tr></tbody></ta=
+ble><table align=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" c=
+ellSpacing=3D"0" role=3D"group" aria-label=3D"Legal disclaimer"><tbody styl=
+e=3D"width:100%"><tr style=3D"width:100%"><td data-id=3D"__react-email-colu=
+mn"><p class=3D"color-fgMuted" style=3D"font-size:0.8125rem;line-height:1re=
+m;color:rgb(91,97,110);margin:0px 0px 0px 0px;font-weight:400;margin-top:0p=
+x;margin-right:0px;margin-bottom:0px;margin-left:0px">CB Payments Ltd is au=
+thorised and regulated by the Financial Conduct Authority for investment se=
+rvices (register number 1045733).<br/>CB Payments Ltd is authorised by the =
+Financial Conduct Authority under the Electronic Money Regulations 2011 for=
+ the issuing of electronic money, and registered under the Money Laundering=
+ Regulations 2017 to carry out specific crypto asset activities (register n=
+umber 900635).<br/></p><p class=3D"color-fgMuted" style=3D"font-size:0.8125=
+rem;line-height:1rem;color:rgb(91,97,110);margin:0px 0px 0px 0px;font-weigh=
+t:400;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">In=
+formation provided is for general educational purposes only and is not inte=
+nded to constitute investment or other advice on financial products. This i=
+s not a recommendation to buy or sell any particular asset or to use any pa=
+rticular investment strategy. Coinbase makes no representation on the accur=
+acy, suitability, or validity of any information provided.<br/></p><p class=
+=3D"color-fgMuted" style=3D"font-size:0.8125rem;line-height:1rem;color:rgb(=
+91,97,110);margin:0px 0px 0px 0px;font-weight:400;margin-top:0px;margin-rig=
+ht:0px;margin-bottom:0px;margin-left:0px">The Scalpel - 18th Floor | 52 Lim=
+e Street | London | EC3M 7AF | UK<br/></p><p class=3D"color-fgMuted" style=
+=3D"font-size:0.8125rem;line-height:1rem;color:rgb(91,97,110);margin:0px 0p=
+x 0px 0px;font-weight:400;margin-top:0px;margin-right:0px;margin-bottom:0px=
+;margin-left:0px">=C2=A9 Coinbase 2026 | CB Payments, Ltd<br/></p></td></tr=
+></tbody></table><table align=3D"center" width=3D"100%" border=3D"0" cellPa=
+dding=3D"0" cellSpacing=3D"0" role=3D"navigation" class=3D"" aria-label=3D"=
+Footer links" style=3D"padding:0px 0 0 0"><tbody style=3D"width:100%"><tr s=
+tyle=3D"width:100%"><td data-id=3D"__react-email-column"><p class=3D"color-=
+fgMuted" style=3D"font-size:0.8125rem;line-height:1rem;color:rgb(91,97,110)=
+;margin:0px 0px 0px 0px;font-weight:400;margin-top:0px;margin-right:0px;mar=
+gin-bottom:0px;margin-left:0px"><a href=3D"https://comm.coinbase.com/CL0/ht=
+tps:%2F%2Fwww.coinbase.com/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb09=
+48f63d7-000000/IYynn0URgvfKBBU2cyKZtG-drhwShL20hYBKmY5_5-0=3D452" class=3D"=
+color-fgPrimary" style=3D"color:rgb(0,82,255);text-decoration-line:none" ta=
+rget=3D"_blank">Coinbase.com</a> | <a href=3D"https://comm.coinbase.com/CL0=
+/https:%2F%2Fhelp.coinbase.com/1/010001a1175d11b9-885865bf-597d-431a-9538-c=
+bb0948f63d7-000000/ilSmuwlRzHLe81A1RAIQH-iVMyAPNttgmG8atDRqckM=3D452" class=
+=3D"color-fgPrimary" style=3D"color:rgb(0,82,255);text-decoration-line:none=
+" target=3D"_blank">Get in touch</a></p></td></tr></tbody></table><table al=
+ign=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D=
+"0" role=3D"group" class=3D"" aria-label=3D"Social media links" style=3D"pa=
+dding:16px 0 0 0"><tbody style=3D"width:100%"><tr style=3D"width:100%"><td =
+align=3D"center" width=3D"48" class=3D"" data-id=3D"__react-email-column" s=
+tyle=3D"padding:0 16px 0 0"><a href=3D"https://comm.coinbase.com/CL0/https:=
+%2F%2Ftwitter.com%2FCoinbase/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb=
+0948f63d7-000000/KldhV8fe5-5OgrmHwOzISNrB5poqrj2hhsiltkhG0KY=3D452" style=
+=3D"color:#067df7;text-decoration-line:none" target=3D"_blank"><img alt=3D"=
+Twitter" height=3D"18" src=3D"https://static-assets.coinbase.com/email/emai=
+l-canvas/social/twitter-gray70.png" style=3D"display:block;outline:none;bor=
+der:none;text-decoration:none" width=3D"18"/></a></td><td align=3D"center" =
+width=3D"48" class=3D"" data-id=3D"__react-email-column" style=3D"padding:0=
+ 16px 0 0"><a href=3D"https://comm.coinbase.com/CL0/https:%2F%2Fwww.instagr=
+am.com%2Fcoinbase%2F/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d=
+7-000000/qmvz0cHZpK07cKrZRvAnb5rnEBdPylMAVCl5Zh5ibDE=3D452" style=3D"color:=
+#067df7;text-decoration-line:none" target=3D"_blank"><img alt=3D"Instagram"=
+ height=3D"18" src=3D"https://static-assets.coinbase.com/email/email-canvas=
+/social/instagram-gray70.png" style=3D"display:block;outline:none;border:no=
+ne;text-decoration:none" width=3D"18"/></a></td><td align=3D"center" width=
+=3D"48" class=3D"" data-id=3D"__react-email-column" style=3D"padding:0 16px=
+ 0 0"><a href=3D"https://comm.coinbase.com/CL0/https:%2F%2Fwww.linkedin.com=
+%2Fcompany%2Fcoinbase/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63=
+d7-000000/xbPhizz3l10WPs4Yfs2E3vVAwPbnG8RrZWbweD0xits=3D452" style=3D"color=
+:#067df7;text-decoration-line:none" target=3D"_blank"><img alt=3D"LinkedIn"=
+ height=3D"18" src=3D"https://static-assets.coinbase.com/email/email-canvas=
+/social/linkedin-gray70.png" style=3D"display:block;outline:none;border:non=
+e;text-decoration:none" width=3D"18"/></a></td><td align=3D"center" width=
+=3D"48" class=3D"" data-id=3D"__react-email-column" style=3D"padding:0 16px=
+ 0 0"><a href=3D"https://comm.coinbase.com/CL0/https:%2F%2Fwww.facebook.com=
+%2FCoinbase/1/010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000/=
+PVtanq-JS0XO693Uy4bvMXS2Z6-9P_MYYk1BrFAaRcg=3D452" style=3D"color:#067df7;t=
+ext-decoration-line:none" target=3D"_blank"><img alt=3D"Facebook" height=3D=
+"18" src=3D"https://static-assets.coinbase.com/email/email-canvas/social/fa=
+cebook-gray70.png" style=3D"display:block;outline:none;border:none;text-dec=
+oration:none" width=3D"18"/></a></td><td align=3D"center" width=3D"48" clas=
+s=3D"" data-id=3D"__react-email-column" style=3D"padding:0 16px 0 0"><a hre=
+f=3D"https://comm.coinbase.com/CL0/https:%2F%2Fwww.tiktok.com%2F@coinbase/1=
+/010001a1175d11b9-885865bf-597d-431a-9538-cbb0948f63d7-000000/0BnQipwWOn205=
+WBIm_FTyPJT8zvJ1OdeRT-qITACebo=3D452" style=3D"color:#067df7;text-decoratio=
+n-line:none" target=3D"_blank"><img alt=3D"TikTok" height=3D"18" src=3D"htt=
+ps://static-assets.coinbase.com/email/email-canvas/social/tiktok-gray70.png=
+" style=3D"display:block;outline:none;border:none;text-decoration:none" wid=
+th=3D"18"/></a></td><td data-id=3D"__react-email-column" style=3D"width:100=
+%">=C2=A0</td></tr></tbody></table><table align=3D"center" width=3D"100%" b=
+order=3D"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" class=
+=3D"" style=3D"padding:16px 0 0 0"><tbody style=3D"width:100%"><tr style=3D=
+"width:100%"><td data-id=3D"__react-email-column"></td></tr></tbody></table=
+></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble><img alt=3D"" src=3D"http://comm.coinbase.com/CI0/010001a1175d11b9-8858=
+65bf-597d-431a-9538-cbb0948f63d7-000000/4TZuNMhlPNDt7NJT20Nu4KmpfN8jX2UTcos=
+Uhc_7TU0=3D452" style=3D"display: none; width: 1px; height: 1px;">
+</body></html>
+------=_Part_237245_221781606.1791393337785--

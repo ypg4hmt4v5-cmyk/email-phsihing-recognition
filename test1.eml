@@ -1,0 +1,1620 @@
+Delivered-To: samwilkinson2801@gmail.com
+Received: by 2002:a05:693c:3b09:b0:362:6e4c:d45 with SMTP id tg9csp3390227dyc;
+        Fri, 23 Oct 2026 10:12:38 -0700 (PDT)
+X-Received: by 2002:a05:600c:198a:b0:4a3:2f35:38b4 with SMTP id 5b1f17b1804b1-4a32f3539e7mr6767995e9.10.1792775011452;
+        Fri, 23 Oct 2026 10:03:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792775011; cv=none;
+        d=google.com; s=arc-20260327;
+        b=UQuPiS/TGqmAYxbzEP4bAXHptydRY74bFZf/Ih8aVVE6XU65jThEfTfwOwHpUVSHzS
+         ygmY0xEw9WvVPM04buWyQAIPMliziMvlQ1gv3IaB8MN+bjh0cm+4vO05epuj1ZYCeEiN
+         6F47bXbh59lixB5OYC4x3SeLmjxUpq5+ToWn3hluRaMS1hL1V2pFJzU8F7yKCgrdu7f5
+         y6XU9ptWHmnnq1tWejnYACgi8iRPmAWg73OCA42j3sPhJ9c9aS2xSJ/rX9DKWdj2+Wuw
+         gWpNYmUFasfuqYiR+lLcj8rzQUzevQM8qRrDylGfH6RtymYRIve2T2TyH1/8PNS8GKYF
+         qkhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=date:message-id:list-unsubscribe-post:list-unsubscribe:list-id
+         :mime-version:from:subject:to:dkim-signature:dkim-signature;
+        bh=tVEkjPi2a7ztXVq4C9TD/a7h4XVH/qDVDmkzLx2mXxg=;
+        fh=Qnp/pJwl7zudKHJ052DU6qhcjQzuOzds2z4zdhoKuhk=;
+        b=PMdGfl5j3aoyurcNtRyLyxjuTmlqrFsf3q4aQNzoT+7eyaDOPkKLKPbGj7jIXInuxx
+         0bEckY0Z3ntsLFEju/NsFoIZcPf7MH1lh7OIjFgVBRosPYI3pWzp+FOQsaUXQPeniF1v
+         2QEowMVQWZVjayZF1pddzDywfZCyy5scVPqafoIa6hdGUQA6L/XqafI+Fu0XtbyfXf1Z
+         Pg0hlP7BD0NLQP7Ouq3WktQVoRnGyu9cGGBtgEGzABH+x7y+oDBdJ3UqCeAV37Dvuxw0
+         OUCWHqUgQLWzk06IW5rINfB3sa3ItaMvoHuQ3nh0DFhDnIWDfw3THszD/AAQNFrgElnA
+         /wXA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.sovendus.com header.s=key2 header.b=WGG+2b9s;
+       dkim=pass header.i=@emarsys.net header.s=emarsys-2048b header.b=i27Mqhbk;
+       spf=pass (google.com: domain of suite40@return.sovendus.com designates 45.86.116.75 as permitted sender) smtp.mailfrom=suite40@return.sovendus.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.sovendus.com
+Return-Path: <suite40@return.sovendus.com>
+Received: from mta-2d56744b.ip4.emsmtp.us (mta-2d56744b.ip4.emsmtp.us. [45.86.116.75])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-48e3d39c168si900125f8f.33.2026.10.23.10.03.31
+        for <samwilkinson2801@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 Oct 2026 10:03:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of suite40@return.sovendus.com designates 45.86.116.75 as permitted sender) client-ip=45.86.116.75;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.sovendus.com header.s=key2 header.b=WGG+2b9s;
+       dkim=pass header.i=@emarsys.net header.s=emarsys-2048b header.b=i27Mqhbk;
+       spf=pass (google.com: domain of suite40@return.sovendus.com designates 45.86.116.75 as permitted sender) smtp.mailfrom=suite40@return.sovendus.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.sovendus.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=mail.sovendus.com;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:
+ Content-Type:Message-ID:Date; i=news@mail.sovendus.com;
+ bh=tVEkjPi2a7ztXVq4C9TD/a7h4XVH/qDVDmkzLx2mXxg=;
+ b=WGG+2b9sxbdhvyTn3wdHXSjr8eeCkSY6J5+ruwKIrryYdtDzJSwXRylPBMf2iJ8lgIZEBDNjrmYJ
+   2K2CerJ1ZQFMQJILvgWHf3JnqUYv2iHSfJOoSEKMlAtLAphu+N6p4Jlx8ZK9c1fRHx0T8SCx2KNE
+   btrgbMYVqGgbPcTc5Pk=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=emarsys-2048b; d=emarsys.net;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:
+ Content-Type:Message-ID:Date;
+ bh=tVEkjPi2a7ztXVq4C9TD/a7h4XVH/qDVDmkzLx2mXxg=;
+ b=i27MqhbkXjCdJczS5e+lMhkE5o2blo/fLX3pWYsHkfb7WhaNnM4k4mONU0B52mb9zq3hAqLO9qcq
+   q840EAeu1S2ICOBma7kCyDHpoLnPgLDbUKG1WywboQ0uadxoUIDKQoCXVhvRk2Sm/YmLbJjUmvMx
+   52s9xhbLuFolyF8N3zO1U+Eod/VF7LBHQN4GUm2rQ/0kVocugGwAq6pQ0/B8DxI6sCWU+GmMVcjW
+   Fazo/DuYNvj7kKuAxzxpXancG956CPR+z3m4LYmho68lg0HR0+iayKX3wcTAGSMLlttC4D7cxFxO
+   5dRl5JGV1XoTvPlo87QEOxwdUlJfxtYSbqpWnQ==
+To: samwilkinson2801@gmail.com
+Subject: Claim 100 No Deposit/No Wagering Free Spins
+X-Mailer: class SMTPMail
+From: "Shop Guide" <news@mail.sovendus.com>
+MIME-Version: 1.0
+List-Id: 816383807 <Shop Guide>
+X-EMarSys-Identify: 816383807_12486063_527352
+X-EMarSys-Environment: suite40
+X-Report-Abuse: Please report abuse here: abuse-report@emarsys.com
+List-Unsubscribe: <https://list-unsubscribe.eservice.emarsys.net/api/unsubscribe/816383807_12486063_527352_Woyg5mzEUi>, <mailto:list-unsub+816383807_12486063_527352_Woyg5mzEUi@edp.sap.emarsys.net>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative;
+ boundary="--=_---NextPart--=_-IGBEvYRwEr"
+Message-ID: <0.0.5.F6D.1DD6310686BD7A2.0@mta-2d56744b.ip4.emsmtp.us>
+Date: Fri, 23 Oct 2026 19:03:21 +0200
+
+
+----=_---NextPart--=_-IGBEvYRwEr
+Content-Type: text/plain; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+Online-Version:
+https://newsletter.sovendus.com/u/gm.php?prm=3DWoyg5mzEUi_816383807_1248606=
+3_527352&_esuh=3D_11_7ef7772e2848cb77ffb4b27ede4ebc0f161f376e8f8aa4c9499ad0=
+9330542ed7
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+ Hello Sam, =20
+
+Discover offers for 100 free spins with no deposit required through
+Slotswise. Offers are available to new players aged 18+ in the UK,
+subject to availability. Wagering requirements and withdrawal
+restrictions apply, so check your chosen provider=E2=80=99s full terms befo=
+re
+claiming.
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+View offers >>
+https://suite40.emarsys.net/u/nrd.php?p=3DWoyg5mzEUi_527352_12486063_1_269&=
+ems_l=3D23577366&_esuh=3D_11_9fc8b1745ef87ad0e5c2497b98492a8a005ef28db1b3f3=
+71018a2dbfcb233c73
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+TERMS & CONDITIONS:=20
+
+Players must be over 18 and reside in the UK to claim offers at
+Slotswise.
+
+Most offers on site are incentives aimed at new players. Existing
+players may not claim bonuses featured on Slotswise.=20
+
+Offers presented are purely informational and subject to availability.
+The offers may change at any time without notice, at the discretion of
+the operator.
+
+Some slots credits and spins offers are non-redeemable in cash form.
+Each operator has specific wagering requirements that must be met to
+release any winnings from the use of free spins or deposit bonuses.
+
+By joining Slotwise, you are giving consent to communicate offers to you
+via email, post and SMS. You may unsubscribe at any time to opt out from
+these communications.
+
+Gamble Aware:
+https://suite40.emarsys.net/u/nrd.php?p=3DWoyg5mzEUi_527352_12486063_1_270&=
+ems_l=3D23577366&_esuh=3D_11_e8c687850f589f7cee7eefafffbf472db821fb7006836b=
+0a0bec97359b7ad576
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+The content of this newsletter is aimed exclusively at persons who are
+legally permitted to gamble.
+You have received this email as you subscribed to receive email
+newsletters containing special offers from Sovendus. Sovendus does not
+accept any liability should the sent information and offers prove to be
+incomplete, inaccurate or not up-to-date. Sovendus is not responsible
+for the content of an external site to which the newsletter refers
+directly or indirectly via a Hyperlink.
+
+Sovendus GmbH
+c/o Design Offices Karlsruhe Bahnhofplatz | Bahnhofplatz=C2=A012 |
+76137=C2=A0Karlsruhe (Germany) | E=C2=ADMail:=C2=A0info@sovendus.com=20
+Place of registration: Amtsgericht (County Court) Mannheim | Company
+No.: HRB 707873
+VAT registration no: DE 813 459 970
+Managing Directors: Sebastian Legler (CEO), Florian Gramelspacher,
+Jennifer Klapper
+https://web.sovendus.com/?utm_source=3Dsovendus+product&utm_medium=3Dreferr=
+al&utm_campaign=3Dmail
+
+Contact >>
+https://web.sovendus.com/contact/customer-service?utm_source=3Dsovendus+pro=
+duct&utm_medium=3Dreferral&utm_campaign=3Dmail
+
+Unsubscribe >>
+https://service.sovendus.com/preference/index.html?uid=3DWoyg5mzEUi&cid=3D1=
+2486063&llid=3D527352
+
+Privacy >>
+https://web.sovendus.com/legal#privacy-policy
+
+Legal notice>>
+https://web.sovendus.com/legal#imprint
+
+
+
+----=_---NextPart--=_-IGBEvYRwEr
+Content-Type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html -webkit-text-size-adjust: none; xmlns:mso=3D"urn:schemas-microsoft-co=
+m:office:office" xmlns:msdt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<title>Sovendus Deals</title>
+<meta http-equiv=3D"Content-Type" name=3D"viewport; format-detection" conte=
+nt=3D"text/html; charset=3Dutf-8" />
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t"/>
+<style type=3D"text/css">
+
+* {
+-webkit-text-size-adjust: none
+}
+
+img {
+border: 0;=20
+-ms-interpolation-mode: bicubic;=20
+display: block;
+}
+p {
+margin-top: 0;
+margin-right: 0;
+margin-bottom: 0.5em;
+margin-left: 0;
+}
+
+table {
+border-collapse: collapse;
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+a.linkcta a:hover {
+text-decoration: underline;
+}
+a, a:link, a:visited {
+text-decoration: none;
+color: #00788a
+}
+a:hover {
+text-decoration: none
+}
+h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited, h4, h5, h6, .t_cht {
+color: #000 !important
+}
+.ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass =
+td {
+line-height: 100%
+}
+
+.ExternalClass {
+width: 100%;
+}
+@media only screen and (max-width: 600px) {
+.emailwrapto100pc {
+width: 100% !important;
+height: auto !important;
+}
+.deviceWidth {
+width: 440px !important;
+padding: 0;
+}
+.ctabutton {
+width: auto !important;
+height: auto !important;
+}
+a.ctatext {
+margin-top: 0 !important;
+margin-right: 0 !important;
+margin-bottom: 0 !important;
+margin-left: 0 !important;
+}
+.noimg {
+display: none !important;
+overflow: hidden !important;
+width: 0px !important;
+max-height: 0px !important;
+line-height: 0px !important;
+mso-hide: all !important;
+}
+td.unsub {
+text-align: left!important;
+}
+p.logotext {
+font-size: 20px !important;
+line-height: 21px !important;
+margin-bottom: 0px !important;
+}
+.hideForMobile {
+display: none !important;
+}
+.removePaddingForMobile {
+padding: 0 !important;
+}
+.navPaddingForMobile {
+padding: 10px !important;
+}
+.bodyText1 {
+font-family: Verdana, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+margin-bottom: 0px !important;
+}
+.bodyText2 {
+font-family: Verdana, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+}
+.ctatextmobil {
+font-family: Verdana, Arial, sans-serif;
+font-size: 12px;
+line-height: 16px;
+mso-line-height-rule: exactly;
+vertical-align:middle;
+text-decoration: none;
+}
+.emailcolsplit {
+width: 95%!important;
+float: left!important;
+text-align: left!important;
+}
+.SovendusLogo {
+width: 150px !important;
+max-width: 150px !important;
+height: auto !important;
+}
+.onlineversion {
+width: 150px !important;
+font-size: 9px !important;
+}
+.Partnerlogo {
+width: 180px !important;
+}
+.Datum {
+width: 100px !important;
+text-align: right !important;
+}
+.AlarmundDatum {
+width: 260px !important;
+}
+.footer {
+font-size: 9px !important;
+line-height: 16px !important;
+font-family: Verdana, Arial, sans-serif;
+font-size: 9px;
+line-height: 14px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+color: #5D6C83;
+}
+}
+@media only screen and (max-width: 479px) {
+.emailwrapto100pc {
+width: 100% !important;
+height: auto !important;
+}
+.deviceWidth {
+width: 350px !important;
+}
+.hideForMobile {
+display: none !important;
+}
+.removePaddingForMobile {
+padding: 0 !important;
+}
+.navPaddingForMobile {
+padding: 10px !important;
+}
+.bodyText1 {
+font-family: Verdana, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+margin-bottom: 0px !important;
+}
+.bodyText2 {
+font-family: Verdana, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+}
+.ctatextmobil {
+font-family: Verdana, Arial, sans-serif;
+font-size: 12px;
+line-height: 16px;
+mso-line-height-rule: exactly;
+vertical-align:middle;
+text-decoration: none;
+}
+.noimg {
+display: none !important;
+overflow: hidden !important;
+width: 0px !important;
+max-height: 0px !important;
+line-height: 0px !important;
+mso-hide: all !important;
+}
+.emailcolsplit {
+width: 95%!important;
+float: left!important;
+text-align: left!important;
+}
+td.unsub {
+text-align: left!important;
+}
+.SovendusLogo {
+width: 150px !important;
+max-width: 150px !important;
+height: auto !important;
+}
+.onlineversion {
+width: 100px !important;
+font-size: 9px !important;
+}
+.Partnerlogo {
+width: 130px !important;
+height: auto !important;
+padding: 0px !important;
+}
+.Datum {
+width: 100px !important;
+text-align: right !important;
+}
+.AlarmundDatum {
+width: 220px !important;
+}
+.footer {
+font-size: 9px !important;
+line-height: 16px !important;
+font-family: Verdana, Arial, sans-serif;
+font-size: 9px;
+line-height: 14px;
+mso-line-height-rule: exactly;
+vertical-align: top;
+text-decoration: none;
+color: #5D6C83;
+}
+.footer_width {
+width: 130px !important;
+}
+.footer_width2 {
+width: 120px !important;
+}
+.footer_width3 {
+width: 100px !important;
+}
+}
+.btn a {
+display: block;
+padding: 12px 14px;
+font-weight: 700;
+font-size: 18px;
+line-height: 26px;
+text-decoration: none;
+}
+.btn-primary td {
+background: #E2001A;
+}
+.btn-primary a {
+color: #FFFFFF;
+}
+.btn-outline td {
+background: #FFFFFF;
+border: 1px solid #1C225C;
+}
+.btn-outline a {
+color: #1C225C;
+}
+.btn-outline-red td {
+background: #FFFFFF;
+border: 1px solid #E2001A;
+}
+.btn-outline-red a {
+color: #E2001A;
+}
+
+.hero-desktop {
+display: table !important;
+width: 100% !important;
+}
+.hero-mobile {
+display: none !important;
+max-height: 0 !important;
+overflow: hidden !important;
+mso-hide: all !important;
+}
+@media screen and (max-width:600px) {
+.wrap {
+width: 100% !important;
+max-width: 100% !important;
+}
+.px {
+padding-left: 16px !important;
+padding-right: 16px !important;
+}
+.stack {
+display: block !important;
+width: 100% !important;
+}
+.center {
+text-align: center !important;
+}
+.img-fluid {
+width: 100% !important;
+height: auto !important;
+}
+.hide-mobile {
+display: none !important;
+height: 0 !important;
+overflow: hidden !important;
+mso-hide: all !important;
+}
+.hero-desktop {
+display: none !important;
+max-height: 0 !important;
+overflow: hidden !important;
+mso-hide: all !important;
+}
+.hero-mobile {
+display: table !important;
+width: 100% !important;
+max-height: none !important;
+overflow: visible !important;
+}
+.hero-mobile img {
+display: block !important;
+width: 100% !important;
+max-width: 100% !important;
+height: auto !important;
+}
+}
+@media only screen and (max-width: 480px) {
+.nostoTemplateWrapper {
+width: 100% !important;
+}
+.nostoTemplateColumnContainer {
+max-width: 99% !important;
+}
+.nostoImageDescription {
+max-width: 200px !important;
+}
+.nostoImageCombined {
+max-width: 100% !important;
+}
+.nostoImageProductContainer {
+height: auto !important;
+}
+.nostoImageProduct {
+max-height: none !important;
+}
+}
+@media only screen and (max-width:600px) {
+.ch {
+padding-right: 10px!important
+}
+.cg {
+padding-left: 10px!important
+}
+.cf {
+padding-top: 0px!important
+}
+.ce {
+padding-bottom: 0px!important
+}
+.cd {
+padding-right: 30px!important
+}
+.cc {
+padding-left: 30px!important
+}
+.cb {
+padding-right: 20px!important
+}
+.ca {
+padding-left: 20px!important
+}
+.bz {
+padding-right: 5px!important
+}
+.by {
+padding-left: 5px!important
+}
+*[class=3D"gmail-fix"] {
+display: none!important
+}
+p, a {
+line-height: 150%!important
+}
+h1, h1 a {
+line-height: 44px!important
+}
+h2, h2 a {
+line-height: 120%!important
+}
+h3, h3 a {
+line-height: 34px!important
+}
+h4, h4 a {
+line-height: 120%!important
+}
+h5, h5 a {
+line-height: 120%!important
+}
+h6, h6 a {
+line-height: 120%!important
+}
+h1 {
+font-size: 40px!important;
+text-align: left
+}
+h2 {
+font-size: 32px!important;
+text-align: left
+}
+h3 {
+font-size: 28px!important;
+text-align: left
+}
+h4 {
+font-size: 24px!important;
+text-align: left
+}
+h5 {
+font-size: 20px!important;
+text-align: left
+}
+h6 {
+font-size: 16px!important;
+text-align: left
+}
+.bv p, .bv a {
+font-size: 14px!important
+}
+.bu p, .bu a {
+font-size: 14px!important
+}
+.ba, .ba h1, .ba h2, .ba h3, .ba h4, .ba h5, .ba h6 {
+text-align: center!important
+}
+.br {
+display: inline-table
+}
+a.e, button.e {
+display: inline-block!important;
+font-size: 14px!important;
+padding: 10px 20px 10px 20px!important;
+line-height: 120%!important
+}
+.u {
+display: inline-block!important
+}
+.bk table, .bl, .bm {
+width: 100%!important;
+border-collapse: separate!important
+}
+.bh table, .bi table, .bj table, .bh, .bj, .bi {
+width: 100%!important;
+max-width: 600px!important
+}
+.adapt-img {
+width: 100%!important;
+height: auto!important
+}
+.be, .bf {
+display: none!important
+}
+.x td {
+width: 1%!important
+}
+.h-auto {
+height: auto!important
+}
+.w.x td a {
+font-size: 10px!important
+}
+.k .v, .k .v * {
+font-size: 10px!important;
+line-height: 150%!important
+}
+a.e, button.e, .u {
+display: inline-block!important
+}
+.k .s, .k .s * {
+font-size: 9px!important;
+line-height: 150%!important
+}
+.img-8043 {
+width: 200px!important
+}
+.img-2340 {
+width: 100px!important
+}
+.img-9887 {
+width: 100px!important
+}
+.img-6669 {
+width: 100px!important
+}
+.img-4285 {
+width: 100px!important
+}
+.k .l, .k .l * {
+font-size: 12px!important;
+line-height: 150%!important
+}
+a.e.f {
+padding: 15px 35px!important
+}
+td.b {
+height: 40px!important
+}
+td.a {
+height: 40px!important
+}
+}
+@media screen and (max-width:384px) {
+.mail-message-content {
+width: 414px!important
+}
+}
+</style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x002=
+3_Editor msdt:dt=3D"string">Irene Kober</mso:display_urn_x003a_schemas-micr=
+osoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt=3D"string">14474800.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x002=
+3_Author msdt:dt=3D"string">Irene Kober</mso:display_urn_x003a_schemas-micr=
+osoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt=3D"string">0x0101008A0C7710CDDC1B4BB9ADB3A028E78=
+036</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body leftmargin=3D"0" topmargin=3D"0" marginwidth=3D"0" marginheight=3D"0"=
+ style=3D"width:100%;margin-top:0;margin-bottom:0;margin-right:0;margin-lef=
+t:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;backgroun=
+d-color:#f4f4f4;font-family:Verdana, Arial, sans-serif;mso-line-height-rule=
+:exactly;-webkit-font-smoothing:antialiased;-ms-text-size-adjust:none !impo=
+rtant;" >
+<div ems:preheader style=3D"display:none!important;font-size:1px;color:#333=
+333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;=
+mso-hide:all">View Offers at Slotswise</div>
+<table width=3D"100%" border=3D"0" bgcolor=3D"#f4f4f4" cellpadding=3D"0" ce=
+llspacing=3D"0" align=3D"center" style=3D"border-spacing:0;border-collapse:=
+collapse;mso-table-lspace:0;mso-table-rspace:0;" >
+<!-- BEGIN EMARSYS =C3=96ffnungspixel -->
+<img src=3D"https://newsletter.sovendus.com/mo/Woyg5mzEUi_816383807_1248606=
+3_527352_23577366.gif" height=3D"0" width=3D"0" border=3D"0" style=3D"displ=
+ay:block;">
+<!-- END EMARSYS =C3=96ffnungspixel -->
+<tr>
+<td width=3D"100%" valign=3D"top" bgcolor=3D"#f4f4f4" style=3D"border-colla=
+pse:collapse;mso-table-lspace:0;mso-table-rspace:0;"><!-- BEGIN SOVENDUS LO=
+GO -->
+<table role=3D"presentation" class=3D"deviceWidth" align=3D"center" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"width:600px;margin-top:=
+0;margin-bottom:0;margin-right:auto;margin-left:auto;border-spacing:0;borde=
+r-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;" >
+<tr>
+<td style=3D"padding:10px 18px 0px 0px; " align=3D"right" valign=3D"top">
+<span class=3D"footer" style=3D"margin-bottom:0px; font-family:Verdana, Ari=
+al,sans-serif; color:#293049; font-size:12px;"><a style=3D"color:#293049;fo=
+nt-weight:normal;" href=3D"https://newsletter.sovendus.com/u/gm.php?prm=3DW=
+oyg5mzEUi_816383807_12486063_527352&_esuh=3D_11_7ef7772e2848cb77ffb4b27ede4=
+ebc0f161f376e8f8aa4c9499ad09330542ed7"><u>Online-Version</u></a></span></td=
+>
+</tr>
+<tr><td class=3D"cta-mobile-spacer" height=3D"5" colspan=3D"2"></td></tr>
+</table>
+<table role=3D"presentation" class=3D"deviceWidth" align=3D"center" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0"
+style=3D"width:600px;margin:0 auto;border-radius:15px;overflow:hidden;backg=
+round:#ffffff;">
+<tr>
+<td>
+<table role=3D"presentation" class=3D"deviceWidth" align=3D"center" bgcolor=
+=3D"#ffffff" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"widt=
+h:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;bor=
+der-spacing:0;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:=
+0;">
+</table>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center" bgcolor=3D"#FFFFFF" class=3D"deviceWidth" style=3D"widt=
+h:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;bor=
+der-spacing:0;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:=
+0;">
+<tr>
+<td align=3D"left" valign=3D"middle" style=3D"padding-top:25px;padding-bott=
+om:4px;padding-left:12px;padding-right:12px;border-collapse:collapse;mso-ta=
+ble-lspace:0;mso-table-rspace:0;color:#222222;font-family:Verdana, Arial, s=
+ans-serif;font-size:12px;line-height:20px;mso-line-height-rule:exactly;vert=
+ical-align:top;text-decoration:none;" class=3D"sov-headline-pad">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"left" style=3D"border-spacing:0;border-collapse:collapse;mso-ta=
+ble-lspace:0;mso-table-rspace:0;">
+<tr>
+<td align=3D"left" valign=3D"middle" style=3D"border-collapse:collapse;mso-=
+table-lspace:0;mso-table-rspace:0;">
+<p class=3D"bodyText2" style=3D"margin:0;"><span style=3D"line-height:20px;=
+mso-line-height-rule:exactly;vertical-align:top;text-decoration:none;">Sove=
+ndus recommends:</span></p>
+</td>
+</tr>
+</table>
+</td>
+<td align=3D"right" style=3D"padding-top: 15px; padding-bottom: 5px; border=
+-collapse:collapse;">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"right">
+</table>
+</td>
+</tr>
+<tr><td class=3D"noimg" height=3D"3" colspan=3D"2"></td></tr>
+</table>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center" bgcolor=3D"#FFFFFF" class=3D"deviceWidth" style=3D"widt=
+h:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;bor=
+der-spacing:0;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:=
+0;">
+<tr>
+<td align=3D"left" valign=3D"middle" style=3D"padding-top: 5px; padding-lef=
+t:10px;padding-right:12px;padding-bottom: 5px; border-collapse:collapse;mso=
+-table-lspace:0;mso-table-rspace:0;">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"left" style=3D"border-spacing:0;border-collapse:collapse;mso-ta=
+ble-lspace:0;mso-table-rspace:0;">
+<tr>
+<td align=3D"left" valign=3D"middle" style=3D"border-collapse:collapse;mso-=
+table-lspace:0;mso-table-rspace:0;">
+<a href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_=
+12486063_1_271&ems_l=3D23577366&_esuh=3D_11_57bc4353c2daf0b6e653362518a20b9=
+79bb9512b1a02d17de7c701b61493c602" target=3D"_blank">
+<img src=3D"https://newsletter.sovendus.com/custloads/816383807/md_1732535.=
+png" width=3D"150" alt=3D"Slotswise logo" title=3D"Slotswise logo" border=
+=3D"0" class=3D"Partnerlogo" style=3D"display:block;border-width:0;-ms-inte=
+rpolation-mode:bicubic;" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+<td align=3D"right" valign=3D"middle" style=3D"padding: 20px; width: 50%; b=
+order-collapse:collapse;">
+<a href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_=
+12486063_1_272&ems_l=3D23577366&_esuh=3D_11_a587e7fffbca2d5c5d8eb2dbd9d8c86=
+be36f7d8238d64ae95d0e7c707e7e5148" target=3D"_blank" style=3D"background-co=
+lor: #0b0c50; border-radius: 5px; padding: 10px 18px; font-size: 12px; font=
+-family: Verdana, Arial, sans-serif; color: #ffffff; text-decoration: none;=
+ font-weight: bold; display: inline-block; text-align: center; text-transfo=
+rm: uppercase;"><span class=3D"ctatextmobil">View&nbsp;offers&nbsp;&raquo;<=
+/span></a>
+</td>
+</tr>
+<tr><td class=3D"noimg" height=3D"3" colspan=3D"2"></td></tr>
+</table>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center" bgcolor=3D"#FFFFFF" class=3D"deviceWidth" style=3D"widt=
+h:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;bor=
+der-spacing:0;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:=
+0;">
+<tr>
+<td width=3D"600" height=3D"1" bgcolor=3D"#E5E5E5" align=3D"left" valign=3D=
+"top" colspan=3D"5" class=3D"deviceWidth" ></td>
+</tr>
+</table>
+<!-- END SOVENDUS LOGO --> <!-- BEGIN PARTNER LOGO --> <!-- END PARTNER LOG=
+O --> <!-- BEGIN TRENNLINIE --> <!-- END TRENNLINIE --> <!-- BEGIN TEXT UND=
+ CTA --> <!-- ORANGE CTA - KANN RAUSGENOMMEN WERDEN --> <!-- ORANGE CTA - K=
+ANN RAUSGENOMMEN WERDEN --> <!-- BEGIN AUSSENTABELLE PARTNERBEREICH -->
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" cl=
+ass=3D"deviceWidth" style=3D"width:600px;margin-top:0;margin-bottom:0;margi=
+n-right:auto;margin-left:auto;border-spacing:0;border-collapse:collapse;mso=
+-table-lspace:0;mso-table-rspace:0;" bgcolor=3D"#FFFFFF" >
+<tr>
+</tr>
+<tr>
+<td align=3D"center" style=3D"width:600px;border-collapse:collapse;mso-tabl=
+e-lspace:0;mso-table-rspace:0;" ><!-- class=3D"emailwrapto100pc" zu den <im=
+g> und <table> hinzufuegen --> <!-- BEGIN INPUT PARTNER -->
+<div dir=3D"ltr" class=3D"es-wrapper-color" lang=3D"en" style=3D"background=
+-color:#F4F4FB"><!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+<v:fill type=3D"tile" color=3D"#f4f4fb" ></v:fill>
+</v:background>
+<![endif]-->
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" class=3D"es-wrapp=
+er" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border=
+-spacing:0px;padding:0;Margin:0;width:100%;height:100%">
+<tr>
+<td valign=3D"top" style=3D"padding:0;Margin:0"><table cellpadding=3D"0" al=
+ign=3D"center" cellspacing=3D"0" class=3D"bh" role=3D"none" style=3D"mso-ta=
+ble-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;width:100%;table-lay=
+out:fixed !important">
+<tr>
+<td align=3D"center" background style=3D"padding:0;Margin:0"><table cellspa=
+cing=3D"0" cellpadding=3D"0" bgcolor=3D"transparent" align=3D"center" class=
+=3D"bv" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0=
+px;background-color:transparent;width:600px" role=3D"none">
+<tr>
+<td align=3D"left" style=3D"padding:0px 0 0;Margin:0"><table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" role=3D"none" style=3D"mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"padding:0;Margin:0;width:600px=
+"><table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" background role=
+=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border=
+-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0">
+<!-- Desktop hero image -->
+<table role=3D"presentation" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" class=3D"hero-desktop" style=3D"width:100%;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;border-spacing:0;border-collapse:collapse">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;font-size:0;line-height:0"><=
+a href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_1=
+2486063_1_273&ems_l=3D23577366&_esuh=3D_11_d9c88405d1da4df4e3966a1820f2d15f=
+3c353f75aec4a56e57625fde15b58611" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule:exactly;text-decoration:none;color:#1376C8"><img height=3D"auto" wid=
+th=3D"600" src=3D"https://newsletter.sovendus.com/custloads/816383807/md_17=
+51768.jpg" alt=3D"Promotional banner featuring Zeus with glowing lightning =
+and ancient Greek temples in the background, advertising '100 Free Spins', =
+'No Deposit Required' and a green 'Claim' button." title=3D"Promotional ban=
+ner featuring Zeus with glowing lightning and ancient Greek temples in the =
+background, advertising '100 Free Spins', 'No Deposit Required' and a green=
+ 'Claim' button." style=3D"display:block;width:100%;max-width:600px;height:=
+auto;font-size:14px;border:0;outline:none;text-decoration:none;margin:0;bor=
+der-radius:5px"></a></td>
+</tr>
+</table>
+<!--[if !mso]><!-->
+<!-- Mobile hero image: replace grafik2.jpg with the hosted image URL befor=
+e sending if necessary. -->
+<table role=3D"presentation" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" class=3D"hero-mobile" style=3D"display:none;max-height:=
+0;overflow:hidden;mso-hide:all;width:100%;mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;border-spacing:0;border-collapse:collapse">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;font-size:0;line-height:0"><=
+a href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_1=
+2486063_1_274&ems_l=3D23577366&_esuh=3D_11_c7b3cce43343c57294d0d3339d03f1d8=
+b838f9e2c930f9d872d014395da51aa5" target=3D"_blank" style=3D"mso-line-heigh=
+t-rule:exactly;text-decoration:none;color:#1376C8"><img height=3D"auto" wid=
+th=3D"600" src=3D"https://newsletter.sovendus.com/custloads/816383807/md_17=
+51769.jpg" alt=3D"Promotional banner featuring Zeus, advertising 100 free s=
+pins with no deposit required and a green Claim button." title=3D"Promotion=
+al banner featuring Zeus, advertising 100 free spins with no deposit requir=
+ed and a green Claim button." style=3D"display:block;width:100%;max-width:6=
+00px;height:auto;font-size:14px;border:0;outline:none;text-decoration:none;=
+margin:0;border-radius:5px"></a></td>
+</tr>
+</table>
+<!--<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;=
+mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table cellspac=
+ing=3D"0" width=3D"100%" role=3D"presentation" cellpadding=3D"0" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" class=3D"k" style=3D"padding:5px 0 0;Margin:0"><p class=
+=3D"s" style=3D"Margin:0;mso-line-height-rule:exactly;font-family:'open san=
+s', 'helvetica neue', helvetica, arial, sans-serif;line-height:14px;letter-=
+spacing:0;color:#333333;font-size:12px;padding-left:10px;padding-right:10px=
+;">New players only. Offers valid across multiple providers. Wagering requi=
+rements and withdrawal restrictions apply. Valid until further notice. See =
+chosen provider&rsquo;s site for full T&amp;C's. </p></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;=
+mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" height=3D"10" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"cl cm" style=3D"padding:0;Margin:0">
+<table width=3D"100%" cellpadding=3D"0" align=3D"right" cellspacing=3D"0" c=
+lass=3D"bw" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0p=
+t;border-spacing:0px;float:right">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px">
+<table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt=
+;border-spacing:0px;background-color:#ffffff;border-radius:5px">
+<tr>
+<td height=3D"50" align=3D"center" class=3D"n" style=3D"padding:0;Margin:0;=
+font-size:0"></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"cj ck a" style=3D"padding:0 40px 15px;Margin:0"=
+><h3 class=3D"b" style=3D"Margin:0;font-family:'source sans pro', 'helvetic=
+a neue', helvetica, arial, sans-serif;mso-line-height-rule:exactly;letter-s=
+pacing:0;font-size:30px;font-style:normal;font-weight:normal;line-height:36=
+px;color:#333333"><strong style=3D"font-weight:bolder !important"><b>We've =
+got an <strong style=3D"font-weight:bolder !important">exclusive offer</str=
+ong> for you, courtesy of our partners at Slotwise.</b></strong></h3></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"ch ci a" style=3D"padding:0 40px;Margin:0"><p s=
+tyle=3D"Margin:0;mso-line-height-rule:exactly;font-family:'open sans', 'hel=
+vetica neue', helvetica, arial, sans-serif;line-height:24px;letter-spacing:=
+0;font-weight:normal;color:#333333;font-size:16px"><br></p>
+<p class=3D"o" style=3D"Margin:0;mso-line-height-rule:exactly;font-family:'=
+open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px=
+;letter-spacing:0;font-weight:normal;color:#333333;font-size:16px">New user=
+s get <strong style=3D"font-weight:bolder !important"><em>100 free spins wi=
+th no deposit</em></strong> &ndash; the perfect way to try out a range of c=
+lassic games without needing to put anything up.</p><p class=3D"o" style=3D=
+"Margin:0;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica =
+neue', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;font-=
+weight:normal;color:#333333;font-size:16px"><br></p><p class=3D"o" style=3D=
+"Margin:0;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica =
+neue', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;font-=
+weight:normal;color:#333333;font-size:16px">Not quite the right offer? <em>=
+<strong style=3D"font-weight:bolder !important">Slotswise</strong></em> com=
+pares all the top UKGC-lisenced operators in one place, so you can pick bet=
+ween packages: <em><strong style=3D"font-weight:bolder !important">no wager=
+ing, no deposit, or <em><strong style=3D"font-weight:bolder !important">up =
+to 500 free spins.</strong></em></strong></em></p><p class=3D"o" style=3D"M=
+argin:0;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica ne=
+ue', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;font-we=
+ight:normal;color:#333333;font-size:16px"><br></p><p class=3D"o" style=3D"M=
+argin:0;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica ne=
+ue', helvetica, arial, sans-serif;line-height:24px;letter-spacing:0;font-we=
+ight:normal;color:#333333;font-size:16px">Compare your exclusive offers tod=
+ay.</p><p style=3D"Margin:0;mso-line-height-rule:exactly;font-family:'open =
+sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;lett=
+er-spacing:0;font-weight:normal;color:#333333;font-size:14px">&nbsp;</p></t=
+d>
+</tr>
+<tr class=3D"ba">
+<td align=3D"left" class=3D"cg cp co ch" style=3D"padding:0 40px;Margin:0">=
+<!--[if mso]><a href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5=
+mzEUi_527352_12486063_1_275&ems_l=3D23577366&_esuh=3D_11_4b4b5e6db04db73e7b=
+6ea30862988d6deea7f806c578f7cd53d31cbb8f151b22" target=3D"_blank" hidden>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" esdevVmlButton href=3D"https://sovendus.emcus=
+tomers.de/trck/eclick/?campaign_alias=3Ddefault&project_id=3D50074&admedia_=
+alias=3DGB&zone=3DEMM&nwurl=3Dhttps%253A%252F%252Fotnetsk.com%252F%253Fa%25=
+3D443%2526c%253D1170%2526s1%253Dsovendus_email%2526s3%253D%257Csys.actionid=
+%257C" style=3D"height:66px; v-text-anchor:middle; width:200px" arcsize=3D"=
+8%" stroke=3D"f" fillcolor=3D"#00ff80">
+<w:anchorlock></w:anchorlock>
+<center style=3D'color:#0b0c50; font-family:&#39;open sans&#39;,&#39;helvet=
+ica neue&#39;,helvetica,arial,sans-serif; font-size:22px; font-weight:700; =
+line-height:22px; mso-text-raise:1px'>Explore</center>
+</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class=3D"explore-button msohide" st=
+yle=3D"border-style:solid;border-color:#2CB543;background:#00ff80;border-wi=
+dth:0;display:inline-block;border-radius:5px;width:auto;mso-hide:all"><a ta=
+rget=3D"_blank" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5=
+mzEUi_527352_12486063_1_276&ems_l=3D23577366&_esuh=3D_11_c8f7ceeb346c7e09d4=
+4a21560615ae846b577f2c07a50c9a084345ae13790412" title=3D"ContentCTA" class=
+=3D"d bb explore-link" style=3D"mso-style-priority:100 !important;text-deco=
+ration:none !important;mso-line-height-rule:exactly;color:#0b0c50;font-size=
+:22px;font-weight:bold;padding:20px 50px;display:inline-block;background:#0=
+0ff80;border-radius:5px;font-family:'open sans', 'helvetica neue', helvetic=
+a, arial, sans-serif;font-style:normal;line-height:26px;width:auto;text-ali=
+gn:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #00f=
+f80;text-transform:none">Explore</a></span><!--<![endif]--></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"50" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"><table cellspacing=3D"0" wi=
+dth=3D"100%" cellpadding=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;=
+mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table cellspac=
+ing=3D"0" width=3D"100%" role=3D"presentation" cellpadding=3D"0" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;=
+mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table width=3D=
+"100%" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" bgcolor=3D"#0b0c50" class=3D"cf ce a" style=3D"Margin:0;=
+padding:10px 20px"><h3 class=3D"bk c" style=3D"Margin:0;font-family:'source=
+ sans pro', 'helvetica neue', helvetica, arial, sans-serif;mso-line-height-=
+rule:exactly;letter-spacing:0;font-size:28px;font-style:normal;font-weight:=
+normal;line-height:34px;color:#ffffff !important"><strong style=3D"font-wei=
+ght:bolder !important;color:#ffffff !important">About&nbsp;Our Provider</st=
+rong></h3></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"10" bgcolor=3D"#00ff80" style=3D"padding:0;M=
+argin:0;font-size:0"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><a href=3D"ht=
+tps://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_12486063_1_27=
+7&ems_l=3D23577366&_esuh=3D_11_ccd611e3ccf7d111c5871f0303c2b52c71655a013208=
+482f3d5e589b6f66a89b" target=3D"_blank" style=3D"mso-line-height-rule:exact=
+ly;text-decoration:underline;color:#1376C8;font-size:14px;font-weight:inher=
+it"><img width=3D"600" src=3D"https://c.bannerflow.net/accounts/qih/655f3c6=
+5a7031f382d0a854a/images/76840f8d-aa8d-4a43-9ba5-3f5c33f4c6e6.png" alt=3D"A=
+ casino promotion banner shows a laptop screen and a grid of slot game thum=
+bnails. Large text reads 'Unlock free spins with no deposit &amp; no wageri=
+ng', with a button labeled 'View offers'. At the top, smaller text says 'Vi=
+ew today's top casino signup offers'. A green diagonal ribbon in the corner=
+ states 'The signup offer experts', and the brand name 'SlotsWise' appears =
+on the left." title=3D"A casino promotion banner shows a laptop screen and =
+a grid of slot game thumbnails. Large text reads 'Unlock free spins with no=
+ deposit &amp; no wagering', with a button labeled 'View offers'. At the to=
+p, smaller text says 'View today's top casino signup offers'. A green diago=
+nal ribbon in the corner states 'The signup offer experts', and the brand n=
+ame 'SlotsWise' appears on the left." class=3D"adapt-img" style=3D"display:=
+block;font-size:14px;border:0;outline:none;text-decoration:none;margin:0"><=
+/a></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"20" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<table cellspacing=3D"0" cellpadding=3D"0" align=3D"center" class=3D"bj" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spaci=
+ng:0px;width:100%;table-layout:fixed !important;background-color:transparen=
+t">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0"><table cellspacing=3D"0" =
+cellpadding=3D"0" bgcolor=3D"transparent" align=3D"center" class=3D"bu" sty=
+le=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;backgrou=
+nd-color:transparent;width:600px" role=3D"none">
+<tr>
+<td align=3D"left" class=3D"cg ch cf ce" style=3D"padding:0;Margin:0"><tabl=
+e cellpadding=3D"0" align=3D"right" cellspacing=3D"0" width=3D"100%" class=
+=3D"bm" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bo=
+rder-spacing:0px;float:right">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" bgcolor=3D=
+"#0F0821" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing=
+:0px;border-radius:5px;background-color:#0F0821">
+<tr>
+<td align=3D"center" style=3D"padding:0 20px;Margin:0;font-size:0"><img src=
+=3D"https://newsletter.sovendus.com/custloads/816383807/md_1669608.png" alt=
+=3D"Gamble responsibly. Play within your limits. 18+ and GambleAware Logo."=
+ title=3D"Gamble responsibly. Play within your limits. 18+ and GambleAware =
+Logo." width=3D"400" class=3D"adapt-img" style=3D"display:block;font-size:1=
+4px;border:0;outline:none;text-decoration:none;margin:0"></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<table cellpadding=3D"0" align=3D"center" cellspacing=3D"0" class=3D"bj" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spaci=
+ng:0px;width:100%;table-layout:fixed !important;background-color:transparen=
+t">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0"><table cellspacing=3D"0" =
+cellpadding=3D"0" bgcolor=3D"transparent" align=3D"center" class=3D"bu" sty=
+le=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;backgrou=
+nd-color:transparent;width:600px" role=3D"none">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0"><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;=
+mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table role=3D"=
+presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" height=3D"30" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"cg ch cf ce" style=3D"padding:0;Margin:0"><tabl=
+e cellspacing=3D"0" width=3D"100%" cellpadding=3D"0" align=3D"right" class=
+=3D"bm" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bo=
+rder-spacing:0px;float:right">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:600px"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;border-radius:5=
+px">
+<tr>
+<td align=3D"left" style=3D"padding:0 0 15px;Margin:0"><h3 style=3D"Margin:=
+0;font-family:'source sans pro', 'helvetica neue', helvetica, arial, sans-s=
+erif;mso-line-height-rule:exactly;letter-spacing:0;font-size:28px;font-styl=
+e:normal;font-weight:normal;line-height:34px;color:#959595;padding-left:10p=
+x;padding-right:10px;"><strong style=3D"font-weight:bolder !important">Term=
+s</strong></h3></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0 0 10px;Margin:0"><p style=3D"Margin:0=
+;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', he=
+lvetica, arial, sans-serif;line-height:21px;letter-spacing:0;color:#959595;=
+font-size:14px;padding-left:10px;padding-right:10px;"><strong style=3D"font=
+-weight:bolder !important">SAFE &amp; RESPONSIBLE GAMBLING&nbsp;</strong></=
+p></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"k" style=3D"padding:0 0 20px;Margin:0"><p class=
+=3D"l" style=3D"Margin:0;mso-line-height-rule:exactly;font-family:'open san=
+s', 'helvetica neue', helvetica, arial, sans-serif;line-height:18px;letter-=
+spacing:0;color:#333333;font-size:12px;padding-left:10px;padding-right:10px=
+;"><span style=3D"color:#959595">Never bet more than you can afford and rem=
+ember to always have fun, whatever you decide to play. We encourage respons=
+ible gambling and support GamCare.&nbsp;</span></p></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0 0 10px;Margin:0"><p style=3D"Margin:0=
+;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', he=
+lvetica, arial, sans-serif;line-height:21px;letter-spacing:0;color:#959595;=
+font-size:14px;padding-left:10px;padding-right:10px;"><strong style=3D"font=
+-weight:bolder !important">TERMS &amp; CONDITIONS&nbsp;</strong></p></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;padding-left:10px;padding-ri=
+ght:10px;" class=3D"k"><ul style=3D"font-family:'open sans', 'helvetica neu=
+e', helvetica, arial, sans-serif;padding:0px 0px 0px 20px;margin-top:0px;ma=
+rgin-bottom:0px">
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"mso-margin-top-alt:0px;Margin:0;mso-line-height-rule:exactly;ms=
+o-margin-bottom-alt:5px;font-family:'open sans', 'helvetica neue', helvetic=
+a, arial, sans-serif;line-height:18px;letter-spacing:0;color:#959595;font-s=
+ize:12px">Players must be over 18 and reside in the UK to claim offers at S=
+lotswise.</p>
+</li>
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"Margin:0;mso-line-height-rule:exactly;mso-margin-bottom-alt:5px=
+;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;li=
+ne-height:18px;letter-spacing:0;color:#959595;font-size:12px">Most offers o=
+n site are incentives aimed at new players. Existing players may not claim =
+bonuses featured on Slotswise.&nbsp;</p>
+</li>
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"Margin:0;mso-line-height-rule:exactly;mso-margin-bottom-alt:5px=
+;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;li=
+ne-height:18px;letter-spacing:0;color:#959595;font-size:12px">Offers presen=
+ted are purely informational and subject to availability. The offers may ch=
+ange at any time without notice, at the discretion of the operator.</p>
+</li>
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"Margin:0;mso-line-height-rule:exactly;mso-margin-bottom-alt:5px=
+;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;li=
+ne-height:18px;letter-spacing:0;color:#959595;font-size:12px">Some slots cr=
+edits and spins offers are non-redeemable in cash form. Each operator has s=
+pecific wagering requirements that must be met to release any winnings from=
+ the use of free spins or deposit bonuses.</p>
+</li>
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"Margin:0;mso-line-height-rule:exactly;mso-margin-bottom-alt:5px=
+;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;li=
+ne-height:18px;letter-spacing:0;color:#959595;font-size:12px">By joining Sl=
+otwise, you are giving consent for us to communicate offers to you via emai=
+l, post and SMS.</p>
+</li>
+<li class=3D"l" style=3D"color:#959595;margin:0px 0px 5px;font-size:12px">
+<p style=3D"Margin:0;mso-line-height-rule:exactly;mso-margin-bottom-alt:0px=
+;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;li=
+ne-height:18px;letter-spacing:0;color:#959595;font-size:12px;">You may unsu=
+bscribe at any time to opt out from these communications.</p>
+</li>
+</ul></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"30" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<table cellspacing=3D"0" cellpadding=3D"0" align=3D"center" class=3D"bj" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spaci=
+ng:0px;width:100%;table-layout:fixed !important;background-color:transparen=
+t">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0"><table bgcolor=3D"transpa=
+rent" align=3D"center" cellspacing=3D"0" cellpadding=3D"0" class=3D"bu" sty=
+le=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;backgrou=
+nd-color:transparent;width:600px" role=3D"none">
+<tr>
+<td align=3D"left" bgcolor=3D"#000000" style=3D"padding:0 20px;Margin:0;bac=
+kground-color:#000000"><table cellpadding=3D"0" width=3D"100%" cellspacing=
+=3D"0" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bor=
+der-spacing:0px">
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"padding:0;Margin:0;width:560px=
+"><table cellpadding=3D"0" width=3D"100%" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0p=
+x">
+<tr>
+<td align=3D"center" height=3D"30" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><a target=3D"=
+_blank" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_52=
+7352_12486063_1_278&ems_l=3D23577366&_esuh=3D_11_f124c44d03ef52ac4edd105f70=
+e2d5f478dde68808ebafa85a87d8c234105bdf" title=3D"LogoFooter" style=3D"mso-l=
+ine-height-rule:exactly;text-decoration:underline;color:#1376C8;font-size:1=
+4px;font-weight:inherit"><img width=3D"200" src=3D"https://newsletter.soven=
+dus.com/custloads/816383807/md_1704831.png" alt=3D"Slotswise Logo" title=3D=
+"Slotswise Logo" class=3D"img-8043 adapt-img" style=3D"display:block;font-s=
+ize:14px;border:0;outline:none;text-decoration:none;margin:0"></a></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding:0 0 10px;Margin:0"><p style=3D"Margin=
+:0;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', =
+helvetica, arial, sans-serif;line-height:21px;letter-spacing:0;color:#fff;f=
+ont-size:14px"><strong style=3D"font-weight:bolder !important">YOUR HOME FO=
+R CASINO OFFERS</strong></p></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"30" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"left" bgcolor=3D"#000000" style=3D"padding:0 20px;Margin:0;bac=
+kground-color:#000000"><!--[if mso]><table style=3D"width:560px" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td style=3D"width:150px" valign=3D"top"><![e=
+ndif]-->
+<table cellspacing=3D"0" align=3D"left" cellpadding=3D"0" class=3D"bl" role=
+=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing=
+:0px;float:left">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:130px"><table role=3D"=
+presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><a target=3D"=
+_blank" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_52=
+7352_12486063_1_279&ems_l=3D23577366&_esuh=3D_11_30833f35f7bf51456090557c83=
+dfe1784587741b510b72c07a6bc470b8a01ef8" title=3D"GamCare" style=3D"mso-line=
+-height-rule:exactly;text-decoration:underline;color:#1376C8;font-size:14px=
+;font-weight:inherit"><img src=3D"https://newsletter.sovendus.com/custloads=
+/816383807/md_1547993.png" alt=3D"GamCare Logo" title=3D"GamCare Logo" widt=
+h=3D"100" class=3D"img-6669 adapt-img" style=3D"display:block;font-size:14p=
+x;border:0;outline:none;text-decoration:none;margin:0"></a></td>
+</tr>
+</table></td>
+<td class=3D"bf" style=3D"padding:0;Margin:0;width:20px"></td>
+</tr>
+</table>
+<!--[if mso]></td><td style=3D"width:160px" valign=3D"top"><![endif]-->
+<table cellspacing=3D"0" align=3D"left" cellpadding=3D"0" class=3D"bl" role=
+=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing=
+:0px;float:left">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:160px"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><a target=3D"=
+_blank" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_52=
+7352_12486063_1_280&ems_l=3D23577366&_esuh=3D_11_83b248351605b30cfdbd047225=
+0a2d0d5bde89c5795340d52af26009ace70307" title=3D"GambleAware" style=3D"mso-=
+line-height-rule:exactly;text-decoration:underline;color:#1376C8;font-size:=
+14px;font-weight:inherit"><img alt=3D"GambleAware Logo" title=3D"GambleAwar=
+e Logo" width=3D"100" src=3D"https://newsletter.sovendus.com/custloads/8163=
+83807/md_1547990.png" class=3D"img-9887 adapt-img" style=3D"display:block;f=
+ont-size:14px;border:0;outline:none;text-decoration:none;margin:0"></a></td=
+>
+</tr>
+</table></td>
+<td class=3D"bf" style=3D"padding:0;Margin:0;width:20px"></td>
+</tr>
+</table>
+<!--[if mso]></td><td style=3D"width:171px" valign=3D"top"><![endif]-->
+<table cellspacing=3D"0" align=3D"left" cellpadding=3D"0" class=3D"bl" role=
+=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing=
+:0px;float:left">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:171px"><table role=3D"=
+presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><a target=3D"=
+_blank" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_52=
+7352_12486063_1_281&ems_l=3D23577366&_esuh=3D_11_839737b7d25b00ee3aa3098c1c=
+d33f87f4e3c52b4a961668ba513fd53a8015d7" title=3D"GamStop" style=3D"mso-line=
+-height-rule:exactly;text-decoration:underline;color:#1376C8;font-size:14px=
+;font-weight:inherit"><img width=3D"100" src=3D"https://newsletter.sovendus=
+.com/custloads/816383807/md_1547994.png" alt=3D"Gamstop Logo" title=3D"Gams=
+top Logo" class=3D"img-2340 adapt-img" style=3D"display:block;font-size:14p=
+x;border:0;outline:none;text-decoration:none;margin:0"></a></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<!--[if mso]></td><td style=3D"width:20px"></td><td style=3D"width:39px" va=
+lign=3D"top"><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"right" class=3D"bm" rol=
+e=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacin=
+g:0px;float:right">
+<tr>
+<td align=3D"left" style=3D"padding:0;Margin:0;width:39px"><table cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"ms=
+o-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px">
+<tr>
+<td align=3D"center" style=3D"padding:0;Margin:0;font-size:0"><img src=3D"h=
+ttps://newsletter.sovendus.com/custloads/816383807/md_1547995.png" alt=3D"1=
+8+ Logo" title=3D"18+ Logo" width=3D"40" style=3D"display:block;font-size:1=
+4px;border:0;outline:none;text-decoration:none;margin:0"></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"20" style=3D"padding:0;Margin:0;font-size:0"=
+></td>
+</tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</div>
+<!-- END INPUT PARTNER --></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"10">
+</td>
+</tr>
+</table>
+<!-- BEGIN TRENNLINIE -->
+<table class=3D"deviceWidth" align=3D"center" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"width:600px;margin-top:0;margin-bottom:0;margi=
+n-right:auto;margin-left:auto;border-spacing:0;border-collapse:collapse;mso=
+-table-lspace:0;mso-table-rspace:0;" >
+<tr>
+<td height=3D"10"></td>
+</tr>
+<tr>
+<td width=3D"600" height=3D"1" bgcolor=3D"#E5E5E5" align=3D"left" valign=3D=
+"top" colspan=3D"5" class=3D"deviceWidth" ></td>
+</tr>
+</table>
+<!-- END TRENNLINIE --> <!-- END AUSSENTABELLE PARTNERBEREICH --> <!--BEGIN=
+ FOOTER --> =09<table class=3D"deviceWidth" align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" style=3D"width:600px;margin-top:0;margin=
+-bottom:0;margin-right:auto;margin-left:auto;border-spacing:0;border-collap=
+se:collapse;mso-table-lspace:0;mso-table-rspace:0;" >
+        <tr>
+          <td valign=3D"top" align=3D"left" style=3D"width:600px;font-famil=
+y:Verdana, Arial,sans-serif;font-size:11px; color:#5D6C83;padding-top:10px;=
+padding-bottom: margin-bottom:5px; line-height:17px"><span class=3D"footer"=
+ style=3D"line-height:17px;mso-line-height-rule:exactly;vertical-align:top;=
+text-decoration:none;font-size:11px; color:#5D6C83">The content of this new=
+sletter is aimed exclusively at persons who are legally permitted to gamble=
+.</span>
+         </td>
+        </tr>
+      =20
+      </table>
+<table class=3D"deviceWidth" align=3D"center" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"width:600px;margin-top:0;margin-bottom:0;margi=
+n-right:auto;margin-left:auto;border-spacing:0;border-collapse:collapse;mso=
+-table-lspace:0;mso-table-rspace:0;" >
+      =20
+       <tr>
+          <td colspan=3D"5" valign=3D"top" align=3D"left" style=3D"width:60=
+0px;font-family:Verdana, Arial,sans-serif;font-size:11px; color:#5D6C83;pad=
+ding-top:15px;padding-bottom:5px; margin-bottom:25px; line-height:17px">
+=09=09=09  <p class=3D"footer"><span style=3D"line-height:17px;mso-line-hei=
+ght-rule:exactly;vertical-align:top;text-decoration:none;">You have receive=
+d this email as you subscribed  to receive email newsletters containing spe=
+cial offers from Sovendus. Sovendus does not accept any liability should th=
+e sent information and offers prove to be incomplete, inaccurate or not up-=
+to-date. Sovendus is not responsible for the content of an external site to=
+ which the newsletter refers directly or indirectly via a Hyperlink.</span>=
+</p>
+=09=09   </td></tr>
+=09=09
+=09=09  <tr>
+=09=09=09 =20
+=09=09=09  <tr>
+          <td colspan=3D"5" valign=3D"top" align=3D"left" style=3D"width:60=
+0px;font-family:Verdana, Arial,sans-serif;font-size:11px; color:#5D6C83;pad=
+ding-top:10px;padding-bottom:5px; margin-bottom:25px; line-height:17px"><p =
+class=3D"footer"> <span style=3D"line-height:17px;mso-line-height-rule:exac=
+tly;vertical-align:top;text-decoration:none;"><strong>Sovendus GmbH</strong=
+><br />=20
+          c/o Design Offices Karlsruhe Bahnhofplatz | Bahnhofplatz&nbsp;12 =
+| 76137&nbsp;Karlsruhe (Germany) | E&#8209;Mail:&nbsp;<a href=3D"mailto:inf=
+o@sovendus.com" target=3D"_blank" style=3D"text-decoration: none; color: #5=
+D6C83">info@sovendus.com</a></span> <br />
+              Place of registration: Amtsgericht (County Court) Mannheim | =
+Company No.: HRB 707873<br />
+              VAT registration no: DE 813 459 970<br />
+              Managing Directors:&nbsp;Sebastian&nbsp;Legler&nbsp;(CEO), Fl=
+orian&nbsp;Gramelspacher, Jennifer&nbsp;Klapper<br /><a href=3D"https://new=
+sletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527352_12486063_-2_1000000&em=
+s_l=3D23577366&l=3D3bb-aoGGe0XSa.d09ZcaSY.8Gncb8Ua.c~Y0Da.d09Zcas-~.ZcYbycb=
+8U80Z4c8D~010~~W7ycb8UYW8-W429D8W47yY4ZD%24Y4Z%24y774ZD%24774Z%24y&s=3DZvi1=
+pub7G1Lgm5p-Awodf19B5Pw&_esuh=3D_11_7e33f1288d218f269a9ea1bfaac13959e8dad96=
+cd94a0696e8e50cca9def302f" target=3D"_blank" style=3D"text-decoration: none=
+; color:#5D6C83">www.sovendus.com</a></p></td>
+        </tr>
+         =20
+        </tr>
+=09=09
+=09=09<!-- BEGIN TRENNLINIE -->
+        <tr>
+          <td width=3D"600" height=3D"1" bgcolor=3D"#E5E5E5" align=3D"left"=
+ valign=3D"top" colspan=3D"5" class=3D"deviceWidth" ></td>
+        </tr>
+       =20
+        <!-- END TRENNLINIE -->
+         <tr>
+          <td class=3D"footer_width" valign=3D"bottom" align=3D"left" style=
+=3D"width:100px;font-family:Verdana, Arial,sans-serif;font-size:11px; color=
+:#5D6C83;padding-left:0px; padding-top:10px; padding-right:0px; padding-bot=
+tom:15px; margin-bottom:0px; line-height:17px"><span class=3D"footer" style=
+=3D"line-height:17px;mso-line-height-rule:exactly;vertical-align:top;text-d=
+ecoration:none;"><a style=3D"color:#5D6C83;text-decoration:none;font-weight=
+:normal;" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_=
+527352_12486063_-2_1000000&ems_l=3D23577366&l=3D2aa.~nFF~Z_c3XZR~9cZ8Yb~RX9=
+7F._Z0Z_Z8XZF38YZeR2a76mb3YCD9f1M7glB3xX3YCIJLPNHNKx663YCMJOKMJxX3YC%24X3Y%=
+24x663YC%24663Y%24x&s=3DaKubXpCAJOTUvogQ4MJlQx_qivg&_esuh=3D_11_c6c80675b6c=
+2e5b70f972f2d617dfbfd0da14035b475429a546559eb8a4cf502" target=3D"_blank">Un=
+subscribe</a></span></td>
+        =20
+          =20
+              <td class=3D"footer_width2" valign=3D"bottom" align=3D"left" =
+style=3D"width:60px;font-family:Verdana, Arial,sans-serif;font-size:11px; c=
+olor:#5D6C83;padding-left:0px; padding-top:10px; padding-right:0px; padding=
+-bottom:15px; margin-bottom:0px; line-height:17px"><span class=3D"footer" s=
+tyle=3D"line-height:17px;mso-line-height-rule:exactly;vertical-align:top;te=
+xt-decoration:none;"><a style=3D"color:#5D6C83;text-decoration:none;font-we=
+ight:normal;" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mz=
+EUi_527352_12486063_-2_1000000&ems_l=3D23577366&l=3DjvvruI00ygd_uqxgpfwu_eq=
+o0ngicn%23rtkxceA~rqnkeAHekfX%24ekf%24SnnkfX%24nnkf%24S&s=3DShuWDJL_rf8i3UW=
+DkbrgzIU8zeM&_esuh=3D_11_af9aefe1c7e730d32c6a317ebf60f548d97e896fe0809155ff=
+efd7e6c4b0fed0" target=3D"_blank">Privacy</a></span></td>
+             =20
+              <td class=3D"footer_width3" valign=3D"bottom" align=3D"center=
+" style=3D"width:90px;font-family:Verdana, Arial,sans-serif;font-size:11px;=
+ color:#5D6C83;padding-left:0px; padding-top:10px; padding-right:0px; paddi=
+ng-bottom:15px; margin-bottom:0px; line-height:17px"><span class=3D"footer"=
+ style=3D"line-height:17px;mso-line-height-rule:exactly;vertical-align:top;=
+text-decoration:none;">             =20
+              <a style=3D"color:#5D6C83;text-decoration:none;font-weight:no=
+rmal;" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527=
+352_12486063_-2_1000000&ems_l=3D23577366&l=3DnzzvyM44CkhcyuBktjAycius4iutzg=
+iz4iAyzuskxdykxBoikLAzseyuAxik1yuBktjAyQvxujAizWAzseskjoAs1xklkxxgrWAzseigs=
+vgomt1sgorWioj1%24ioj%24Wrroj1%24rroj%24W&s=3DBxBfp1j44FZvvtdLh9hSFOYV4NE&_=
+esuh=3D_11_1132fa558f59ae49e10082ceb9febf02fffd254369ed7237f3042d9a3c5029d1=
+" target=3D"_blank">Contact</a></span></td>
+=09=09=09    <td class=3D"footer_width" valign=3D"bottom" align=3D"center" =
+style=3D"width:80px;font-family:Verdana, Arial,sans-serif;font-size:11px; c=
+olor:#5D6C83;padding-left:0px; padding-top:10px; padding-right:0px; padding=
+-bottom:15px; margin-bottom:0px; line-height:17px"><span class=3D"footer" s=
+tyle=3D"line-height:17px;mso-line-height-rule:exactly;vertical-align:top;te=
+xt-decoration:none;">             =20
+              <a style=3D"color:#5D6C83;text-decoration:none;font-weight:no=
+rmal;" href=3D"https://newsletter.sovendus.com/u/nrd.php?p=3DWoyg5mzEUi_527=
+352_12486063_-2_1000000&ems_l=3D23577366&l=3DcooknBTTr~.5njq~i_pn5-jhTg~b9g=
+%23dhkmdioA-d_Q%24-d_%24Lggd_Q%24ggd_%24L&s=3D4Dd4XP8K-NXF_woGdLV9aYOyHBE&_=
+esuh=3D_11_47b6dabf305894067225fe22ae6665fafcb09114421ce5544afb8cad721fadf6=
+" target=3D"_blank">Legal notice</a></span></td>
+          <td class=3D"hideForMobile" style=3D"width:270px;"></td>
+        </tr>
+      </table> <!-- END FOOTER --></td>
+</tr>
+</table>
+</body>
+</html>
+----=_---NextPart--=_-IGBEvYRwEr--

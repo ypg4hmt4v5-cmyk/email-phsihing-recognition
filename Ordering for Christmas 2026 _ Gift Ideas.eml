@@ -1,0 +1,986 @@
+Delivered-To: samwilkinson2801@gmail.com
+Received: by 2002:a05:693c:3b09:b0:362:6e4c:d45 with SMTP id tg9csp1007496dyc;
+        Wed, 21 Oct 2026 10:40:10 -0700 (PDT)
+X-Received: by 2002:a05:6000:186f:b0:48d:f9dd:e3b9 with SMTP id ffacd0b85a97d-48e264a2d31mr7058886f8f.17.1792604409778;
+        Wed, 21 Oct 2026 10:40:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792604409; cv=none;
+        d=google.com; s=arc-20260327;
+        b=dAwwzt9bVwQKpn+Pyx5xOtAMCMWJe/P8EN7tiQyvl4Fff3sKMhL1jMd6ifmtqn7d+K
+         ZrUKXsQa4ld41GiSeMcb/P9SBtTFiU/eEaBmCGPTPHtKviE9HcY3uZiPDH4SEJVnBQgq
+         6JbZTzg1LbOdOqj2OJCVo4ZSwvRTF5YGNrVyO7O4o+1hxsYvtzzP/EYZf+s1K6Rlwfvo
+         MOW4v5EaVzHQhBnwprCIv6BE9AMHdsmE2Mnbo8/D0Tq7vzsEGcDoHoL2T0BlksnKZear
+         tSkFRQAy5UAPFQKZnuTdb7uDnuMtDR02K+R9ddd8s3Y+1mYdB8jFWae0903+VAn5+f0r
+         TXRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=message-id:mime-version:list-unsubscribe:list-unsubscribe-post
+         :delivery-context:feedback-id:subject:reply-to:from:to:date
+         :dkim-signature;
+        bh=LJt0/ZFMeTGHsvgH/Eawdv6bgyNtNfqL8eUzxe5jFos=;
+        fh=5OcD+1lshOGnO0FOIzYpb6zs7G5/H7ooRjJ5Tahr0K4=;
+        b=WkM0UHkwLh+KSdzZQvYvozR49Q1+k1SoFGb07n697ZKQX6UWp8lqR8oFyYlgaFpwvn
+         BXq2N/BbDEY4LYbOb4XDRVMUcag40kG1qQcroZNI2pIklbOskWW/kqIJg9/kjg+MWXzF
+         HgS1v2HVBtp0v5HxoC1jhMa6vdhuw1TEKRon8972wlKpsll3LFdQmFJ+3MudpMugNdc/
+         8FsZHEt8viWKS1c2Rpxm9Gq5IReMDT4EQaEntzaSDFdveXWd3Cs/VOq5/RT0NZJHzYlm
+         zi8RRUfVEas9M0p5LB1oTIYQNq9WcJUZollZtnuGmjBYCY8fwaSlnzEBJJ2Bgcrx7bbL
+         shuQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.zapkam.com header.s=dkim1024 header.b=bQRm5HTE;
+       spf=pass (google.com: domain of zapkam@e.zapkam.com designates 185.105.64.226 as permitted sender) smtp.mailfrom=Zapkam@e.zapkam.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.zapkam.com
+Return-Path: <Zapkam@e.zapkam.com>
+Received: from emx226.instillerhq.com (emx226.instillerhq.com. [185.105.64.226])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-48e2589627fsi6177816f8f.469.2026.10.21.10.40.09
+        for <samwilkinson2801@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 21 Oct 2026 10:40:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of zapkam@e.zapkam.com designates 185.105.64.226 as permitted sender) client-ip=185.105.64.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.zapkam.com header.s=dkim1024 header.b=bQRm5HTE;
+       spf=pass (google.com: domain of zapkam@e.zapkam.com designates 185.105.64.226 as permitted sender) smtp.mailfrom=Zapkam@e.zapkam.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.zapkam.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim1024; d=e.zapkam.com;
+ h=Date:To:From:Reply-To:Subject:List-Unsubscribe-Post:List-Unsubscribe:
+ MIME-Version:Content-Type:Message-ID; i=Zapkam@e.zapkam.com;
+ bh=LJt0/ZFMeTGHsvgH/Eawdv6bgyNtNfqL8eUzxe5jFos=;
+ b=bQRm5HTEeIkeiJmJ0gBXzDDrTi2khAbfSLfoNynJj85rixDUy8HijgBtGRnFWdXgJ87i2Q0r6lLU
+   D5A9iDy7UtNszROC4t1CfMaWZO7eqod8bgE4JkQRqlMujgk2cA8U7DxXZnlT5IgZhV8oS8KpfmX8
+   JEmmGMjg6RqhVdFqrS0=
+Received: by emx226.instillerhq.com id hr3sfi3d1t4u for <samwilkinson2801@gmail.com>; Wed, 21 Oct 2026 17:12:11 +0100 (envelope-from <Zapkam@e.zapkam.com>)
+Date: Wed, 21 Oct 2026 17:12:04 +0100
+Return-Path: Zapkam@e.zapkam.com
+To: "samwilkinson2801@gmail.com" <samwilkinson2801@gmail.com>
+From: Zapkam <Zapkam@e.zapkam.com>
+Reply-To: Zapkam <info@zapkam.com>
+Subject: Ordering for Christmas 2026 | Gift Ideas
+Feedback-ID: cmp-61448:acct-92:campaign:ebd4ea8444d5f51
+Delivery-Context: AQGcy3py7r5uwC-OqU4RJIeBKKvV-nf4uR11O1uMu2kzMR_IGi_3WiQsp_04rkTFWBT2g9PDOWKsB0DIP6sVm5IFwCmsjRb5xxjyQ8NveWsoIlPHtaQcxPrdVhIg
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://clicks.zapkam.com/profile/S-61613@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@9>,<mailto:list-unsubscribe-3sn956s-fbfqi.1s5d@e.zapkam.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_0d6f1b5eac91e95756be3b82b88de07d"
+Message-ID: <0.0.9.19B.1DD6176EDF98504.0@emx226.instillerhq.com>
+
+
+--b1_0d6f1b5eac91e95756be3b82b88de07d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+(https://clicks.zapkam.com/email/S-61613@1808757@qWzT-9z_C3egQlwriFq0m8_ZgD=
+n_VDPCrnGC1ZRq23A.@)=0A(https://clicks.zapkam.com/email/S-61613@1808758@qWz=
+T-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0AOrdering for Christmas =
+2026=0A=0ARecommended ordering date: by Monday 16th November(https://clicks=
+.zapkam.com/email/S-61613@1808759@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq2=
+3A.@):=0A=0AWe recommend ordering by Monday 16th November, to allow enough =
+time to receive delivery in time for Christmas 2026=0A=0AIf you are plannin=
+g on handing out club items at a training session, allow yourself enough fo=
+r your last sessions=0A=0AStart Designing Today(https://clicks.zapkam.com/e=
+mail/S-61613@1808760@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)        =
+    Request a Call Back(https://clicks.zapkam.com/email/S-61613@1808761@qWz=
+T-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0APerfect Gifts for Chris=
+tmas=0A=0A(https://clicks.zapkam.com/email/S-61613@1808762@qWzT-9z_C3egQlwr=
+iFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0AFrom jackets for the colder weather =
+to kit bags.=0A=0AWhen it comes to custom made clothing, we do it all.=0A=
+=0AView Our Team Wear Range(https://clicks.zapkam.com/email/S-61613@1808763=
+@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0APrefer a real perso=
+n? Visit our showrooms.=0A=0AWe have two showrooms available for you to vis=
+it. Simply get in touch with us to book an appointment at your preferred ve=
+nue below. Showroom visits are by appointment only.=0A=0A=0A=0AGloucestersh=
+ire Office:=0AUnit 12 Gabwell Business Centre=0AHardwicke=0AGloucester=0AGL=
+2 2JH=0ABerkshire Office:=0AUnit 7 Metro Centre=0AToutley Road=0AWokingham=
+=0ARG41 1QW=0ABook An Appointment(https://clicks.zapkam.com/email/S-61613@1=
+808764@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)            Book An Ap=
+pointment(https://clicks.zapkam.com/email/S-61613@1808765@qWzT-9z_C3egQlwri=
+Fq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0A=0A=0A=0A400+ Google Reviews=0A=0A=0A=
+=0A=E2=80=9CI placed a large football kit order in November on the run in t=
+o Christmas and Zapkam delivered a great looking kit in under 4 weeks. The =
+Zapkam team was quick and amenable in their responses and communicated clea=
+rly throughout. Very pleased with my service.=E2=80=9D=0A=0A=0A=E2=80=9CZap=
+kam were excellent with being helpful and delivering was very quick. We are=
+ all very happy with design and colours... We have had so many comments fro=
+m other clubs how nice it looks. Thank you Zapkam for our Tops, Jackets, Gi=
+lets, and Shower proof Jackets. All Very happy=E2=80=9C=0A=0A=0A(https://cl=
+icks.zapkam.com/email/S-61613@1808766@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1=
+ZRq23A.@)    (https://clicks.zapkam.com/email/S-61613@1808767@qWzT-9z_C3egQ=
+lwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)    (https://clicks.zapkam.com/email/S-616=
+13@1808768@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)=0A=0A=0ACopyright=
+ =C2=A9 2026 Zapkam Limited.=0ANot interested any longer? Click here to uns=
+ubscribe(https://clicks.zapkam.com/profile/S-61613@qWzT-9z_C3egQlwriFq0m8_Z=
+gDn_VDPCrnGC1ZRq23A.@1).=0APlease add Zapkam@e.zapkam.com to your address b=
+ook.=0A=0A=0A(https://clicks.zapkam.com/email/S-61613@1808769@qWzT-9z_C3egQ=
+lwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@)
+
+--b1_0d6f1b5eac91e95756be3b82b88de07d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">=0A<html lang=3D"en" xml:lang=3D"en" xmln=
+s=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head>=0A<meta http-e=
+quiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=0A    <!--[if=
+ gte mso 9]>=0A      <xml>=0A        <o:OfficeDocumentSettings>=0A         =
+ <o:AllowPNG />=0A          <o:PixelsPerInch>96</o:PixelsPerInch>=0A       =
+ </o:OfficeDocumentSettings>=0A      </xml>=0A    <![endif]--><meta name=3D=
+"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0">=0A    <ti=
+tle>Ordering for Christmas 2026 | Gift Ideas</title>=0A    <!--[if !mso 9]>=
+<!-->=0A    <style type=3D"text/css" id=3D"styles_webfonts">=0A=09    /* Go=
+ogle Web fonts */=0A        @import url(https://fonts.googleapis.com/css?fa=
+mily=3DAnton|Arvo:400,400italic,700,700italic|Bitter:400,700,400italic|Cabi=
+n:400,700,400italic,700italic|DM+Sans:400,400italic,700,700italic|Sora:400,=
+700|Lato:400,700,400italic,700italic|Merriweather:400italic,400,700,700ital=
+ic|Open+Sans:400italic,700italic,700,400|Playfair+Display:400,400italic,700=
+,700italic|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,7=
+00italic|Roboto:400,400italic,700,700italic|Old+Standard+TT:400,400italic,7=
+00,700italic|Kanit:400,400italic,700,700italic|Poppins:400,400italic,700,70=
+0italic|Titillium+Web:400,400italic,700,700italic);=0A    </style>=0A<!--<!=
+[endif]--> =09=0A=09<style type=3D"text/css" id=3D"styles_boilerplate">=0A=
+=09=09/* RESET */  =0A=09=09#outlook a {padding:0;} =0A=09=09body{width:100=
+% !important; -webkit-text-size-adjust:none; -ms-text-size-adjust:100%; mar=
+gin:0; padding:0; } =0A=09=09.ExternalClass {width:100%;}=0A=09=09.External=
+Class, .ExternalClass p, .ExternalClass span, .ExternalClass font, .Externa=
+lClass td, .ExternalClass div {line-height: 100%;}=0A=0A=09=09img {outline:=
+none; text-decoration:none; -ms-interpolation-mode: bicubic;} =0A=09=09a im=
+g {border:none;} =0A=09=09.image_fix {display:block;}=0A=09=09p {margin: 1e=
+m 0;}=0A=0A=09=09/*h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !importa=
+nt;}*/=0A=09=09h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:ac=
+tive, h6 a:active {=0A=09=09=09color: red !important;=0A=09=09}=0A=09=09h1 =
+a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:vi=
+sited {=0A=09=09=09color: purple !important; =0A=09=09}=0A=0A=09=09table td=
+ {border-collapse: collapse;}=0A=09=09table { border-collapse:collapse; mso=
+-table-lspace:0pt; mso-table-rspace:0pt; }=0A=09=09/*default to none, refle=
+ct this in email-designer-client-layout-page.js base_link_style */=0A=09=09=
+a {=0A=09=09=09color: #5BC0DE; =0A=09=09=09text-decoration: none;=0A=09=09}=
+=0A=0A=09=09/* END RESET */  =0A=0A=09=09/* IMAGE OPTIONS */  =0A=09=09img =
+{=0A=09=09=09display:block !important;=0A=09=09}=0A=0A=09=09/* Fix for Gmai=
+l Emoji */=0A=09=09img[data-emoji] { =0A=09=09=09display: inline !important=
+;=0A=09=09}=0A=09=09=0A=09=09img.fit_wh {  /* Stretch width and height to f=
+it */=0A=09=09=09width:100%;=0A=09=09=09height:100%;=0A=09=09}=0A=0A=09=09i=
+mg.fit_w { /* Width to fit and calculate height to maintain aspect ratio */=
+=0A=09=09=09width:100%;=0A=09=09=09height:auto;=0A=09=09}=0A=0A=09=09img.na=
+tural { /* Use images actual dimensions */=0A=09=09=09width:auto !important=
+;=0A=09=09=09height:auto !important;=0A=09=09}=0A=09=09/* END IMAGE OPTIONS=
+ */  =0A=0A=09=09#bg-table  {=0A=09=09=09margin:0; =0A=09=09=09padding:0; =
+=0A=09=09=09width:100% !important; =0A=09=09=09line-height: 1.25 !important=
+;=0A=09=09}=0A=09=0A=09=09.two_col_text table p:first-child {=0A=09=09=09ma=
+rgin-bottom:0;=0A=09=09}=0A=0A=09=09/* Hide disabled elements */=0A=09=09*[=
+class~=3Dhidden] {=0A=09=09    display : none !important;=0A=09=09    width=
+ : 0px !important;=0A=09=09    max-height: 0px !important;=0A=09=09    over=
+flow : none !important;=0A=09=09}=09=09=0A=09=0A=0A=0A=09=09/* RESPOND EMAI=
+L BELOW 580px */=0A=0A=09=09@media only screen and (max-width: 580px) {=0A=
+=0A=09=09=09table[class*=3D"social-follow-buttons__table"] td.social-follow=
+-button-wrapper { =0A=09=09=09=09padding:2px !important; =0A=09=09=09}=0A=
+=0A=09=09=09table[class*=3D"social-follow-buttons__table"] td.social-follow=
+-button-wrapper:first-child { =0A=09=09=09=09padding-left:0px !important;=
+=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"social-follow-buttons__table"] =
+td.social-follow-button-wrapper:last-child {=0A=09=09=09=09padding-right:0p=
+x !important;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"social-follow-butt=
+ons__table"] .social-follow-button-icon img {=0A=09=09=09=09width:40px;=0A=
+=09=09=09=09height:40px;=0A=09=09=09}=0A=0A=09=09=09*[class*=3D"mobile-only=
+"] {=0A=09            display: block !important;=0A=09            max-heigh=
+t: none !important;=0A=09      =09}=0A=0A=09=09=09*[class~=3Dmobile-show] {=
+=0A=09=09=09    display : block !important;=0A=09=09=09    width : auto !im=
+portant;=0A=09=09=09    max-height: inherit !important;=0A=09=09=09    over=
+flow : visible !important;=0A=09=09=09    float : none !important;=0A=09=09=
+=09}=0A=0A=09=09=09*[class~=3Dmobile-hide] {=0A=09=09=09    display : none =
+!important;=0A=09=09=09    width : 0px !important;=0A=09=09=09    max-heigh=
+t: 0px !important;=0A=09=09=09    overflow : none !important;=0A=09=09=09}=
+=0A=0A=09=09=09/* Gmail Full width Table Fix */=0A=09=09=09u ~ div {=0A    =
+            min-width: 100vw;=0A            }=0A=0A=09=09=09p, ul, ol { fon=
+t-size: 16px !important; }=0A=0A=09=09=09table[class=3D"content-table"]  { =
+/* Content Inner Table */=0A=09=09=09=09width:100% !important;=0A=09=09=09}=
+=0A=0A=09=09=09td[class=3D"content-table-td"]  { /* Content Inner Table TD =
+*/=0A=09=09=09=09padding:10px !important;=0A=09=09=09}=0A=0A=09=09=09table[=
+class*=3D"row"]  { /* Targets all rows/sections */=0A=09=09=09=09width:100%=
+ !important;=0A=09=09=09=09line-height:1.5;=0A=09=09=09}=0A=0A=09=09=09tabl=
+e[class*=3D"row"] td  {=0A=09=09=09=09width: 95% !important;=0A=09=09=09=09=
+display: block;=0A=09=09=09=09float: none !important;=0A=09=09=09=09padding=
+-left: 0px !important;=0A=09=09=09=09padding-right: 0px !important;=0A=09=
+=09=09=09margin:0 auto;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"row"] td=
+[class*=3D"td-mobile-100"]  {=0A=09=09=09=09width: 100% !important;=0A=09=
+=09=09=09padding:0 !important;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"r=
+ow"] td[class*=3D"td-mobile-text-align-left"]  {=0A=09=09=09=09text-align: =
+left !important;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"no_stack"] td  =
+{=0A=09=09=09=09width: auto !important;=0A=09=09=09=09display: table-cell !=
+important;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"no_stack"] td.spacer =
+ {=0A=09=09=09=09width: 20px !important;=0A=09=09=09}=0A=0A=09=09=09table[c=
+lass*=3D"row"] td table  {=0A=09=09=09=09width: 100% !important;=0A=09=09=
+=09}=0A=0A=09=09=09table[class*=3D"row"] table[align=3Dcenter] {=0A=09=09=
+=09=09text-align:center;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"row"] t=
+able[align=3Dright] {=0A=09=09=09=09text-align:right;=0A=09=09=09}=0A=0A=09=
+=09=09td[class=3D"spacer"]  { /* Adds correct vertical spacing between cell=
+ columns when in single col */=0A=09=09=09=09width: 100% !important;=0A=09=
+=09=09=09display: block !important;=0A=09=09=09=09float: none !important;=
+=0A=09=09=09=09height:10px !important;=0A=09=09=09}=0A=0A=09=09=09/* Reorde=
+ring content on mobile (Two Col - Text/Image) */=0A            tr[class*=3D=
+"flex-wrapper"]  {=0A                display: -webkit-box;=0A              =
+  -webkit-flex-direction: column;=0A                display: -moz-box;=0A  =
+              -moz-flex-direction: column;=0A                display: -ms-f=
+lexbox;=0A                -ms-flex-direction: column;=0A                dis=
+play: -webkit-flex;=0A                display: flex;=0A                flex=
+-direction: column;=0A            }=0A=0A            td[class*=3D"flex-item=
+-1"]  {=0A                -webkit-order: 1;=0A                order: 1;=0A =
+           }=0A=0A            td[class*=3D"flex-item-2"]  {=0A             =
+   -webkit-order: 2;=0A                order: 2;=0A            }=0A=0A=09=
+=09=09/* FOOTER LINKS */=0A=09=09=09td[class=3D"footer_link"] {=0A=09=09=09=
+=09text-align:center;=0A=09=09=09}=0A=0A=09=09=09td[class=3D"footer_link"] =
+a {=0A=09=09=09=09display:block;=0A=09=09=09=09width:100%;=0A=09=09=09=09fo=
+nt-size:18px;=0A=09=09=09=09line-height:28px;=0A=09=09=09=09padding:5px 0px=
+ 5px 0px;=0A=09=09=09=09margin:10px 0px 10px 0px;=0A=09=09=09}=0A=09=09=09/=
+* END FOOTER LINKS */=0A=0A=09=09=09/* HEADER */=0A=0A=09=09=09table[class*=
+=3D"header-logo-strapline"] .header-logo {=0A=09=09=09=09width:100%;=0A=09=
+=09=09=09height:auto;=0A=09=09=09}=0A=0A=09=09=09span[class*=3D"pre-header-=
+text"]   {=0A=09=09=09=09display:block;=0A=09=09=09=09float:left;=0A=09=09=
+=09=09width:100%;=0A=09=09=09}=0A=0A=09=09=09td[class*=3D"header_partial_sp=
+lit_text"] {=0A=09=09=09=09text-align: center;=0A=09=09=09}=0A=0A=09=09=09/=
+* END HEADER */=0A=0A=09=09=09/* FOOTER LOGO ADDRESS */=0A=09=09=09table[cl=
+ass*=3D"footer_logo"] {=0A=09=09=09=09text-align:center;=0A=09=09=09}=0A=0A=
+=09=09=09table[class*=3D"footer_address"] {=0A=09=09=09=09text-align:center=
+ !important;=0A=09=09=09}=0A=09=09=09/* END FOOTER LOGO ADDRESS */=0A=0A=09=
+=09=09/* HEADER STRAPLINES/SOCIAL */=0A=09=09=09table[class*=3D"header_stra=
+pline_social"] {=0A=09=09=09=09width:100% !important;=0A=09=09=09=09line-he=
+ight:1.5;=0A=09=09=09}=0A=0A=09=09=09td[class*=3D"header_strapline"] {=0A=
+=09=09=09=09float: left !important;=0A=09=09=09=09width: 100% !important;=
+=0A=09=09=09}=0A=0A=09=09=09td[class*=3D"header_social_buttons"] {=0A=09=09=
+=09=09float: left !important;=0A=09=09=09=09width: 100% !important;=0A=09=
+=09=09}=0A=0A=09=09=09td[class*=3D"header_social_buttons"] table {=0A=09=09=
+=09=09margin-left: auto;=0A=09=09=09=09margin-right: auto;=0A=09=09=09}=0A=
+=09=09=09/* END HEADER STRAPLINES/SOCIAL */=0A=0A=09=09=09/* MARGIN BOTTOM =
+FLEX ORDER */=0A=09=09=09td[class*=3D"mobile-margin-bottom"] {=0A=09=09=09 =
+   margin-bottom:20px !important;=0A=09=09=09}=0A=0A=09=09=09/* END MARGIN =
+BOTTOM FLEX ORDER */=0A=0A=09=09=09div[class~=3Dcta-button] {=0A=09=09=09  =
+  margin-bottom:20px;=0A=09=09=09}=0A=0A=09=09=09div[class~=3Dcta-button] a=
+ {=0A=09=09=09    width:100% !important;=0A=09=09=09}=0A=0A=09=09=09td[clas=
+s=3D"inner-cta"] a {=0A=09=09=09=09padding-top:15px;=0A=09=09=09=09padding-=
+bottom:15px;=0A=09=09=09}=0A=0A=09=09=09/* SOCIAL SHARE LINKS */=0A=09=09=
+=09table[class*=3D"social-share-links-table"]  {=0A=09=09=09=09width:100% !=
+important;=0A=09=09=09=09line-height:1.5;=0A=09=09=09}=0A=0A=09=09=09td[cla=
+ss*=3D"social-share-button-wrapper"] {=0A=09=09=09=09/*float:left;*/=0A=09=
+=09=09=09display:block;=0A=09=09=09=09width:100%;=0A=09=09=09=09margin-bott=
+om:5px;=0A=09=09=09}=0A=0A=09=09=09table[class*=3D"no_stack"] table[class*=
+=3D"social-share-buttons"], table[class*=3D"no_stack"] table[class*=3D"soci=
+al-share-button-style"] {=0A=09=09=09=09width:100%;=0A=09=09=09}=0A=0A=09=
+=09=09table[class*=3D"no_stack"] td[class*=3D"social-share-button-wrapper"]=
+ {=0A=09=09=09=09float:left;=0A=09=09=09=09width:48% !important;=0A=09=09=
+=09=09padding-right:1.5% !important;=0A=09=09=09}=0A=0A=09=09=09table[class=
+*=3D"no_stack_no_label"] td[class*=3D"social-share-button-wrapper"] {=0A=09=
+=09=09=09width:auto !important;=0A=09=09=09=09padding-right:0 !important;=
+=0A=09=09=09=09display:block !important;=0A=09=09=09}=0A=0A=09=09=09table[c=
+lass*=3D"no_stack_no_label"] table[class*=3D"social-share-buttons"] {=0A=09=
+=09=09=09width: auto !important;=0A=09=09=09}=0A=0A=09=09=09td[class*=3D"so=
+cial-follow-button-wrapper"] {=0A=09=09=09=09float:left;=0A=09=09=09}=0A=0A=
+=09=09=09table[class*=3D"social-follow-header"]  {=0A=09=09=09=09float:none=
+ !important;=0A=09=09=09}=0A=0A=09=09=09table[class=3D"social-follow-button=
+"] td:first-child  {=0A=09=09=09=09padding: 5px 8px 5px 7px !important;=0A=
+=09=09=09}=0A=09=09=09/* END SOCIAL SHARE LINKS */=0A=0A=09=09=09/* END RES=
+POND EMAIL BELOW 580px */=0A=0A=09=09}=0A=0A=09=09/* END RESPOND EMAIL BELO=
+W 580px */=0A=0A=09=0A=0Aa {color: #ffffff; text-decoration: none; font-wei=
+ght: normal;}=0A=0A</style>=0A =0A=09=0A=0A  =0A<!--[if mso]>=0A<xml>=0A=09=
+<w:WordDocument xmlns:w=3D"urn:schemas-microsoft-com:office:word">=0A=09=09=
+<w:DontUseAdvancedTypographyReadingMail/>=0A=09</w:WordDocument>=0A</xml>=
+=0A<![endif]-->=0A</head>=0A  <body>                                     =
+=0A    =0A=0A    <!-- Wrapper/Container Table -->=0A    <table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" id=3D"bg-table" style=3D"font-family:=
+ Lato, Tahoma, sans-serif; color: rgb(255, 255, 255); font-size: 16px; back=
+ground-color: rgb(255, 255, 255);" width=3D"100%" role=3D"presentation">=0A=
+      <tbody><tr>=0A        <td valign=3D"top" align=3D"center">=0A        =
+  <!-- Content Table -->=0A          <table class=3D"content-table" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center" width=3D"100%" r=
+ole=3D"presentation" data-blank-info=3D"blank_template_info_0" style=3D"bor=
+der-color: rgb(128, 128, 128); border-style: none; border-width: 0px; backg=
+round-color: rgb(255, 255, 255); border-radius: 0px;">=0A            <tbody=
+><tr>=0A              <td valign=3D"top" class=3D"content-table-td content-=
+table-full-width-td" style=3D"padding: 0px;" align=3D"center"><table class=
+=3D"section-full-width-wrapper" width=3D"100%" style=3D"background-color: r=
+gb(232, 17, 14);" bgcolor=3D"#e8110e"><tbody><tr><td class=3D"section-full-=
+width-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Full Width Ima=
+ge -->=0A=09=09=09=09=09=09<table width=3D"600" class=3D"row-tb_100 row_ful=
+l_width" style=3D"width: 600px; max-width: 600px; background-color: rgb(232=
+, 17, 14); border-radius: 0px; border-color: rgb(128, 128, 128); border-wid=
+th: 0px; border-collapse: unset; border-style: none;" role=3D"presentation"=
+ bgcolor=3D"#e8110e" align=3D"center">=0A=09=09=09=09=09=09=09<tbody><tr>=
+=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 10px; font-size: 16px; col=
+or: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=
+=09=09=09=09=09=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=
+=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-size: 16px; color: rgb(2=
+55, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=
+=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=
+=09=09=09=09=09=09=09=09<td style=3D"font-size: 16px; color: rgb(255, 255, =
+255); font-family: Lato, Tahoma, sans-serif;" valign=3D"middle" align=3D"ce=
+nter">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"https://clicks.zapk=
+am.com/email/S-61613@1808744@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@"=
+ target=3D"_blank"><img width=3D"100%" class=3D"fit_w" src=3D"https://mmana=
+gers3shared.cachefly.net/bbxf60cgrf/email_assets/16907/revisions/4/580xunli=
+mited___white_zapkam.png?icfid=3D61448" alt=3D"" title=3D""></a>=0A=09=09=
+=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=
+=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</=
+td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=
+=09=09=09=09=09<!-- END Full Width Image -->=0A=09=09=09=09=09</div></td></=
+tr></tbody>=0A</table><table class=3D"section-full-width-wrapper" width=3D"=
+100%" style=3D"background-color: rgb(255, 255, 255);" bgcolor=3D"#ffffff"><=
+tbody><tr><td class=3D"section-full-width-td" style=3D"padding:0px;"><div>=
+=0A=09=09=09=09=09<!-- Full Width Image -->=0A=09=09=09=09=09=09<table widt=
+h=3D"600" class=3D"row-tb_100 row_full_width" style=3D"width: 600px; max-wi=
+dth: 600px; background-color: rgb(255, 255, 255); border-radius: 0px; borde=
+r-color: rgb(48, 155, 66); border-width: 0px; border-collapse: unset; borde=
+r-style: none;" role=3D"presentation" align=3D"center" bgcolor=3D"#ffffff">=
+=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"=
+padding: 10px; font-size: 16px; color: rgb(255, 255, 255); font-family: Lat=
+o, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=09=09=09=
+=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=
+=3D"font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, =
+sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font=
+-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-ser=
+if;" valign=3D"middle" align=3D"center">=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09<a link-description=3D"" href=3D"https://clicks.zapkam.com/email/S-61=
+613@1808745@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_blank=
+"><img width=3D"100%" class=3D"fit_w" src=3D"https://mmanagers3shared.cache=
+fly.net/bbxf60cgrf/email_assets/16907/revisions/4/580xunlimited___zapkam_wo=
+kingham12.jpg?icfid=3D61448" alt=3D"" title=3D""></a>=0A=09=09=09=09=09=09=
+=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=
+=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=
+=09<!-- END Full Width Image -->=0A=09=09=09=09=09</div></td></tr></tbody>=
+=0A</table><table class=3D"section-full-width-wrapper" width=3D"100%" style=
+=3D"background-color: rgb(255, 255, 255);" bgcolor=3D"#ffffff"><tbody><tr><=
+td class=3D"section-full-width-td" style=3D"padding:0px;"><div>=0A=09=09=09=
+=09=09<!-- Editable Text -->=0A=09=09=09=09=09=09<table width=3D"600" class=
+=3D"row-tb_100 row_full_width" style=3D"width: 600px; max-width: 600px; bor=
+der-radius: 0px; border-color: rgb(128, 128, 128); border-width: 0px; borde=
+r-collapse: unset; border-style: none; background-color: rgb(255, 255, 255)=
+;" role=3D"presentation" bgcolor=3D"#ffffff" align=3D"center">=0A=09=09=09=
+=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 10p=
+x 20px; font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Taho=
+ma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=09=09=09=09=09=
+=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"fon=
+t-family: Lato, Tahoma, sans-serif; font-size: 16px; color: rgb(255, 255, 2=
+55);" align=3D"left">=0A=09=09=09=09=09=09=09=09=09=09=09=09<div class=3D""=
+><p style=3D"text-align: center;"><strong><span style=3D'font-size: 26px; c=
+olor: rgb(0, 0, 0); font-family: "Helvetica Neue", Helvetica, Arial, sans-s=
+erif;'>Ordering for Christmas 2026</span></strong></p><p style=3D"text-alig=
+n: center;"><a href=3D"https://clicks.zapkam.com/email/S-61613@1808746@qWzT=
+-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_blank"><span style=3D=
+'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 20=
+px;'><strong><span style=3D"color: rgb(51, 153, 255);">Recommended ordering=
+ date: by Monday 16th November</span></strong></span></a>:</p><p style=3D"t=
+ext-align: center;"><span style=3D'font-size: 19px; color: rgb(0, 0, 0); fo=
+nt-family: "Helvetica Neue", Helvetica, Arial, sans-serif;'>We recommend or=
+dering by Monday 16th November, to allow enough time to receive delivery in=
+ time for Christmas 2026</span></p><p style=3D"text-align: center;"><span s=
+tyle=3D'font-size: 19px; color: rgb(0, 0, 0); font-family: "Helvetica Neue"=
+, Helvetica, Arial, sans-serif;'>If you are planning on handing out club it=
+ems at a training session, allow yourself enough for your last sessions</sp=
+an></p></div>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=
+=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=0A=09=
+=09=09=09=09=09=09=09=09 =0A=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A=
+</table>=0A=09=09=09=09=09<!-- END Editable Text -->=0A=09=09=09=09=09</div=
+></td></tr></tbody>=0A</table><table class=3D"section-full-width-wrapper" w=
+idth=3D"100%" style=3D"background-color: rgb(255, 255, 255);" bgcolor=3D"#f=
+fffff"><tbody><tr><td class=3D"section-full-width-td" style=3D"padding:0px;=
+"><div>=0A=09=09=09=09=09<!-- Half/Half Text -->=0A=09=09=09=09=09=09<table=
+ width=3D"600" border=3D"0" class=3D"row-tb_4060 row_full_width" style=3D"w=
+idth: 600px; max-width: 600px; background-color: rgb(255, 255, 255); border=
+-radius: 0px; border-color: rgb(255, 255, 255); border-width: 0px; border-c=
+ollapse: unset; border-style: none;" role=3D"presentation" align=3D"center"=
+ bgcolor=3D"#ffffff">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=
+=09=09=09<td style=3D"padding: 10px; font-size: 16px; color: rgb(255, 255, =
+255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=
+=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=
+=09=09=09=09=09<td width=3D"280" style=3D"font-size: 16px; color: rgb(255, =
+255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" alig=
+n=3D"center" style=3D"border-collapse: separate; border-radius: 5px; backgr=
+ound-color: rgb(26, 156, 6); width: 100%; min-width: 100%; padding-top: 10p=
+x; padding-bottom: 10px; border-style: none; border-color: rgb(205, 222, 19=
+9); border-width: 0px; box-shadow: none;" role=3D"presentation" width=3D"10=
+0%">=0A=09=09=09=09=09=09=09=09                    <tbody>=0A=09=09=09=09=
+=09=09=09=09                        <tr>=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09<td align=3D"center" valign=3D"middle" style=3D"font-size: 1=
+6px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a title=3D"Click Here" tar=
+get=3D"_blank" style=3D'color: rgb(255, 255, 255); font-size: 18px; font-we=
+ight: bold; text-align: center; text-decoration: none; width: 100%; display=
+: inline-block; text-size-adjust: none; line-height: normal; font-family: "=
+Helvetica Neue", Helvetica, Arial, sans-serif;' href=3D"https://clicks.zapk=
+am.com/email/S-61613@1808747@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@"=
+>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"color=
+: rgb(255, 255, 255);">Start Designing Today</span>=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09</a>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09</td>=0A=09=09=09=09=09=09=09=09                        </tr>=0A=09=
+=09=09=09=09=09=09=09                    </tbody>=0A=09=09=09=09=09=09=09=
+=09                </table>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td class=3D"spacer" width=3D"20" style=3D"font-size: =
+16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;"></=
+td>=0A=09=09=09=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"font-size=
+: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" align=3D"center" style=3D"border-collapse: separate; bo=
+rder-radius: 5px; background-color: rgb(26, 156, 6); width: 100%; min-width=
+: 100%; padding-top: 10px; padding-bottom: 10px; border-style: none; border=
+-color: rgb(255, 255, 255); border-width: 0px; box-shadow: none;" role=3D"p=
+resentation" width=3D"100%">=0A=09=09=09=09=09=09=09=09                    =
+<tbody>=0A=09=09=09=09=09=09=09=09                        <tr>=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"middle" =
+style=3D"font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tah=
+oma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a tit=
+le=3D"Click Here" target=3D"_blank" style=3D'color: rgb(255, 255, 255); fon=
+t-size: 18px; font-weight: bold; text-align: center; text-decoration: none;=
+ width: 100%; display: inline-block; text-size-adjust: none; line-height: n=
+ormal; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;' href=
+=3D"https://clicks.zapkam.com/email/S-61613@1808748@qWzT-9z_C3egQlwriFq0m8_=
+ZgDn_VDPCrnGC1ZRq23A.@">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09<span style=3D"color: rgb(255, 255, 255);">Request a Call Back</span>=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</a>=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09                =
+        </tr>=0A=09=09=09=09=09=09=09=09                    </tbody>=0A=09=
+=09=09=09=09=09=09=09                </table>=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=
+</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</=
+tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</=
+tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Half/=
+Half Text -->=0A=09=09=09=09=09</div></td></tr></tbody>=0A</table><table cl=
+ass=3D"section-full-width-wrapper" width=3D"100%" style=3D"background-color=
+: rgb(202, 230, 198);" bgcolor=3D"#cae6c6"><tbody><tr><td class=3D"section-=
+full-width-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Editable =
+Text -->=0A=09=09=09=09=09=09<table width=3D"600" class=3D"row-tb_100 row_f=
+ull_width" style=3D"width: 600px; max-width: 600px; border-radius: 0px; bor=
+der-color: rgb(128, 128, 128); border-width: 0px; border-collapse: unset; b=
+order-style: none; background-color: rgb(202, 230, 198);" role=3D"presentat=
+ion" align=3D"center" bgcolor=3D"#cae6c6">=0A=09=09=09=09=09=09=09<tbody><t=
+r>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 10px 20px 0px; font-size=
+: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=
+=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody>=
+<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-family: Lato, Tah=
+oma, sans-serif; font-size: 16px; color: rgb(255, 255, 255);" align=3D"left=
+">=0A=09=09=09=09=09=09=09=09=09=09=09=09<div class=3D""><p style=3D"text-a=
+lign: center;"><span style=3D"color: rgb(0, 0, 0);"><strong><span style=3D'=
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 22p=
+x;'>Perfect Gifts for Christmas</span></strong></span></p></div>=0A=09=09=
+=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=
+=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=0A=09=09=09=09=09=09=09=
+=09=09 =0A=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09</td>=0A=09=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=
+=09=09<!-- END Editable Text -->=0A=09=09=09=09=09</div></td></tr></tbody>=
+=0A</table><table class=3D"section-full-width-wrapper" width=3D"100%" style=
+=3D"background-color: rgb(202, 230, 198);" bgcolor=3D"#cae6c6"><tbody><tr><=
+td class=3D"section-full-width-td" style=3D"padding:0px;"><div>=0A=09=09=09=
+=09=09<!-- Full Width Image -->=0A=09=09=09=09=09=09<table width=3D"600" cl=
+ass=3D"row-tb_100 row_full_width" style=3D"width: 600px; max-width: 600px; =
+background-color: rgb(202, 230, 198); border-radius: 0px; border-color: rgb=
+(128, 128, 128); border-width: 0px; border-collapse: unset; border-style: n=
+one;" role=3D"presentation" align=3D"center" bgcolor=3D"#cae6c6">=0A=09=09=
+=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: =
+10px; font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma=
+, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=09=09=09=09=09=09=
+=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-s=
+ize: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif=
+;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=
+=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=
+=09=09<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-size: 16px;=
+ color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;" valign=
+=3D"middle" align=3D"center">=0A=09=09=09=09=09=09=09=09=09=09=09=09<a href=
+=3D"https://clicks.zapkam.com/email/S-61613@1808749@qWzT-9z_C3egQlwriFq0m8_=
+ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_blank"><img width=3D"100%" class=3D"fit_=
+w" src=3D"https://mmanagers3shared.cachefly.net/bbxf60cgrf/email_assets/169=
+07/revisions/4/580xunlimited___jackets_copy.png?icfid=3D61448" alt=3D"" tit=
+le=3D""></a>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=
+=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</=
+tbody>=0A</table>=0A=09=09=09=09=09<!-- END Full Width Image -->=0A=09=09=
+=09=09=09</div></td></tr></tbody>=0A</table><table class=3D"section-full-wi=
+dth-wrapper" width=3D"100%" style=3D"background-color: rgb(202, 230, 198);"=
+ bgcolor=3D"#cae6c6"><tbody><tr><td class=3D"section-full-width-td" style=
+=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Editable Text -->=0A=09=09=09=
+=09=09=09<table width=3D"600" class=3D"row-tb_100 row_full_width" style=3D"=
+width: 600px; max-width: 600px; border-radius: 0px; border-color: rgb(128, =
+128, 128); border-width: 0px; border-collapse: unset; border-style: none; b=
+ackground-color: rgb(202, 230, 198);" role=3D"presentation" bgcolor=3D"#cae=
+6c6" align=3D"center">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=
+=09=09=09<td style=3D"padding: 10px 20px; font-size: 16px; color: rgb(255, =
+255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=
+=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=
+=09=09=09=09=09=09<td style=3D"font-family: Lato, Tahoma, sans-serif; font-=
+size: 16px; color: rgb(255, 255, 255);" align=3D"left">=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09<div class=3D""><p style=3D"text-align: center;"><span=
+ style=3D'font-size: 19px; color: rgb(0, 0, 0); font-family: "Helvetica Neu=
+e", Helvetica, Arial, sans-serif;'>From jackets for the colder weather to k=
+it bags</span><span style=3D'font-size: 19px; color: rgb(0, 0, 0); font-fam=
+ily: "Helvetica Neue", Helvetica, Arial, sans-serif;'>.</span></p><p style=
+=3D"text-align: center;"><span style=3D'font-size: 19px; color: rgb(0, 0, 0=
+); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;'>When it co=
+mes to custom made clothing, we do it all.</span></p></div>=0A=09=09=09=09=
+=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=
+=09=09=09=09=09=09=09</tbody>=0A</table>=0A=0A=09=09=09=09=09=09=09=09=09 =
+=0A=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=09=
+=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=
+<!-- END Editable Text -->=0A=09=09=09=09=09</div></td></tr></tbody>=0A</ta=
+ble><table class=3D"section-full-width-wrapper" width=3D"100%" style=3D"bac=
+kground-color: rgb(202, 230, 198);" bgcolor=3D"#cae6c6"><tbody><tr><td clas=
+s=3D"section-full-width-td" style=3D"padding:0px;"><div>=0A  <!-- CTA -->=
+=0A  <table width=3D"600" border=3D"0" class=3D"row-tb_100 row_full_width" =
+style=3D"width: 600px; max-width: 600px; background-color: rgb(202, 230, 19=
+8); border-radius: 0px; border-color: rgb(255, 255, 255); border-width: 0px=
+; border-collapse: unset; border-style: none;" role=3D"presentation" align=
+=3D"center" bgcolor=3D"#cae6c6">=0A    <tbody><tr>=0A      <td style=3D"pad=
+ding: 5px; font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, T=
+ahoma, sans-serif;" align=3D"center">=0A        <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"border-collapse: sep=
+arate; border-radius: 5px; background-color: rgb(0, 0, 0); min-width: 50%; =
+width: 50%; padding-top: 10px; padding-bottom: 10px; border-style: none; bo=
+rder-color: rgb(128, 128, 128); border-width: 0px; box-shadow: none;" role=
+=3D"presentation" width=3D"50%">=0A          <tbody>=0A            <tr>=0A =
+             <td align=3D"center" valign=3D"middle" style=3D"font-size: 16p=
+x; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A  =
+              <a title=3D"Click Here" target=3D"_blank" style=3D'color: rgb=
+(255, 255, 255); font-size: 18px; font-weight: bold; text-align: center; te=
+xt-decoration: none; width: 100%; display: inline-block; text-size-adjust: =
+none; line-height: normal; font-family: "Helvetica Neue", Helvetica, Arial,=
+ sans-serif;' href=3D"https://clicks.zapkam.com/email/S-61613@1808750@qWzT-=
+9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@">=0A                  <span style=
+=3D"color: rgb(255, 255, 255);">View Our Team Wear Range</span>=0A         =
+       </a>=0A              </td>=0A            </tr>=0A          </tbody>=
+=0A        </table>=0A      </td>=0A    </tr>=0A=0A    <tr>=0A      <td sty=
+le=3D"padding-top: 5px; font-size: 16px; color: rgb(255, 255, 255); font-fa=
+mily: Lato, Tahoma, sans-serif;"></td>=0A    </tr>=0A  </tbody>=0A</table>=
+=0A  <!-- END CTA -->=0A</div></td></tr></tbody>=0A</table><table class=3D"=
+section-full-width-wrapper" width=3D"100%" style=3D"background-color: rgb(0=
+, 0, 0);" bgcolor=3D"#000000"><tbody><tr><td class=3D"section-full-width-td=
+" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Editable Text -->=0A=
+=09=09=09=09=09=09<table width=3D"600" class=3D"row-tb_100 row_full_width" =
+style=3D"width: 600px; max-width: 600px; background-color: rgb(0, 0, 0); bo=
+rder-radius: 0px; border-color: rgb(128, 128, 128); border-width: 0px; bord=
+er-collapse: unset; border-style: none;" role=3D"presentation" bgcolor=3D"#=
+000000" align=3D"center">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=
+=09=09=09=09<td style=3D"padding: 10px 20px; font-size: 16px; color: rgb(25=
+5, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=
+=09=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td style=3D"font-family: Lato, Tahoma, sans-serif; fo=
+nt-size: 16px; color: rgb(255, 255, 255);" align=3D"left">=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09<div class=3D""><p><span style=3D"font-size: 20px;"=
+><strong><span style=3D"font-family: Helvetica Neue,Helvetica,Arial,sans-se=
+rif;">Prefer a real person? Visit our showrooms.</span></strong></span></p>=
+<p><span style=3D"font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">=
+We have two showrooms available for you to visit. Simply get in touch with =
+us to book an appointment at your preferred venue below. Showroom visits ar=
+e <strong>by appointment only</strong>.</span></p></div>=0A=09=09=09=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=
+=09=09=09=09=09=09</tbody>=0A</table>=0A=0A=09=09=09=09=09=09=09=09=09 =0A=
+=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=
+=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-=
+- END Editable Text -->=0A=09=09=09=09=09</div></td></tr></tbody>=0A</table=
+><table class=3D"section-full-width-wrapper" width=3D"100%" style=3D"backgr=
+ound-color: rgb(0, 0, 0);" bgcolor=3D"#000000"><tbody><tr><td class=3D"sect=
+ion-full-width-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Half/=
+Half Images -->=0A=09=09=09=09=09=09<table width=3D"600" border=3D"0" class=
+=3D"row-tb_4060 row_full_width" style=3D"width: 600px; max-width: 600px; bo=
+rder-radius: 0px; border-width: 0px; border-collapse: unset; border-style: =
+none; background-color: rgb(0, 0, 0); border-color: rgb(128, 128, 128);" ro=
+le=3D"presentation" bgcolor=3D"#000000" align=3D"center">=0A=09=09=09=09=09=
+=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 10px 20px=
+; font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sa=
+ns-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=09=09=09=09=09=09=09=
+=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td width=3D"270" alig=
+n=3D"left" style=3D"font-size: 16px; color: rgb(255, 255, 255); font-family=
+: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09<img width=3D"270" class=3D"fit_w" src=3D"=
+https://mmanagers3shared.cachefly.net/bbxf60cgrf/email_assets/16907/revisio=
+ns/4/640xunlimited___gloucestershire.jpg?icfid=3D61448" alt=3D"" title=3D""=
+>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09=
+=09<td class=3D"spacer" width=3D"20" style=3D"font-size: 16px; color: rgb(2=
+55, 255, 255); font-family: Lato, Tahoma, sans-serif;"></td>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td width=3D"270" align=3D"left" style=3D"font-size: 1=
+6px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+<img width=3D"270" class=3D"fit_w" src=3D"https://mmanagers3shared.cachefly=
+.net/bbxf60cgrf/email_assets/16907/revisions/4/640xunlimited___berkshire.jp=
+g?icfid=3D61448" alt=3D"" title=3D"">=0A=09=09=09=09=09=09=09=09=09=09=09</=
+td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tb=
+ody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr=
+>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Half/Ha=
+lf Images -->=0A=09=09=09=09=09</div></td></tr></tbody>=0A</table><table cl=
+ass=3D"section-full-width-wrapper" width=3D"100%" style=3D"background-color=
+: rgb(0, 0, 0);" bgcolor=3D"#000000"><tbody><tr><td class=3D"section-full-w=
+idth-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Half/Half Text =
+-->=0A=09=09=09=09=09=09<table width=3D"600" border=3D"0" class=3D"row-tb_4=
+060 row_full_width" style=3D"width: 600px; max-width: 600px; border-radius:=
+ 0px; border-color: rgb(128, 128, 128); border-width: 0px; border-collapse:=
+ unset; border-style: none; background-color: rgb(0, 0, 0);" role=3D"presen=
+tation" bgcolor=3D"#000000" align=3D"center">=0A=09=09=09=09=09=09=09<tbody=
+><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 10px 20px; font-size:=
+ 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=
+=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody>=
+<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"font-fam=
+ily: Lato, Tahoma, sans-serif; font-size: 16px; color: rgb(255, 255, 255);"=
+ align=3D"left">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09<div class=3D""><pre style=3D"text-align: left;"><span=
+ style=3D"font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>=
+Gloucestershire Office:</strong></span><br><span style=3D"font-family: Helv=
+etica Neue,Helvetica,Arial,sans-serif;">Unit 12 Gabwell Business Centre<br>=
+Hardwicke<br>Gloucester<br>GL2 2JH</span></pre></div>=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=
+=09=09=09=09=09=09=09=09=09<td class=3D"spacer" width=3D"20" style=3D"font-=
+size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-seri=
+f;"></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"fon=
+t-family: Lato, Tahoma, sans-serif; font-size: 16px; color: rgb(255, 255, 2=
+55);" align=3D"left">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09<div class=3D""><pre style=3D"text-align: left;"><s=
+pan style=3D"font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><stro=
+ng>Berkshire Office:</strong></span><br><span style=3D"font-family: Helveti=
+ca Neue,Helvetica,Arial,sans-serif;">Unit 7 Metro Centre<br>Toutley Road<br=
+>Wokingham<br>RG41 1QW</span></pre></div>=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=
+=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</=
+tbody>=0A</table>=0A=09=09=09=09=09<!-- END Half/Half Text -->=0A=09=09=09=
+=09=09</div></td></tr></tbody>=0A</table><table class=3D"section-full-width=
+-wrapper" width=3D"100%" style=3D"background-color: rgb(0, 0, 0);" bgcolor=
+=3D"#000000"><tbody><tr><td class=3D"section-full-width-td" style=3D"paddin=
+g:0px;"><div>=0A=09=09=09=09=09<!-- Half/Half Text -->=0A=09=09=09=09=09=09=
+<table width=3D"600" border=3D"0" class=3D"row-tb_4060 row_full_width" styl=
+e=3D"width: 600px; max-width: 600px; background-color: rgb(0, 0, 0); border=
+-radius: 0px; border-color: rgb(128, 128, 128); border-width: 0px; border-c=
+ollapse: unset; border-style: none;" role=3D"presentation" align=3D"center"=
+ bgcolor=3D"#000000">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=
+=09=09=09<td style=3D"padding: 10px 20px 30px; font-size: 16px; color: rgb(=
+255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=
+=09=09=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=
+=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"font-size: 16px; color: =
+rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" style=3D"border-collapse: separate; border-radius: =
+5px; background-color: rgb(51, 153, 255); width: 100%; min-width: 100%; pad=
+ding-top: 10px; padding-bottom: 10px; border-style: none; border-color: rgb=
+(128, 128, 128); border-width: 0px; box-shadow: none;" role=3D"presentation=
+" width=3D"100%">=0A=09=09=09=09=09=09=09=09                    <tbody>=0A=
+=09=09=09=09=09=09=09=09                        <tr>=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"middle" style=3D"=
+font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans=
+-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a title=3D"Cli=
+ck Here" target=3D"_blank" style=3D'color: rgb(255, 255, 255); font-size: 1=
+8px; font-weight: bold; text-align: center; text-decoration: none; width: 1=
+00%; display: inline-block; text-size-adjust: none; line-height: normal; fo=
+nt-family: "Helvetica Neue", Helvetica, Arial, sans-serif;' href=3D"https:/=
+/clicks.zapkam.com/email/S-61613@1808751@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrn=
+GC1ZRq23A.@">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<span st=
+yle=3D"color: rgb(255, 255, 255);">=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09Book An Appointment</span>=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09</a>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</=
+td>=0A=09=09=09=09=09=09=09=09                        </tr>=0A=09=09=09=09=
+=09=09=09=09                    </tbody>=0A=09=09=09=09=09=09=09=09        =
+        </table>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=
+=09=09=09=09<td class=3D"spacer" width=3D"20" style=3D"font-size: 16px; col=
+or: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;"></td>=0A=09=
+=09=09=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"font-size: 16px; c=
+olor: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" align=3D"center" style=3D"border-collapse: separate; border-radi=
+us: 5px; background-color: rgb(51, 153, 255); width: 100%; min-width: 100%;=
+ padding-top: 10px; padding-bottom: 10px; border-style: none; border-color:=
+ rgb(128, 128, 128); border-width: 0px; box-shadow: none;" role=3D"presenta=
+tion" width=3D"100%">=0A=09=09=09=09=09=09=09=09                    <tbody>=
+=0A=09=09=09=09=09=09=09=09                        <tr>=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"middle" style=
+=3D"font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, =
+sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a title=3D=
+"Click Here" target=3D"_blank" style=3D'color: rgb(255, 255, 255); font-siz=
+e: 18px; font-weight: bold; text-align: center; text-decoration: none; widt=
+h: 100%; display: inline-block; text-size-adjust: none; line-height: normal=
+; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;' href=3D"htt=
+ps://clicks.zapkam.com/email/S-61613@1808752@qWzT-9z_C3egQlwriFq0m8_ZgDn_VD=
+PCrnGC1ZRq23A.@">=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<spa=
+n style=3D"color: rgb(255, 255, 255);">=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09Book An Appointment</span>=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09</a>=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09</td>=0A=09=09=09=09=09=09=09=09                        </tr>=0A=09=09=
+=09=09=09=09=09=09                    </tbody>=0A=09=09=09=09=09=09=09=09  =
+              </table>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=
+=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Half/Half Text -->=0A=
+=09=09=09=09=09</div></td></tr></tbody>=0A</table><table class=3D"section-f=
+ull-width-wrapper" width=3D"100%" style=3D"background-color: rgb(255, 255, =
+255);" bgcolor=3D"#ffffff"><tbody><tr><td class=3D"section-full-width-td" s=
+tyle=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Spacer -->=0A=09=09=09=09=
+=09=09<table width=3D"600" class=3D"row-tb_100 row_full_width" style=3D"wid=
+th: 600px; max-width: 600px; background-color: rgb(255, 255, 255); border-r=
+adius: 0px; border-color: rgb(128, 128, 128); border-width: 0px; border-col=
+lapse: unset; border-style: none;" role=3D"presentation" bgcolor=3D"#ffffff=
+" align=3D"center">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=
+=09=09<td style=3D"padding: 10px; font-size: 16px; color: rgb(255, 255, 255=
+); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=
+=09=09=09<td width=3D"580" style=3D"padding-top: 10px !important; font-size=
+: 16px; font-family: Lato, Tahoma, sans-serif; color: rgb(255, 255, 255);">=
+=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09<=
+/tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=
+=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</t=
+able>=0A=09=09=09=09=09<!-- END Spacer -->=0A=09=09=09=09=09</div></td></tr=
+></tbody>=0A</table><table class=3D"section-full-width-wrapper" width=3D"10=
+0%" style=3D"background-color: rgb(255, 255, 255);" bgcolor=3D"#ffffff"><tb=
+ody><tr><td class=3D"section-full-width-td" style=3D"padding:0px;"><div>=0A=
+=09=09=09=09=09<!-- Full Width Image -->=0A=09=09=09=09=09=09<table width=
+=3D"600" class=3D"row-tb_100 row_full_width" style=3D"width: 600px; max-wid=
+th: 600px; background-color: rgb(255, 255, 255); border-radius: 0px; border=
+-color: rgb(128, 128, 128); border-width: 0px; border-collapse: unset; bord=
+er-style: none;" role=3D"presentation" bgcolor=3D"#ffffff" align=3D"center"=
+>=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D=
+"padding: 10px 0px; font-size: 16px; color: rgb(255, 255, 255); font-family=
+: Lato, Tahoma, sans-serif;" class=3D"td-mobile-100">=0A=09=09=09=09=09=09=
+=09=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=
+=09=09=09=09=09=09=09<td style=3D"font-size: 16px; color: rgb(255, 255, 255=
+); font-family: Lato, Tahoma, sans-serif;" class=3D"td-mobile-100">=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=
+=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09=09<tr>=
+=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-size: 16px; color: rg=
+b(255, 255, 255); font-family: Lato, Tahoma, sans-serif;" class=3D"td-mobil=
+e-100">=0A=09=09=09=09=09=09=09=09=09=09=09=09<img width=3D"100%" class=3D"=
+fit_w" src=3D"https://mmanagers3shared.cachefly.net/bbxf60cgrf/email_assets=
+/16907/revisions/4/600xunlimited___socials_grid.jpg?icfid=3D61448" alt=3D""=
+ title=3D"">=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=
+=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</=
+tbody>=0A</table>=0A=09=09=09=09=09<!-- END Full Width Image -->=0A=09=09=
+=09=09=09</div></td></tr></tbody>=0A</table><table class=3D"section-full-wi=
+dth-wrapper" width=3D"100%" bgcolor=3D""><tbody><tr><td class=3D"section-fu=
+ll-width-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Full Width =
+Image -->=0A=09=09=09=09=09=09<table width=3D"600" class=3D"row-tb_100 row_=
+full_width" style=3D"width: 600px; max-width: 600px; border-radius: 0px; bo=
+rder-color: rgb(128, 128, 128); border-width: 0px; border-collapse: unset; =
+border-style: none;" role=3D"presentation" align=3D"center" bgcolor=3D"">=
+=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"=
+padding: 20px 10px 0px; font-size: 16px; color: rgb(255, 255, 255); font-fa=
+mily: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=
+=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<=
+td style=3D"font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, =
+Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=
+=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=
+=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=
+=3D"font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, =
+sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=09=09<img width=3D"100%" cla=
+ss=3D"fit_w" src=3D"https://mmanagers3shared.cachefly.net/bbxf60cgrf/email_=
+assets/16907/revisions/4/580xunlimited___5_stars_copy.png?icfid=3D61448" al=
+t=3D"" title=3D"">=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=
+=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Full Width Image -->=0A=
+=09=09=09=09=09</div></td></tr></tbody>=0A</table><div>=0A=09=09=09=09=09<!=
+-- Editable Text -->=0A=09=09=09=09=09=09<table width=3D"600" class=3D"row-=
+tb_100 row_full_width" style=3D"width: 600px; max-width: 600px; border-radi=
+us: 0px; border-color: rgb(128, 128, 128); border-width: 0px; border-collap=
+se: unset; border-style: none;" role=3D"presentation" align=3D"center" bgco=
+lor=3D"">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td =
+style=3D"padding: 0px 10px; font-size: 16px; color: rgb(255, 255, 255); fon=
+t-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table w=
+idth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=
+=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=
+=09<td style=3D"font-family: Lato, Tahoma, sans-serif; font-size: 16px; col=
+or: rgb(255, 255, 255);" align=3D"left" valign=3D"middle">=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09<div class=3D"" style=3D"line-height: 1.25; letter-=
+spacing: 0px;"><p style=3D"text-align: center;"><span style=3D"color: rgb(5=
+1, 153, 255);"><strong><span style=3D"font-size: 22px;">400+ Google Reviews=
+</span></strong></span></p></div>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=
+=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody=
+>=0A</table>=0A=0A=09=09=09=09=09=09=09=09=09 =0A=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=
+=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Editable Text -->=
+=0A=09=09=09=09=09</div><div>=0A=09=09=09=09=09<!-- Half/Half Text -->=0A=
+=09=09=09=09=09=09<table width=3D"600" border=3D"0" class=3D"row-tb_4060 ro=
+w_full_width" style=3D"width: 600px; max-width: 600px; border-radius: 0px; =
+border-color: rgb(128, 128, 128); border-width: 0px; border-collapse: unset=
+; border-style: none;" role=3D"presentation" align=3D"center" bgcolor=3D"">=
+=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"=
+padding: 0px 20px 20px; font-size: 16px; color: rgb(255, 255, 255); font-fa=
+mily: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09<table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation">=0A=09=
+=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<=
+td width=3D"280" style=3D"font-family: Lato, Tahoma, sans-serif; font-size:=
+ 16px; color: rgb(255, 255, 255);" align=3D"left">=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09<div class=3D""><p><s=
+pan style=3D"color: rgb(0, 0, 0);"><em>=E2=80=9CI placed a large football k=
+it order in November on the run in to Christmas and Zapkam delivered a grea=
+t looking kit in under 4 weeks. The Zapkam team was quick and amenable in t=
+heir responses and communicated clearly throughout. Very pleased with my se=
+rvice.=E2=80=9D</em></span></p></div>=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=
+=09=09=09=09<td class=3D"spacer" width=3D"20" style=3D"font-size: 16px; col=
+or: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;"></td>=0A=09=
+=09=09=09=09=09=09=09=09=09=09<td width=3D"280" style=3D"font-family: Lato,=
+ Tahoma, sans-serif; font-size: 16px; color: rgb(255, 255, 255);" align=3D"=
+left">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09<div class=3D""><p><span style=3D"color: rgb(0, 0, 0);"><em>=
+=E2=80=9CZapkam were excellent with being helpful and delivering was very q=
+uick. We are all very happy with design and colours... We have had so many =
+comments from other clubs how nice it looks. Thank you Zapkam for our Tops,=
+ Jackets, Gilets, and Shower proof Jackets. All Very happy=E2=80=9C</em></s=
+pan></p></div>=0A=09=09=09=09=09=09=09=09=09=09=09=09 =09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=
+=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=0A=09=
+=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=
+=09=09<!-- END Half/Half Text -->=0A=09=09=09=09=09</div><table class=3D"se=
+ction-full-width-wrapper" width=3D"100%" style=3D"background-color: rgb(51,=
+ 153, 255);" bgcolor=3D"#3399ff"><tbody><tr><td class=3D"section-full-width=
+-td" style=3D"padding:0px;"><div>=0A=09=09=09=09=09<!-- Thirds x3 Images --=
+>=0A=09=09=09=09=09=09<table width=3D"600" border=3D"0" class=3D"row-tb_406=
+0 row_full_width" style=3D"width: 600px; max-width: 600px; background-color=
+: rgb(51, 153, 255); border-radius: 0px; border-color: rgb(128, 128, 128); =
+border-width: 0px; border-collapse: unset; border-style: none;" role=3D"pre=
+sentation" bgcolor=3D"#3399ff" align=3D"center">=0A=09=09=09=09=09=09=09<tb=
+ody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"padding: 30px 50px 10px; fo=
+nt-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-s=
+erif;">=0A=09=09=09=09=09=09=09=09=09<table width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"table-layout:fixed;" role=3D"presentation">=0A=
+=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09=09=09=
+=09<td width=3D"153" style=3D"font-size: 16px; color: rgb(255, 255, 255); f=
+ont-family: Lato, Tahoma, sans-serif;" valign=3D"middle" align=3D"center">=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09<a link-description=3D"" href=3D"https://clicks.zapkam.com/email/S-61613=
+@1808753@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_blank"><=
+img class=3D"" src=3D"https://mmanagers3shared.cachefly.net/bbxf60cgrf/emai=
+l_assets/16907/revisions/4/insta_icon.png?icfid=3D61448" alt=3D"" title=3D"=
+"></a>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=
+=09=09=09<td class=3D"spacer" width=3D"20" style=3D"font-size: 16px; color:=
+ rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;"></td>=0A=09=09=
+=09=09=09=09=09=09=09=09=09<td width=3D"154" style=3D"font-size: 16px; colo=
+r: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif;" valign=3D"mi=
+ddle" align=3D"center">=0A=09=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09<a link-description=3D"" href=3D"https://clicks.=
+zapkam.com/email/S-61613@1808754@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23=
+A.@" target=3D"_blank"><img class=3D"" src=3D"https://mmanagers3shared.cach=
+efly.net/bbxf60cgrf/email_assets/16907/revisions/4/640xunlimited___facebook=
+_icon.png?icfid=3D61448" alt=3D"" title=3D""></a>=0A=09=09=09=09=09=09=09=
+=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09=09<td class=3D"spacer" w=
+idth=3D"20" style=3D"font-size: 16px; color: rgb(255, 255, 255); font-famil=
+y: Lato, Tahoma, sans-serif;"></td>=0A=09=09=09=09=09=09=09=09=09=09=09<td =
+width=3D"153" style=3D"font-size: 16px; color: rgb(255, 255, 255); font-fam=
+ily: Lato, Tahoma, sans-serif;" valign=3D"middle" align=3D"center">=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09<a =
+link-description=3D"" href=3D"https://clicks.zapkam.com/email/S-61613@18087=
+55@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_blank"><img cl=
+ass=3D"" src=3D"https://mmanagers3shared.cachefly.net/bbxf60cgrf/email_asse=
+ts/16907/revisions/4/linkedin_icon.png?icfid=3D61448" alt=3D"" title=3D""><=
+/a>=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=
+=09</tr>=0A=09=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=
+=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A=
+</table>=0A=09=09=09=09=09<!-- END Thirds x3 Images -->=0A=09=09=09=09=09</=
+div></td></tr></tbody>=0A</table>=0A                <table class=3D"section=
+-full-width-wrapper" width=3D"100%" style=3D"background-color: rgb(51, 153,=
+ 255);" bgcolor=3D"#3399ff"><tbody><tr><td class=3D"section-full-width-td" =
+style=3D"padding:0px;"><div>=0A                  <!-- Editable Text -->=0A =
+                 <table width=3D"600" class=3D"row-tb_100 row_full_width" s=
+tyle=3D"width: 600px; max-width: 600px; border-radius: 0px; border-color: r=
+gb(128, 128, 128); border-width: 0px; border-collapse: unset; border-style:=
+ none; background-color: rgb(51, 153, 255);" role=3D"presentation" bgcolor=
+=3D"#3399ff" align=3D"center">=0A                    <tbody>=0A            =
+          <tr>=0A                        <td style=3D"padding: 0px 10px 10p=
+x; font-size: 16px; color: rgb(255, 255, 255); font-family: Lato, Tahoma, s=
+ans-serif;">=0A                          <table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation">=0A                         =
+   <tbody>=0A                              <tr>=0A                         =
+       <td style=3D"font-family: Lato, Tahoma, sans-serif; font-size: 16px;=
+ color: rgb(255, 255, 255);" align=3D"center" valign=3D"middle">=0A        =
+                          <div style=3D"line-height: 1.25; letter-spacing: =
+0px;" class=3D""><p><span style=3D"font-size: 14px;">Copyright =C2=A9 2026 =
+Zapkam Limited.</span></p><span style=3D"font-size: 14px;">Not interested a=
+ny longer? <a href=3D"https://clicks.zapkam.com/profile/S-61613@qWzT-9z_C3e=
+gQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@1">Click here to unsubscribe</a>.=0A=0A  =
+                                  </span><p><span style=3D"font-size: 14px;=
+">Please add <strong>Zapkam@e.zapkam.com</strong> to your address book.</sp=
+an></p></div>=0A                                </td>=0A                   =
+           </tr>=0A                            </tbody>=0A                 =
+         </table>=0A                        </td>=0A                      <=
+/tr>=0A                    </tbody>=0A                  </table>=0A        =
+          <!-- END Editable Text -->=0A                </div></td></tr></tb=
+ody>=0A</table><table class=3D"section-full-width-wrapper" width=3D"100%" s=
+tyle=3D"background-color: rgb(51, 153, 255);" bgcolor=3D"#3399ff"><tbody><t=
+r><td class=3D"section-full-width-td" style=3D"padding:0px;"><div>=0A=09=09=
+=09=09=09<!-- Divider -->=0A=09=09=09=09=09=09<table width=3D"600" border=
+=3D"0" class=3D"row-tb_100 row_full_width" style=3D"width: 600px; max-width=
+: 600px; background-color: rgb(51, 153, 255); border-radius: 0px; border-co=
+lor: rgb(255, 255, 255); border-width: 0px; border-collapse: unset; border-=
+style: none;" role=3D"presentation" bgcolor=3D"#3399ff" align=3D"center">=
+=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=09<td style=3D"=
+padding-top: 10px !important; font-size: 16px; font-family: Lato, Tahoma, s=
+ans-serif; color: rgb(255, 255, 255);">=0A=09=09=09=09=09=09=09=09</td>=0A=
+=09=09=09=09=09=09=09</tr>=0A=0A=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=
+=09=09=09<td width=3D"600" style=3D"font-size: 16px; color: rgb(255, 255, 2=
+55); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09=
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border-top: 2px solid rgb(255, 255, 255); border-bottom-style: none;" =
+align=3D"center" role=3D"presentation">=0A=09=09=09=09=09=09=09=09=09=09<tb=
+ody><tr>=0A=09=09=09=09=09=09=09=09=09=09=09<td style=3D"font-size: 16px; c=
+olor: rgb(255, 255, 255); font-family: Lato, Tahoma, sans-serif; padding-to=
+p: 0px;">=0A=09=09=09=09=09=09=09=09=09=09=09=09<span></span>=0A=09=09=09=
+=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=
+=09=09=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=
+=0A=09=09=09=09=09=09=09</tr>=0A=0A=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=
+=09=09=09=09<td style=3D"padding-top: 10px !important; font-size: 16px; fon=
+t-family: Lato, Tahoma, sans-serif; color: rgb(255, 255, 255);">=0A=09=09=
+=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09</tr>=0A=0A=09=09=09=09=09=
+=09</tbody>=0A</table>=0A=09=09=09=09=09<!-- END Divider -->=0A=09=09=09=09=
+=09</div></td></tr></tbody>=0A</table><table class=3D"section-full-width-wr=
+apper" width=3D"100%" style=3D"background-color: rgb(51, 153, 255);" bgcolo=
+r=3D"#3399ff"><tbody><tr><td class=3D"section-full-width-td" style=3D"paddi=
+ng:0px;"><div>=0A=09=09=09=09=09<!-- Full Width Image -->=0A=09=09=09=09=09=
+=09<table width=3D"600" class=3D"row-tb_100 row_full_width" style=3D"width:=
+ 600px; max-width: 600px; border-radius: 0px; border-color: rgb(128, 128, 1=
+28); border-width: 0px; border-collapse: unset; border-style: none; backgro=
+und-color: rgb(51, 153, 255);" role=3D"presentation" bgcolor=3D"#3399ff" al=
+ign=3D"center">=0A=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=09=09=
+=09<td style=3D"padding: 10px 10px 20px; font-size: 16px; color: rgb(255, 2=
+55, 255); font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=
+=09=09<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation">=0A=09=09=09=09=09=09=09=09=09=09<tbody><tr>=0A=09=09=09=09=09=
+=09=09=09=09=09=09<td style=3D"font-size: 16px; color: rgb(255, 255, 255); =
+font-family: Lato, Tahoma, sans-serif;">=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=0A=09=09=09=09=09=09=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=
+=09=09</tr>=0A=09=09=09=09=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09=09=
+=09=09=09<td style=3D"font-size: 16px; color: rgb(255, 255, 255); font-fami=
+ly: Lato, Tahoma, sans-serif;" valign=3D"middle" align=3D"center">=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09<a href=3D"https://clicks.zapkam.com/email/S-=
+61613@1808756@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@" target=3D"_bla=
+nk"><img width=3D"100%" class=3D"fit_w" src=3D"https://mmanagers3shared.cac=
+hefly.net/bbxf60cgrf/email_assets/16907/revisions/4/580xunlimited___logo_im=
+age_copy.png?icfid=3D61448" alt=3D"" title=3D""></a>=0A=09=09=09=09=09=09=
+=09=09=09=09=09</td>=0A=09=09=09=09=09=09=09=09=09=09</tr>=0A=09=09=09=09=
+=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=09=09=09=09</td>=0A=09=09=
+=09=09=09=09=09</tr>=0A=09=09=09=09=09=09</tbody>=0A</table>=0A=09=09=09=09=
+=09<!-- END Full Width Image -->=0A=09=09=09=09=09</div></td></tr></tbody>=
+=0A</table>=0A              </td>=0A            </tr>=0A          </tbody>=
+=0A</table>=0A          <!-- End content table -->=0A        </td>=0A      =
+</tr>=0A    </tbody>=0A</table>=0A    <!-- END wrapper/Container Table -->=
+=0A  <a href=3D"https://clicks.zapkam.com/profile/S-61613@qWzT-9z_C3egQlwri=
+Fq0m8_ZgDn_VDPCrnGC1ZRq23A.@16" class=3D"system_detection_link" style=3D"ms=
+o-hide:all;display:none;max-height:0px;max-width:0px;overflow:hidden;opacit=
+y:0;font-size:1px;line-height:1px;"></a><img src=3D"https://clicks.zapkam.c=
+om/email/S-61613@@qWzT-9z_C3egQlwriFq0m8_ZgDn_VDPCrnGC1ZRq23A.@1yu9A.jpg" a=
+lt=3D"open" height=3D"1" width=3D"1"></body></html>=0A
+
+
+--b1_0d6f1b5eac91e95756be3b82b88de07d--
+

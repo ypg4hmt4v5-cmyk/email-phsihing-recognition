@@ -1,0 +1,711 @@
+Delivered-To: samwilkinson2801@gmail.com
+Received: by 2002:a05:7300:4a93:b0:35b:4487:11b2 with SMTP id e19csp194018dyo;
+        Tue, 13 Oct 2026 21:15:11 -0700 (PDT)
+X-Received: by 2002:a05:600c:8208:b0:4a0:1b14:d00c with SMTP id 5b1f17b1804b1-4a18e446f55mr282589025e9.3.1791951311255;
+        Tue, 13 Oct 2026 21:15:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791951311; cv=none;
+        d=google.com; s=arc-20260327;
+        b=PmURKsegAFcUty7olxKSpW5OyBlLVYcYD7XuAs7Yup0YR1GiWx7qj4mxGDdbdkFhRW
+         U/8vCguH5T+MJ27N+oPkKX57nxXTMQzE0I3FynnY8NF7WQXH+ifB4VYFd7uDoSCZEbQP
+         NI5jQzaOFh41mXOsc+3IBn4LJpJV1H/VvJU9uTSBSvOrm5HDlLin2QjbfwRlb/NaLyfS
+         nwLVuo33bwudi3v9LFoPAWKb+TpkeORJBGSwIEoZmBCaLr8TahtW6PeEhwGbyiIRNJ+d
+         Q8Mf6XLr3T7HO47mweGhCzo7fVu/UMyd0XinRYTyNCSJd4aB0xpHUKCu1dUJttlvfGyh
+         zvEw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:message-id:reply-to:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature:dkim-signature;
+        bh=sv+oH5X2ZIKt+NMbyqgxYo0EEWuklaj2q2CvmlxBEPs=;
+        fh=mM6hGWE8UpD4BGkN4/5x++xz8EfYwbk9RaH37mRMYkU=;
+        b=s8NoATlhZKLqinqmVKeewyJY7NJQ5r4b3DFjIsLbFIWYucjnSmFiCdj9Z3QdDW4DXE
+         DGrVRmEzVfZro88+C28LpY6AAD+jigBrNsvjAkUDtGH6ECLQzMPpN506NoFO0Kmqm1ZC
+         9zv2mIFSE1PD/OY+QAg6i+gMf9mR8394CjeADfggu9FBZHCG23wHP1II8XsSqjVBpB7k
+         H0jp1pokyTRXwaDZUF8Rf3n+itu9S/hL8FvezAYokmsTxOHwnwHn5epkM7abXZd0Gk7H
+         +0x3G4YQD+bwHiKYjVFYjbawM3AUgE4F/43hKCKvWczsjr3JJK79e8iz2iP42tGx57WE
+         9t4g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email-pepsico.co.uk header.s=13dkim1 header.b=Pi1m2VA2;
+       dkim=pass header.i=@s13.y.mc.salesforce.com header.s=fbldkim13 header.b=a0e+x0jE;
+       spf=pass (google.com: domain of bounce-7znocqqicpve7khe252jkaqr4u.130023@bounce.email-pepsico.co.uk designates 128.245.245.131 as permitted sender) smtp.mailfrom=bounce-7ZNOCQQICPVE7KHE252JKAQR4U.130023@bounce.email-pepsico.co.uk;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=email-pepsico.co.uk
+Return-Path: <bounce-7ZNOCQQICPVE7KHE252JKAQR4U.130023@bounce.email-pepsico.co.uk>
+Received: from mta.email-pepsico.co.uk (mta.email-pepsico.co.uk. [128.245.245.131])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-4a197a16e25si339743765e9.7.2026.10.13.21.15.10
+        for <samwilkinson2801@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 Oct 2026 21:15:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-7znocqqicpve7khe252jkaqr4u.130023@bounce.email-pepsico.co.uk designates 128.245.245.131 as permitted sender) client-ip=128.245.245.131;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email-pepsico.co.uk header.s=13dkim1 header.b=Pi1m2VA2;
+       dkim=pass header.i=@s13.y.mc.salesforce.com header.s=fbldkim13 header.b=a0e+x0jE;
+       spf=pass (google.com: domain of bounce-7znocqqicpve7khe252jkaqr4u.130023@bounce.email-pepsico.co.uk designates 128.245.245.131 as permitted sender) smtp.mailfrom=bounce-7ZNOCQQICPVE7KHE252JKAQR4U.130023@bounce.email-pepsico.co.uk;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=email-pepsico.co.uk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=13dkim1; d=email-pepsico.co.uk;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:Message-ID:Content-Type; i=Joy@email-pepsico.co.uk;
+ bh=sv+oH5X2ZIKt+NMbyqgxYo0EEWuklaj2q2CvmlxBEPs=;
+ b=Pi1m2VA2+R1+Cco2HJKOz2qZrUcEa1Z2hJHRgl0mcbOVOH0+L0AMyDtYnbBxtvkHQrL5X6wxsUfF
+   aPzClZdcmCC2YuCk7S4ceW4eNo/BaS4eFVtG1Waa8u4NTUvG02Jgrv2mmUSWqeWMcSm4ckuggc0L
+   M+eoIM3sBFDiEChpP2ChbUEtIckDt0d2uAFA1p6D5z07ZLntiAHGmbBnoRCqMmb3N5p0cDT4af8y
+   orW22t5pAMu4wyu6PbphlecBdAjoD6As3swzqn48fmUsuykiLKI+XQBHFzfvHqW59iQKvtw/tm3L
+   gPllJrAliPE6beh1/zK5QmOSfmYAidRw8jW7WQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim13; d=s13.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:Message-ID:Content-Type;
+ bh=sv+oH5X2ZIKt+NMbyqgxYo0EEWuklaj2q2CvmlxBEPs=;
+ b=a0e+x0jEPxK+GIV65bWdzVeUClb3cN+hkiy+zgbxzTTlAdVxzw87YsAVIqDHmxeBcZE0wCUnMRaD
+   afrzQYPdmYR750q1hYVVTzrMX/ETTikviUafnSLPvCKOQFIJAaSpJ4e7wn8CJHr6Oig+71Cr9VkX
+   1I8piLlo841di1fWmCIcDmvwdaAx8ublhils7/E2+qZ26pwSa8WJ99sO4YkLBD9QYv5ErzLsEHYo
+   KXAvrjzYaTKMlkL3DpwPKDdKOdHIECDOb7NwZaZx7soxx68KPefSfrezJbgI1XGGgZzRH1Y/leGP
+   eNDlpL21pr3rFzHpGxb1rERTQNQGTTElVmms1w==
+Received: by mta.email-pepsico.co.uk id hps0ss39mjcn for <samwilkinson2801@gmail.com>; Wed, 14 Oct 2026 04:14:40 +0000 (envelope-from <bounce-7ZNOCQQICPVE7KHE252JKAQR4U.130023@bounce.email-pepsico.co.uk>)
+From: "Joy by PepsiCo" <Joy@email-pepsico.co.uk>
+To: <samwilkinson2801@gmail.com>
+Subject: =?UTF-8?B?QXZlbmdlcnM6IERvb21zZGF5IGJyaW5ncyB5b3UgYSBjaGFuY2Ug?=
+ =?UTF-8?B?dG8gd2luIHByaXplcyBldmVyeSBob3VyIeKAiw==?=
+Date: Tue, 13 Oct 2026 22:14:39 -0600
+List-Unsubscribe: <https://click.email-pepsico.co.uk/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1NDYwMDIyMjkiLCJzIjoiMjUxNDYyNyIsImxpZCI6IjkxMSIsImoiOiIzNDI1NCIsImpiIjoiNTAwIiwiZCI6IjEzMDAyMyJ9.yHmFK1-30JVK7Py5lQbOnV6Q-IgVdhok7T01muMsBJA>, <mailto:leave-QSA3CAGYOTDENJY2ADD6HGIZ64.130023@leave.email-pepsico.co.uk>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Reply-To: "PepsiCo" <reply-WE5YPRQ2YI3EFFCRVTLBZBH7NY.130023@email-pepsico.co.uk>
+X-SFMC-Stack: 13
+x-job: 546002229_34254
+Message-ID: <2c89ba0b-f318-46e2-95a9-e98a6f6c538b@iad4s13mta0032.xt.local>
+Feedback-ID: 546002229:34254:128.245.245.131:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="1KbzIS3NDjJ7=_?:"
+
+This is a multi-part message in MIME format.
+
+--1KbzIS3NDjJ7=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;
+&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;&zwnj;&zwnj; &zwnj; &zwnj; &zwnj;
+
+ 
+ 
+Welcome to Joy!Hi, your journey starts now
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErfmzgGZ4AOnQPERnx-MFEZNTw4X9QhA0FzMJfzysxSzMYASjFEV9J0gWGe9IQ9Vz71luDaqU2J8REpqobUW2LQ0U5q68MaC0 
+Having trouble viewing? Open in browser 
+
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErf8zMHFBQnhBaL-Yishlt_yl02irVtnPMH2jGTuMYFFaMvcDM0G4UAsW2CVrxUbM_BjH9hQvviNhaBbgjzSKx2fM6RYizvEA 
+
+
+ Hi Sam,
+ 
+
+Can’t wait to see Avengers: Doomsday?
+
+
+ Get ready to assemble your snacks and enter for your chance to win amazing prizes every hour!
+
+
+ You could be heading to Tokyo for a family holiday, winning Vue cinema tickets or taking home one of the other exciting prizes up for grabs.
+ 
+
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErgEO_Ck1IFnisOHrNvLiDTPM8sTrgzaLTCvjvCNWGdStYhmAjZhTXE5E55IeCXQIUc5H3seOKbLS0hFKkyZ26Rf2MOsIWLfo 
+
+ ASSEMBLE NOW  
+
+
+ How to enter:
+
+1Purchase a promotional pack and scan the QR code.
+2Register or log in to JOY.
+3Enter the code on the back of your pack to find out if you’ve won!
+
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErge47sH168MOLu1HnXtMQP1DMZgLNPDCsGHa0ZGHhtddQ5gnkPYbNTuR3Pe8jCNAZNwzQBkSOWmTrysWWSBFGSNk3_L0LdgA 
+
+ ASSEMBLE NOW  
+
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErgsFv604VJNG-ck-k68VcIyvestdI1ueI9jGqUJRgNe718yrRPyena-oUeTuYWyZ3h8zC0RuGroMMCDBWta1GM7EtrF-coL4 
+
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErg4Jun452GJlOR7SxNu5khNFVF19HV_Nn5T4jSRGzR2qrrQFAwePaE5_JEgNbH8LH-fTytetHGypNyJxn7ziW-ZTzVv-9Gq8 
+Conditions 
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErhFjDOjhQYG1TaV5_7J58loXWLpPNizvRbMhGZ-2DOikF5WB2CTz6KSeCP3Ke4j0DuTmk2rcytE1mIpE-ygejD50uuDkJmnQ 
+Privacy Policy 
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErhQdMC3IxfCj2NFBtTkacYARO3kQXOwM2-F3jWRXYatMnVg9miXdYc7A5UPDnwHumW-4NJl0KhoFMq6PZylwnUxnnPfUDznw 
+Contact 
+
+ You are receiving this email because you provided your consent to hear from PepsiCo Brands via email. If you no longer wish to receive our emails 
+https://click.email-pepsico.co.uk/unsub_center.aspx?qs=ACN7ImQiOjUwMjksInQiOjYyMjUsInAiOiJVQyIsInMiOjEzfQANAAAAAAFkdhErhnQFNRTcPfdv0mXgND0aqBwMetizOST2BCXe4kBeEUp3z2LZ9Quwnd22x7-VfUxBb2TXvg4vgvMl_KYAAMvFljI9AMd7OUiai3AT9NHiGRI 
+unsubscribe  here, but we will miss you. Your Privacy is important to us. To learn more about how PepsiCo handles your personal data please see our 
+https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErh-9Cb8n1aSdB6Y1yR6H2cD5YdREsaPr8ZQ1JYW5vMQIGYluqq0AWxQiEd_752zlnbqvrPu_2BWKYAcPCH4S-e5npirUx98Y 
+Privacy Notice  for details.
+
+  
+ (c)2026 PepsiCo, Inc.
+
+
+ 
+ 
+
+
+--1KbzIS3NDjJ7=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      ReadMsgBody{ width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important;}
+      p { margin: 1em 0;}
+      table td { border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      @-ms-viewport{ width: device-width;}
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 480px) {
+        .container {width: 100% !important;}
+        .footer { width:auto !important; margin-left:0; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        img { max-width:100% !important; height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .photo img { width:100% !important; max-width:100% !important; height:auto !important;}
+        .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo { display:block !important; width: 100% !important; padding-top:15px; float:left; clear:both;}
+        .nav4, .nav5, .nav6 { display: none !important; }
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding:0 !important; }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+        body { padding: 0px !important; font-size: 16px !important; line-height: 150% !important;}
+        h1 { font-size: 22px !important; line-height: normal !important;}
+        h2 { font-size: 20px !important; line-height: normal !important;}
+        h3 { font-size: 18px !important; line-height: normal !important;}
+        .buttonstyles {
+          font-family:arial,helvetica,sans-serif !important;
+          font-size: 16px !important;
+          color: #FFFFFF !important;
+          padding: 10px !important;
+        }
+        /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      }
+      @media only screen and (max-width: 640px) {
+        .container { width:100% !important; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        .photo img { width:100% !important; height:auto !important;}
+        .nav5, .nav6 { display: none !important;}
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    </style>
+    <!--[if mso]>       <style type="text/css">           /* Begin Outlook Font Fix */           body, table, td {               font-family: Arial, Helvetica, sans-serif ;               font-size:16px;               color:#000000;               line-height:1;           }           /* End Outlook Font Fix */       </style>     <![endif]-->
+  </head>
+  <body bgcolor="#ffffff" text="#000000" style="background-color: #ffffff; color: #000000; padding: 0px; -webkit-text-size-adjust:none; font-size: 16px; font-family:arial,helvetica,sans-serif;"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Assemble your snacks for a chance to win holidays, cinema tickets and more.​</div>
+      <div style="display:none !important; font-size:1px; color:#ffffff; line-height:1px; max-height:0px; max-width:0px; overflow:hidden;">
+
+&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;
+&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;
+&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&zwnj;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+    <div style="font-size:0; line-height:0;"><img src="https://click.email-pepsico.co.uk/open.aspx?LCAHT75QONUEJG2MO4F4ZT2GGA.130023&d=130023&bmt=0" width="1" height="1" alt=""></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+        <td align="center" valign="top">
+          
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+            <tr>
+              <td>
+                <table class="tb_properties border_style" style="background-color:#FFFFFF;" cellspacing="0" cellpadding="0" bgcolor="#ffffff" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <!-- added padding here -->
+                          <td class="content_padding" style="">
+                            <!-- end of comment -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr> <!-- top slot -->
+                                <td align="center" class="header" valign="top">
+                                  <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                          <td align="left" valign="top">
+                                            <table cellspacing="0" cellpadding="0" style="width:100%">
+                                              <tbody>
+                                              <tr>
+                                                <td class="responsive-td" valign="top" style="width: 100%;">
+                                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Welcome to Joy!</title>
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<![endif]-->
+  <img src="https://click.email-pepsico.co.uk/open.aspx?LCAHT75QONUEJG2MO4F4ZT2GGA.130023&d=130023&bmt=0" width="1" height="1" alt="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    p {
+      display: block;
+      margin: 13px 0;
+    }
+
+  </style>
+  <!--[if mso]>   <noscript>     <xml>       <o:OfficeDocumentSettings>         <o:AllowPNG/>         <o:PixelsPerInch>96</o:PixelsPerInch>       </o:OfficeDocumentSettings>     </xml>   </noscript>   <![endif]-->
+  <!--[if lte mso 11]>   <style type="text/css">     .mj-outlook-group-fix { width:100% !important; }   </style>   <![endif]-->
+  <style type="text/css">
+    @media only screen and (min-width:480px) {
+      .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+
+      .mj-column-per-33 {
+        width: 33% !important;
+        max-width: 33%;
+      }
+
+      .mj-column-per-30 {
+        width: 30% !important;
+        max-width: 30%;
+      }
+
+      .mj-column-per-70 {
+        width: 70% !important;
+        max-width: 70%;
+      }
+    }
+
+  </style>
+  <style media="screen and (min-width:480px)">
+    .moz-text-html .mj-column-per-100 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .moz-text-html .mj-column-per-33 {
+      width: 33% !important;
+      max-width: 33%;
+    }
+
+    .moz-text-html .mj-column-per-30 {
+      width: 30% !important;
+      max-width: 30%;
+    }
+
+    .moz-text-html .mj-column-per-70 {
+      width: 70% !important;
+      max-width: 70%;
+    }
+
+  </style>
+  <style type="text/css">
+    @media only screen and (max-width:479px) {
+      table.mj-full-width-mobile {
+        width: 100% !important;
+      }
+
+      td.mj-full-width-mobile {
+        width: auto !important;
+      }
+    }
+
+  </style>
+  <style type="text/css">
+    .bullet-number {
+      display: inline-block;
+      background-color: #1443FF;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      padding: 5px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+  </style>
+
+
+
+<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Hi, your journey starts now</div>
+<div style="" lang="en" dir="auto">
+  <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+  <div style="margin:0px auto;max-width:600px;">
+    <table align="center" cellpadding="0" cellspacing="0" style="color:#ffffff;text-align:center;padding:0px 0px">
+ 
+  <tr>
+   <td style="text-align:center;">
+    <a href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErdAIjgqXyBjcZCMA9fgVlXralDEEWMQgYN0kvUMyA6vWy8uLFXBnjeG1Hq8On33xsuyxheu5JsUW1QvcdG5CzVyMNvRbo5QE"  style="color:#000000;text-align:center;text-decoration:none;font-size:12px;font-weight:400">Having trouble viewing? Open in browser</a></td></tr></table>
+    
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+      
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:0px 0px 0px 0px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              
+              <tr>
+                <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                    
+                    <tr>
+                      <td style="width:600px;">
+                        <a   href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErdReF0jeciGgPKoDL1_3NBj54V6cg1G1Y-7yYx3EKCQktwhQ-ys1DjEH3Iyoux67l9ud68vFyX9_Y8468duup_V1Tex1lvPU" target="_blank">
+                          <img alt="JOY by Pepsico" src="https://www.joy-pepsico.eu/en-gb-prod/s3fs-public/2026-08/1578_desktop_header_2880x858px.jpg" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="600" height="auto">
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+  <div style="background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;">
+      
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:20px 40px 00px 40px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:520px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              
+              <tr>
+                <td align="left" style="font-size:0px;padding:0px 0px 0 0px;word-break:break-word;">
+                  
+               
+                <div style="font-family:Arial, sans-serif; font-size:16px; line-height:22px; text-align:left; color:#333333;">
+
+  <p style="margin:0 0 8px 0;">
+    Hi Sam,
+  </p>
+                    <p style="display: flex; align-items: center;">
+                      <span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji', Arial, sans-serif; line-height:1; mso-line-height-rule:exactly; display:inline;">
+                       
+                      </span>
+                      <span>Can’t wait to see Avengers: Doomsday?</span>
+                    </p>
+
+  <p style="margin:0 0 12px 0; font-size:16px;">
+    Get ready to <b>assemble your snacks </b>and enter for your chance to win <b>amazing prizes every hour!</b>
+  </p>
+
+  <p style="margin:0 0 12px 0; font-size:16px;">
+   You could be heading to <b>Tokyo for a family holiday</b>, winning <b>Vue cinema tickets</b> or taking home one of the other exciting prizes up for grabs.
+  </p><br>
+
+
+</div>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                 
+                  
+                  
+                  
+                  
+                   <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
+                    
+                    <tr>
+                      <td align="center" bgcolor="#FFE600" role="presentation" style="border:none;border-radius:44px;cursor:auto;mso-padding-alt:10px 20px 10px 20px;background:#FFE600;" valign="middle">
+                        <a  href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErdj1C5MZkEnTwL4zNDW4H7ghnP--cboTUd95LVvJ285erpOPnEjJlmi1usXZS3PqH1IpzkEqf2rDJKkDSiKZCcq85Gwa-avE" style="display:inline-block;background:#FFE600;color:#1443FF;font-family:Arial;font-size:14px;font-weight:700;line-height:16px;margin:0;text-decoration:none;text-transform:uppercase;padding:10px 20px 10px 20px;mso-padding-alt:0px;border-radius:44px;" target="_blank">
+                          ASSEMBLE NOW </a>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+  <div style="background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;">
+      
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:0px 40px 10px 40px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:520px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              
+              <tr>
+                <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                  <div style="font-family:Arial;font-size:16px;font-weight:400;line-height:21px;text-align:left;color:#333333;">
+                    <h2 style="font-size:1.25rem; color:#333333; line-height:32px; font-weight:700; margin-bottom: 0px">
+                      How to enter:</h2>
+                  </div>
+                </td>
+              </tr>
+              
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+  <div style="background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;">
+    <tr>
+      <td style="direction:ltr;font-size:0px;padding:0px 35px 0px 35px;text-align:center;">
+
+        
+        
+        <!--[if !mso]><!-- -->
+        
+        
+        <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+            <tr>
+              <td align="left" style="font-size:0px;padding:0;word-break:break-word;">
+                <table cellpadding="5" cellspacing="0" width="100%" border="0" style="color:#333333;font-family:Arial;font-size:16px;line-height:21px;table-layout:auto;width:100%;border:none;">
+                  <tr>
+                    <td width="45" valign="middle">
+                      <span style="display:inline-block;background-color:#1443FF;color:#ffffff;font-family:Arial;font-size:16px;font-weight:700;border-radius:50%;width:36px;height:36px;line-height:36px;text-align:center;">1</span>
+                    </td>
+                    <td align="left" valign="middle">Purchase a promotional pack and scan the QR code.</td>
+                  </tr>
+                  <tr>
+                    <td width="45" valign="middle">
+                      <span style="display:inline-block;background-color:#1443FF;color:#ffffff;font-family:Arial;font-size:16px;font-weight:700;border-radius:50%;width:36px;height:36px;line-height:36px;text-align:center;">2</span>
+                    </td>
+                    <td align="left" valign="middle">Register or log in to JOY.</td>
+                  </tr>
+                  <tr>
+                    <td width="45" valign="middle">
+                      <span style="display:inline-block;background-color:#1443FF;color:#ffffff;font-family:Arial;font-size:16px;font-weight:700;border-radius:50%;width:36px;height:36px;line-height:36px;text-align:center;">3</span>
+                    </td>
+                    <td align="left" valign="middle">Enter the code on the back of your pack to find out if you’ve won!</td>
+                  </tr>
+                 
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!--<![endif]-->
+       <!--[if mso]> <div class="mj-column-per-100 mj-outlook-group-fix" style="width:100%;">   <table border="0" cellpadding="0" cellspacing="0" width="100%"     style="color:#333333;font-family:Arial;font-size:16px;line-height:21px;">      <tr>       <td align="left" style="padding:0;">         <table cellpadding="5" cellspacing="0" width="100%" border="0">            <tr>             <td width="45" valign="middle">               <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"                 xmlns:w="urn:schemas-microsoft-com:office:word"                 arcsize="0%" fillcolor="#1443FF" strokecolor="#1443FF"                 style="width:36px;height:36px;">                 <w:anchorlock/>                <v:textbox inset="0,0,0,0">   
+<table role="presentation" width="36" height="36" cellpadding="0" cellspacing="0" border="0">     <tr>       <td align="center" valign="middle"         style="font-family:Arial; font-size:16px; font-weight:bold; color:#ffffff; mso-style-textfill-fill-color:#ffffff;">         1       </td>     </tr>   </table> </v:textbox>               </v:roundrect>             </td>             <td valign="middle">Purchase a promotional pack and scan the QR code.</td>           </tr>            <tr>             <td width="45" valign="middle">               
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"                 xmlns:w="urn:schemas-microsoft-com:office:word"                 arcsize="0%" fillcolor="#1443FF" strokecolor="#1443FF"                 style="width:36px;height:36px;">                 <w:anchorlock/>                <v:textbox inset="0,0,0,0">   <table role="presentation" width="36" height="36" cellpadding="0" cellspacing="0" border="0">     <tr>       <td align="center" valign="middle"         style="font-family:Arial; font-size:16px; font-weight:bold; color:#ffffff; mso-style-textfill-fill-color:#ffffff;">         2       </td>     </tr>   </table> </v:textbox>               </v:roundrect>             </td>             <td valign="middle">Register or log in to JOY.</td>           </tr>            <tr>             
+<td width="45" valign="middle">               <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"                 xmlns:w="urn:schemas-microsoft-com:office:word"                 arcsize="0%" fillcolor="#1443FF" strokecolor="#1443FF"                 style="width:36px;height:36px;">                 <w:anchorlock/>                <v:textbox inset="0,0,0,0">   <table role="presentation" width="36" height="36" cellpadding="0" cellspacing="0" border="0">     <tr>       <td align="center" valign="middle"         style="font-family:Arial; font-size:16px; font-weight:bold; color:#ffffff; mso-style-textfill-fill-color:#ffffff;">         3       </td>     </tr>   </table> </v:textbox>               </v:roundrect>             </td>             
+<td valign="middle">Enter the code on the back of your pack to find out if you’ve won!</td>           </tr>            <tr>             <td width="45" valign="middle">               <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"                 xmlns:w="urn:schemas-microsoft-com:office:word"                 arcsize="0%" fillcolor="#1443FF" strokecolor="#1443FF"                 style="width:36px;height:36px;">                 <w:anchorlock/>                <v:textbox inset="0,0,0,0">    </div> <![endif]-->
+        
+        
+        
+
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>
+  
+  
+<!--<![endif]-->
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+
+  
+
+  <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+  <div style="background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#FFFFFF;background-color:#FFFFFF;width:100%;">
+      
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:0px 40px 30px 40px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:520px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              
+              <tr>
+                <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
+                    
+                    <tr>
+                      <td align="center" bgcolor="#FFE600" role="presentation" style="border:none;border-radius:44px;cursor:auto;mso-padding-alt:10px 20px 10px 20px;background:#FFE600;" valign="middle">
+                        <a  href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErd4_HO56T1UwdZYdsDuTwQJlpg97PVPbCM3bIwaG98tWDuhc4owWL5nXmcUa349jVDWo6rhzl6BnBd7UpS_7cVbiIs9_Xrmk" style="display:inline-block;background:#FFE600;color:#1443FF;font-family:Arial;font-size:14px;font-weight:700;line-height:16px;margin:0;text-decoration:none;text-transform:uppercase;padding:10px 20px 10px 20px;mso-padding-alt:0px;border-radius:44px;" target="_blank">
+                         ASSEMBLE NOW </a>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+
+
+
+
+
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style type="text/css">
+.desktop-only {
+    display: none !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .mobile-only {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  @media only screen and (min-width: 600px) {
+    .desktop-only {
+      display: table !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+    .mobile-only {
+      display: none !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+    }
+  }
+  @media only screen and (max-width: 599px) {
+    .nav-link a { font-size: 10px !important; padding-right: 4px !important; }
+    .footer-legal { font-size: 9px !important; line-height: 13px !important; }
+  }</style><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px; background-color:#1443FF; margin:0 auto;" width="100%">
+ <!--[if mso]><tr><td>   <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"     style="background-color:#1443FF;" width="600"><![endif]-->
+  <tr>
+   <td style="width:30%; padding:10px;">
+    <a  href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhEreM0_tOiCbCW7EGH5InGkZdAOQJPd5utRannk3Qe8CkQB87OSNg8ZndIP8xmHc-FYwPkEQ9Hrsj-uxbPsMAdLJw4bU-DR72c" target="_blank"><img alt="Joy logo Pepsico" src="https://image.email-pepsico.co.uk/lib/fe3111747364047f771679/m/1/f05afeba-ded0-4887-bbf8-af1ef76c355b.png" style="border:0; display:block;" width="225"> </a></td><td style="width:70%; padding:10px 15px; vertical-align:top;">
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+     
+      <tr>
+       <td class="nav-link" style="white-space:nowrap;">
+        <a   data-linkto="https://" href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErec5EBoVF8dsdQob7Xn-CHBYp_smhnuRjGBuLQUJPuOPD9Z80SmDvLANWqvJKe6fHZVx73qdCmL7R-J_CD-KLRIUPSP-82Yw" style="color:#FFFFFF;text-decoration:none; font-family:Arial, sans-serif; font-size:11px; font-weight:700; line-height:22px; padding-right:6px;" target="_blank" title="">Conditions</a></td><td class="nav-link" style="white-space:nowrap;">
+        <a   data-linkto="https://" href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErejWj7wQ7F5JDD0pN0oARZCtyXbrZ1EMZ3KAfEzolXvAOhSiZIIV1TEJaRtsFw61M_4Eur4OYBq5lVrQ9BzQflAjCyyoWGBc" style="color:#FFFFFF;text-decoration:none; font-family:Arial, sans-serif; font-size:11px; font-weight:700; line-height:22px; padding-right:6px;" target="_blank" title="">Privacy Policy</a></td><td class="nav-link" style="white-space:nowrap;">
+        <a  href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhEre6nUj3mjHOtw_-W80OFWMNVc5z2ICB2XifXCYgLwLmqnKhHsmJOW9lwMVhezGU7TRS4kAibU4OU_x24FijsyuuO4CRqqf2s" style="color:#FFFFFF; font-family:Arial, sans-serif; font-size:11px; font-weight:700; line-height:22px; text-decoration:none;" target="_blank">Contact</a></td></tr><tr>
+       <td class="footer-legal" colspan="3" style="padding-top:10px; font-family:Verdana, sans-serif; font-size:8px; line-height:13px; color:#FFFFFF;">
+        You are receiving this email because you provided your consent to hear from PepsiCo Brands via email. If you no longer wish to receive our emails <a  href="https://click.email-pepsico.co.uk/unsub_center.aspx?qs=ACN7ImQiOjUwMjksInQiOjYyMjUsInAiOiJVQyIsInMiOjEzfQANAAAAAAFkdhErfP0Aw4JYEUYB27CbIFnuj8kLImog9SEnmIK8YrBalbsHMNq5bffolG3328_cdG8fKYb__SjJybgOvkoQBnxPk0jn5y-_w---TKMRcP4iGvs" style="color:#FFFFFF; text-decoration:underline;" target="_blank">unsubscribe</a> here, but we will miss you. Your Privacy is important to us. To learn more about how PepsiCo handles your personal data please see our <a   data-linkto="https://" href="https://click.email-pepsico.co.uk/?qs=ABp7ImQiOjUwMjksInQiOjYyMjUsInMiOjEzfQANAAAAAAFkdhErfZMoLTNCg9_9YuwbJ1iDvlxVCIH-kvivJDWc63fSU3uR4etYh3Zzlx-aP3GXp3Xr8aYz8FInyEmR8IPbwjccTQiIYPorS2s" style="color:#FFFFFF;text-decoration:underline;" target="_blank" title="">Privacy Notice</a> for details.<br>
+        &nbsp;<div style="text-align:center; padding-top:10px;">
+         &copy;2026 PepsiCo, Inc.</div></td></tr></table></td></tr><!--[if mso]></table></td></tr></table><![endif]--></table>
+
+</div>
+</custom></td></tr></table>
+                                                </td>
+                                              </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+--1KbzIS3NDjJ7=_?:--
+
